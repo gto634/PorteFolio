@@ -1,0 +1,463 @@
+/* =========================================
+   projets.css
+   Styles, animations et mise en page des projets
+======================================== */
+
+:root {
+    /* Dimensions du texte RESPONSIVES */
+    --text-width-base: clamp(300px, 35vw, 550px);
+    --text-width-expanded: clamp(450px, 50vw, 800px);
+    
+    /* 🛡️ NOUVEAU : Marge de sécurité symétrique (Safe Zone) */
+    /* 4rem = 64px. Les dots sont à 40px + 14px, ça laisse un espace parfait ! */
+    --layout-padding-x: clamp(4rem, 8vw, 120px);
+    
+    /* Espace fluide entre texte et vidéo */
+    --slide-margin: clamp(2rem, 5vw, 6rem);          
+    
+    /* ⚡ PARAMÈTRES DU DÉGRADÉ (Voile Unique) */
+    --fade-width: 150%;
+    --fade-offset: 0%; 
+
+    /* 🔄 TRANSLATIONS DU VOILE EN POURCENTAGE (Adieu le bug de scrollbar !) */
+    --translate-fade-start: -46.66%; 
+    --translate-fade-end: 0%;
+
+    /* 🔄 VARIABLES DE CALCULS STRICTS (Finies les valeurs magiques !) */
+    /* Largeur dispo pour la vidéo = Écran - les 2 paddings - largeur texte - marge */
+    --video-width: calc(100vw - (2 * var(--layout-padding-x)) - var(--text-width-expanded) - var(--slide-margin));
+    
+    /* Le texte se décale exactement de la largeur de la vidéo + sa marge */
+    --slide-distance: calc(var(--video-width) + var(--slide-margin));
+    
+    --translate-content-start: 0px;
+    --translate-content-end: var(--slide-distance);
+}
+
+/* -----------------------------------------
+   DISPOSITION GÉNÉRALE DES PLANCHES
+----------------------------------------- */
+.planche {
+    align-items: flex-start;
+    /* Padding symétrique pour centrer le calcul de la vidéo */
+    padding-left: var(--layout-padding-x);
+    padding-right: var(--layout-padding-x);
+}
+
+.planche.is-reversed {
+    align-items: flex-end;
+    /* L'effet miroir est géré naturellement par flex-end, rien à écraser ! */
+}
+
+/* Fonds d'écran spécifiques par projet */
+#projet-1 { background-image: url('../Tatamiam/Splashscreen.png'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+#projet-2 { background-image: url('../IsekaiWar/Splashscreen.png'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+#projet-3 { background-image: url('../Entrecote/Splashscreen.png'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+#projet-4 { background-image: url('../SpaceRunner/Splashscreen.png'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+
+
+/* -----------------------------------------
+   CONTENU DES PROJETS (Texte, Typographie)
+----------------------------------------- */
+.content {
+    width: var(--text-width-base);
+    text-align: left;
+    position: relative;
+    z-index: 10; 
+
+    transform: translateX(var(--translate-content-start));
+    will-change: transform;
+    transition: transform var(--anim-speed), width var(--anim-speed);
+}
+
+.planche.is-reversed .content {
+    text-align: right;
+}
+
+/* TYPOGRAPHIE FLUIDE */
+.content h1, .content h2 {
+    font-size: clamp(1.8rem, 5vw, 3.5rem); 
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.content p, .project-details {
+    font-size: clamp(0.85rem, 2vw, 1.1rem);
+}
+
+/* Animations de translation du contenu */
+.planche.is-expanded .content {
+    width: var(--text-width-expanded);
+    transform: translateX(var(--translate-content-end));
+}
+
+.planche.is-reversed.is-expanded .content {
+    transform: translateX(calc(-1 * var(--translate-content-end)));
+}
+
+/* -----------------------------------------
+   BOUTONS PARTAGÉS ET ANIMATIONS
+----------------------------------------- */
+.btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--bg-main); 
+    padding: 0.8rem 1.5rem;
+    margin-top: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.2s ease; 
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px); 
+}
+
+/* Bouton d'expansion circulaire */
+.expand-btn {
+    flex-shrink: 0; 
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    
+    /* Pointeur Normal: Droite, Inversé: Gauche */
+    transform: rotate(0deg) scale(1);
+}
+.planche.is-reversed .expand-btn { transform: rotate(180deg) scale(1); }
+
+.expand-btn:hover {
+    background: var(--accent);
+    color: var(--bg-main);
+}
+.planche:not(.is-reversed) .expand-btn:hover { transform: rotate(0deg) scale(1.1); }
+.planche.is-reversed .expand-btn:hover { transform: rotate(180deg) scale(1.1); }
+
+/* État ouvert */
+.planche.is-expanded .expand-btn { transform: rotate(180deg) scale(1); }
+.planche.is-reversed.is-expanded .expand-btn { transform: rotate(0deg) scale(1); }
+
+.planche.is-expanded .expand-btn:hover { transform: rotate(180deg) scale(1.1); }
+.planche.is-reversed.is-expanded .expand-btn:hover { transform: rotate(0deg) scale(1.1); }
+
+
+/* -----------------------------------------
+   LOGIQUE DU VOILE DYNAMIQUE
+----------------------------------------- */
+/* Normal (Dégradé vers la droite) */
+.planche::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: var(--fade-width); 
+    height: 100%;
+    background: linear-gradient(to right, 
+        var(--fade-color-dark) 0%, 
+        var(--fade-color-dark) calc(35% + var(--fade-offset)), 
+        var(--fade-color-light) 100%
+    );
+    z-index: 1; 
+    pointer-events: none; 
+    transform: translateX(var(--translate-fade-start)); 
+    transition: transform var(--anim-speed); 
+}
+
+.planche.is-reversed::after {
+    /* On ancre à droite */
+    right: 0;
+    left: auto;
+    
+    /* Le transform s'inverse grâce à ton calcul (devient +46.66%) */
+    transform: translateX(calc(-1 * var(--translate-fade-start))); 
+    
+    /* 🛡️ LA CORRECTION EST ICI : On inverse le sens du dégradé */
+    background: linear-gradient(to left, 
+        var(--fade-color-dark) 0%, 
+        var(--fade-color-light) 100%
+    );
+}
+
+/* Apparition */
+.planche.is-expanded::after,
+.planche.is-reversed.is-expanded::after {
+    transform: translateX(var(--translate-fade-end)); 
+}
+
+
+/* -----------------------------------------
+   DÉTAILS DES PROJETS (En-têtes, Listes)
+----------------------------------------- */
+.project-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    gap: 20px;
+    margin-bottom: 1rem;
+}
+
+.planche.is-reversed .project-header {
+    flex-direction: row-reverse;
+}
+
+.project-details {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; 
+}
+
+.project-details ul {
+    list-style-type: none; 
+    padding-left: 1rem;
+    border-left: 2px solid var(--accent); 
+}
+
+.planche.is-reversed .project-details ul {
+    border-left: none;
+    border-right: 2px solid var(--accent);
+    padding-left: 0;
+    padding-right: 1rem;
+}
+
+.project-details li {
+    margin-bottom: 0.5rem;
+    color: #b9b6c9; 
+}
+
+.project-details strong {
+    color: var(--text-main); 
+}
+
+/* LOGOS ET BADGES (Tech Stack) */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 1rem;
+}
+
+.planche.is-reversed .tech-stack {
+    justify-content: flex-end;
+}
+
+.tech-stack img {
+    height: 30px; 
+    width: auto;
+    object-fit: contain;
+}
+
+.custom-badge {
+    background-color: var(--bg-surface);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+
+/* -----------------------------------------
+   VIDÉO GLISSANTE (Format HD 16:9 Dynamique)
+----------------------------------------- */
+.project-video-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: var(--video-width); 
+    
+    /* Position cachée à l'origine (gauche) */
+    left: calc(-1 * var(--slide-distance) - 35px); 
+    
+    aspect-ratio: 16 / 9;
+    height: auto; 
+    max-height: 80vh; 
+    
+    margin: 0;
+    border-radius: 8px;
+    border: none;
+    z-index: 2; 
+    background-color: #000;
+    overflow: hidden;
+}
+
+.planche.is-reversed .project-video-container {
+    left: auto;
+    /* Position cachée à l'origine (droite) */
+    right: calc(-1 * var(--slide-distance) - 35px); 
+}
+
+/* ⚡ État déplié pour la vidéo de droite : elle rattrape son retard */
+.planche.is-reversed.is-expanded .project-video-container {
+    right: calc(-1 * var(--slide-distance) - 25px); 
+}
+
+.hover-video {
+    width: 100%;
+    height: 100%; 
+    display: block;
+    object-fit: cover; 
+    opacity: 0.7; 
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.video-hint {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 25px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    pointer-events: none; 
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.project-video-container:hover .hover-video {
+    opacity: 1;
+    transform: scale(1.02); 
+}
+
+.project-video-container:hover .video-hint {
+    opacity: 0; 
+}
+
+/* -----------------------------------------
+   VIDÉOS ET MINIATURES (Posters)
+----------------------------------------- */
+.project-video-container video {
+    width: 100%;
+    height: 100%; 
+    display: block;
+    
+    /* Remplir le conteneur 16:9 sans déformer (coupe les bords si nécessaire) */
+    object-fit: cover; 
+    
+    /* Centrer parfaitement la miniature et la vidéo */
+    object-position: center; 
+}
+
+/* On garde tes effets de survol spécifiques pour .hover-video */
+.hover-video {
+    opacity: 0.7; 
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+/* =========================================
+   RESPONSIVE (Écrans < 1024px : Tablettes & Mobiles)
+========================================= */
+@media (max-width: 1024px) {
+    
+    /* 1. GESTION DES FONDS ET ANNULATION QUINCONCE */
+    .planche, .planche.is-reversed {
+        padding: 1.5rem !important; 
+        align-items: center; 
+        overflow-y: auto; 
+    }
+
+    /* Le fond normal se décale pour montrer la droite de l'image */
+    .planche {
+        background-position: 75% center !important; 
+    }
+
+    /* Le fond inversé se décale pour montrer la gauche de l'image */
+    .planche.is-reversed {
+        background-position: 25% center !important; 
+    }
+
+    /* 2. GESTION DU CONTENU (Texte centré) */
+    .content, 
+    .planche.is-reversed .content,
+    .planche.is-expanded .content,
+    .planche.is-reversed.is-expanded .content {
+        transform: translateX(0) !important;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .project-header,
+    .planche.is-reversed .project-header {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .tech-stack,
+    .planche.is-reversed .tech-stack {
+        justify-content: center;
+    }
+
+    .project-details ul,
+    .planche.is-reversed .project-details ul {
+        border-left: none; 
+        border-right: none;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* 3. GESTION DE LA VIDÉO (Passe en dessous du contenu) */
+    .project-video-container,
+    .planche.is-reversed .project-video-container {
+        position: relative; 
+        top: auto; left: auto; right: auto;
+        transform: none;
+        width: 100%;
+        margin: 0 auto;
+        max-height: 0;
+        opacity: 0;
+        margin-top: 0;
+        transition: max-height var(--anim-speed), opacity var(--anim-speed), margin-top var(--anim-speed);
+    }
+
+    .planche.is-expanded .project-video-container {
+        max-height: 50vh; 
+        opacity: 1;
+        margin-top: 2rem; 
+    }
+
+    /* 4. GESTION DU MENU LATÉRAL */
+    .dot-nav {
+        right: 10px; 
+        transform: translateY(-50%) scale(0.8); 
+    }
+}
+
+/* =========================================
+   RESPONSIVE MOBILE (Écrans < 600px)
+========================================= */
+@media (max-width: 600px) {
+    /* On réinitialise la position pour que le voile mobile soit identique partout */
+    .planche.is-reversed::after {
+        left: 0;
+        right: auto;
+        transform: translateX(var(--translate-fade-start)); 
+    }
+
+    .planche::after, .planche.is-reversed::after {
+        background: linear-gradient(to right, 
+            rgba(12, 11, 20, 0.9) 0%, 
+            rgba(12, 11, 20, 0.8) 60%, 
+            rgba(12, 11, 20, 0) 100%
+        );
+    }
+}

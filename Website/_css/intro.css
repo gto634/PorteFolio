@@ -1,0 +1,164 @@
+/* =========================================
+   intro.css
+   Styles spécifiques à la planche d'introduction
+========================================= */
+
+#intro {
+    background-color: var(--bg-main); 
+}
+
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 20vw; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: 0;     
+}
+
+#intro .content {
+    position: relative;
+    z-index: 2; 
+    
+    /* 🎯 Centrage à 25% de la largeur */
+    left: 25%; 
+    transform: translateX(-50%); 
+    
+    /* Optionnel : limiter la largeur pour éviter que le texte ne bave trop à droite */
+    max-width: 40vw; 
+}
+
+#transition-btn {
+    /* ⏱️ VARIABLES DE L'ANIMATION */
+    --bounce-interval: 3s; /* Temps total d'un cycle (Attente + Saut) */
+    --bounce-height: -20px; /* Hauteur maximale du saut */
+
+    position: absolute;
+    bottom: 30px; 
+    left: 50%; 
+    
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+    
+    text-decoration: none; 
+    cursor: pointer;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10; 
+    
+    transform: translateX(-50%) translateY(0) rotate(-90deg) scale(1);
+    
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    
+    animation: periodicGravityBounce var(--bounce-interval) infinite;
+}
+
+#transition-btn:hover {
+    background: var(--accent);
+    color: var(--bg-main);
+    transform: translateX(-50%) translateY(0) rotate(-90deg) scale(1.1);
+    animation: none; 
+}
+
+/* 🏀 ANIMATION AVEC GRAVITÉ (Physique réaliste) */
+@keyframes periodicGravityBounce {
+    /* Le bouton est au repos la plupart du temps (de 25% à 100%) */
+    0%, 25%, 100% {
+        transform: translateX(-50%) translateY(0) rotate(-90deg) scale(1);
+    }
+    
+    /* 1. IMPULSION : Il saute (décélère en montant grâce à ease-out) */
+    0% {
+        animation-timing-function: ease-out; 
+    }
+    
+    /* 2. SOMMET : Il atteint sa hauteur max et commence à tomber (accélère avec ease-in) */
+    10% {
+        transform: translateX(-50%) translateY(var(--bounce-height)) rotate(-90deg) scale(1);
+        animation-timing-function: ease-in; 
+    }
+    
+    /* 3. IMPACT : Il touche le sol et rebondit un peu moins haut */
+    18% {
+        transform: translateX(-50%) translateY(0) rotate(-90deg) scale(1);
+        animation-timing-function: ease-out; 
+    }
+    
+    /* 4. SOMMET DU PETIT REBOND : Il retombe */
+    22% {
+        transform: translateX(-50%) translateY(calc(var(--bounce-height) / 3)) rotate(-90deg) scale(1);
+        animation-timing-function: ease-in; 
+    }
+}
+
+/* =========================================
+   RESPONSIVE (Écrans < 1024px : Tablettes & Mobiles)
+========================================= */
+@media (max-width: 1024px) {
+    
+    /* 1. On recentre la vidéo d'arrière-plan pour qu'elle remplisse l'écran */
+    .video-bg {
+        left: 0; 
+        width: 100%;
+    }
+
+    #intro .content {
+        left: 0; 
+        transform: none; /* 🛠️ Annule le centrage à 25% du PC */
+        width: 100%;
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    /* 3. (Optionnel) On remonte un peu le bouton pour éviter qu'il ne 
+          se cache sous la barre de navigation des navigateurs mobiles */
+    #transition-btn {
+        bottom: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    /* 1. ON NETTOIE LE VOILE SUR L'INTRO */
+    #intro::after {
+        display: none; /* Supprime le dégradé qui assombrit tout */
+    }
+
+    /* 2. FORMAT PROPRE À L'INTRO MOBILE */
+    #intro {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
+        padding: 1rem !important;
+        background-color: var(--bg-main);
+    }
+
+    /* 3. POSITIONNEMENT DU TEXTE INTRO */
+    #intro .content {
+        position: relative;
+        left: 0;
+        transform: none;
+        width: 90%;
+        z-index: 5;
+        /* Ajout d'un léger text-shadow pour la lisibilité sur la vidéo */
+        text-shadow: 0px 2px 10px rgba(0,0,0,0.5); 
+    }
+
+    /* 4. AJUSTEMENT VIDÉO MOBILE */
+    #intro .video-bg {
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.6; /* On peut baisser l'opacité ici au lieu d'utiliser un voile */
+    }
+}

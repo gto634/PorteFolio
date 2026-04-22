@@ -1,0 +1,65 @@
+/* =========================================
+   PALETTE DE COULEURS (TC Studio)
+========================================= */
+:root {
+    --bg-main: #0C0B14;      /* Fond principal : Violet Nuit Très Foncé */
+    --bg-surface: #232136;   /* Fond secondaire : Raisin Muted */
+    --text-main: #E0DEF4;    /* Texte : Gris Nuage */
+    --accent: #F7BACF;       /* Action : Rose Pastel Froid */
+}
+
+/* =========================================
+   RESET DE BASE
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   STYLES GLOBAUX & SCROLLBAR CUSTOM
+========================================= */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+    line-height: 1.6;
+    
+    /* On verrouille l'écran pour éviter la double barre et les décalages */
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; 
+}
+
+/* Personnalisation de la barre de défilement */
+::-webkit-scrollbar {
+    width: 12px; 
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-main); 
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bg-surface); 
+    border-radius: 6px; 
+    border: 3px solid var(--bg-main); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent); 
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.text-accent {
+    color: var(--accent);
+}
