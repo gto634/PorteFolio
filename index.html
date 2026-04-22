@@ -24,7 +24,7 @@
     <main class="scroll-container">
 
         <section class="planche" id="intro">
-            <video autoplay loop muted playsinline class="video-bg">
+            <video autoplay loop muted playsinline preload="auto" class="video-bg">
                 <source src="Intro/video-Intro.mp4" type="video/mp4">
             </video>
 
@@ -63,15 +63,15 @@
                         <p>
                             <strong>Points clés :</strong><br>
                             - Gestion de projet et Méthodologie AGILE.<br>
-                            - Implémentation d'une API multijoueur dans un moteur personnalisé.
-                            - Rendre un jeu fluide grâce au Gamefeel.
+                            - Implémentation d'une API multijoueur dans un moteur personnalisé.<br>
+                            - Rendre un jeu fluide grâce au Gamefeel.<br>
                             - Créer une architechture à partir d'un EC.
                         </p>
                     </div>
                 </div>
 
                 <div class="project-video-container">
-                    <video class="click-video" muted loop playsinline preload="metadata" poster="Tatamiam/Thumbnail.png">
+                    <video class="click-video" muted loop playsinline preload="auto" poster="Tatamiam/Thumbnail.png">
                         <source src="Tatamiam/Gameplay.mp4" type="video/mp4">
                     </video>
                     <div class="video-hint">Cliquer pour jouer</div>
@@ -113,7 +113,7 @@
                 </div>
 
                 <div class="project-video-container">
-                    <video class="click-video" muted loop playsinline preload="metadata" poster="IsekaiWar/Thumbnail.png">
+                    <video class="click-video" muted loop playsinline preload="auto" poster="IsekaiWar/Thumbnail.png">
                         <source src="IsekaiWar/Gameplay.mp4" type="video/mp4">
                     </video>
                     <div class="video-hint">Cliquer pour jouer</div>
@@ -122,88 +122,88 @@
         </section>
 
         <section class="planche" id="projet-3">
-        <div class="content">
-            <div class="project-header">
-                <h2 class="text-accent">EntreCôte</h2>
-                <button class="expand-btn" title="Plus d'informations">➔</button>
-            </div>
-        
-            <div class="project-details">
-                <div class="tech-stack">
-                    <img src="Icons/C++.png" alt="C++" title="C++">
-                    <img src="Icons/DX12.png" alt="DX12" title="DX12">
-                    <span class="custom-badge">Direct XII</span>
+            <div class="content">
+                <div class="project-header">
+                    <h2 class="text-accent">EntreCôte</h2>
+                    <button class="expand-btn" title="Plus d'informations">➔</button>
+                </div>
+            
+                <div class="project-details">
+                    <div class="tech-stack">
+                        <img src="Icons/C++.png" alt="C++" title="C++">
+                        <img src="Icons/DX12.png" alt="DX12" title="DX12">
+                        <span class="custom-badge">Direct XII</span>
+                    </div>
+
+                    <div class="project-text">
+                        <p>Moteur de jeu 3D custom utilisant un EC.</p>
+                        <p>Vidéo: Sandbox + Sushi Adventure, mini jeu dévellopé en 3jours.</p>
+                        <ul>
+                            <li><strong>Rôle :</strong> Tech Designer / Développeur Moteur</li>
+                            <li><strong>Année :</strong> 2026</li>
+                            <li><strong>Équipe :</strong> 3 développeurs</li>
+                            <li><strong>Temps :</strong> 3 semaines</li>
+                        </ul>
+                        <p>
+                            <strong>Points clés :</strong><br>
+                            - Gestion de la pipeline de rendu.<br>
+                            - Avoir une architecture propre et évolutive.<br>
+                            - Encapsuler correctement pour supporter différents supports.<br>
+                            - Optimiser et refactorer proprement.
+                        </p>
+                    </div>
                 </div>
 
-            <div class="project-text">
-                <p>Moteur de jeu 3D custom utilisant un EC.</p>
-                <p>Vidéo: Sandbox + Sushi Adventure, mini jeu dévellopé en 3jours.</p>
-                <ul>
-                    <li><strong>Rôle :</strong> Tech Designer / Développeur Moteur</li>
-                    <li><strong>Année :</strong> 2026</li>
-                    <li><strong>Équipe :</strong> 3 développeurs</li>
-                    <li><strong>Temps :</strong> 3 semaines</li>
-                </ul>
-                <p>
-                    <strong>Points clés :</strong><br>
-                    - Gestion de la pipeline de rendu.<br>
-                    - Avoir une architecture propre et évolutive.<br>
-                    - Encapsuler correctement pour supporter différents supports.<br>
-                    - Optimiser et refactorer proprement.
-                </p>
+                <div class="project-video-container">
+                    <video class="click-video" muted loop playsinline preload="auto" poster="EntreCote/Thumbnail.png">
+                        <source src="EntreCote/Gameplay.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-hint">Cliquer pour jouer</div>
+                </div>
             </div>
-        </div>
-
-        <div class="project-video-container">
-            <video class="click-video" muted loop playsinline preload="metadata" poster="EntreCote/Thumbnail.png">
-                <source src="EntreCote/Gameplay.mp4" type="video/mp4">
-            </video>
-            <div class="video-hint">Cliquer pour jouer</div>
-        </div>
-    </div>
-</section>
+        </section>
 
         <section class="planche is-reversed" id="projet-4">
             <div class="content">
                 <div class="project-header">
                     <h2 class="text-accent">SpaceRunner</h2>
                     <button class="expand-btn" title="Plus d'informations">➔</button>
-            </div>
-            
-            <div class="project-details">
-                <div class="tech-stack">
-                    <img src="Icons/C++.png" alt="C++" title="C++">
-                    <img src="Icons/Blender.png" alt="Blender" title="Blender">
-                    <span class="custom-badge">GC Engine</span>
+                </div>
+                
+                <div class="project-details">
+                    <div class="tech-stack">
+                        <img src="Icons/C++.png" alt="C++" title="C++">
+                        <img src="Icons/Blender.png" alt="Blender" title="Blender">
+                        <span class="custom-badge">GC Engine</span>
+                    </div>
+
+                    <div class="project-text">
+                        <p>Jeu de course infini dans un environnement spatial.</p>
+                        <p>Réalisé avec le moteur custom de mon école: GC Engine.</p>
+                        <ul>
+                            <li><strong>Rôle :</strong> Co-créateur / Développeur Généraliste</li>
+                            <li><strong>Année :</strong> 2025</li>
+                            <li><strong>Équipe :</strong> 2 développeurs</li>
+                            <li><strong>Temps :</strong> 2 semaines</li>
+                        </ul>
+                        <p>
+                            <strong>Points clés :</strong><br>
+                            - Savoir s'adapter à un moteur custom incomplet.<br>
+                            - Optimiser pour de bonnes performances sur ce moteur.<br>
+                            - Développer un jeu 3D avec des Tiles en 2 semaines.<br>
+                            - Travailler le level design malgré les contraintes du Gameplay.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="project-text">
-                    <p>Jeu de course infini dans un environnement spatial.</p>
-                    <p>Réalisé avec le moteur custom de mon école: GC Engine.</p>
-                    <ul>
-                        <li><strong>Rôle :</strong> Co-créateur / Développeur Généraliste</li>
-                        <li><strong>Année :</strong> 2025</li>
-                        <li><strong>Équipe :</strong> 2 développeurs</li>
-                        <li><strong>Temps :</strong> 2 semaines</li>
-                    </ul>
-                    <p>
-                        <strong>Points clés :</strong><br>
-                        - Savoir s'adapter à un moteur custom incomplet.<br>
-                        - Optimiser pour de bonnes performances sur ce moteur.<br>
-                        - Développer un jeu 3D avec des Tiles en 2 semaines.<br>
-                        - Travailler le level design malgré les contraintes du Gameplay.
-                    </p>
+                <div class="project-video-container">
+                    <video class="click-video" muted loop playsinline preload="auto" poster="SpaceRunner/Thumbnail.png">
+                        <source src="SpaceRunner/Gameplay.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-hint">Cliquer pour jouer</div>
                 </div>
             </div>
-
-            <div class="project-video-container">
-                <video class="click-video" muted loop playsinline preload="metadata" poster="SpaceRunner/Thumbnail.png">
-                    <source src="SpaceRunner/Gameplay.mp4" type="video/mp4">
-                </video>
-                <div class="video-hint">Cliquer pour jouer</div>
-            </div>
-        </div>
-    </section>
+        </section>
 
     </main>
 
