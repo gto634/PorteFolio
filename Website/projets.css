@@ -50,10 +50,10 @@
 }
 
 /* Fonds d'écran spécifiques par projet */
-#projet-1 { background-image: url('../Tatamiam/Splashscreen.png'); background-size: cover; background-position: center; background-repeat: no-repeat; }
-#projet-2 { background-image: url('../IsekaiWar/Splashscreen.png'); background-size: cover; background-position: center; background-repeat: no-repeat; }
-#projet-3 { background-image: url('../Entrecote/Splashscreen.png'); background-size: cover; background-position: center; background-repeat: no-repeat; }
-#projet-4 { background-image: url('../SpaceRunner/Splashscreen.png'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+#projet-1 { background-image: url('Tatamiam/Splashscreen.png'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+#projet-2 { background-image: url('IsekaiWar/Splashscreen.png'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+#projet-3 { background-image: url('Entrecote/Splashscreen.png'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+#projet-4 { background-image: url('SpaceRunner/Splashscreen.png'); background-size: cover; background-position: center; background-repeat: no-repeat; }
 
 
 /* -----------------------------------------
