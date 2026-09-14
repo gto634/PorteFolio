@@ -1,0 +1,33 @@
+/* Shared interaction feedback, with comfortable pointer and keyboard targets. */
+:where(a, button, video):focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+button { font: inherit; touch-action: manipulation; }
+a { touch-action: manipulation; }
+.dot-nav { gap: 2px; right: 24px; }
+.dot {
+    width: 44px; height: 44px; display: grid; place-items: center;
+    border: 0; background: transparent; transform: none; position: relative;
+    transition: none;
+}
+.dot::before {
+    content: ''; width: 12px; height: 12px; border: 2px solid var(--text-main); border-radius: 50%;
+    transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+.dot:hover, .dot.active { background: transparent; transform: none; }
+.dot:hover::before { transform: scale(1.25); border-color: var(--accent); }
+.dot.active::before { background: var(--accent); border-color: var(--accent); transform: scale(1.2); }
+.dot:active::before { transform: scale(0.9); }
+.dot::after {
+    content: attr(aria-label); position: absolute; right: 48px; padding: 4px 10px;
+    background: var(--bg-surface); border-radius: 6px; white-space: nowrap; color: var(--text-main);
+    font-size: 0.85rem; opacity: 0; transform: translateX(4px); pointer-events: none;
+    transition: opacity 180ms ease, transform 180ms ease;
+}
+.dot:hover::after, .dot:focus-visible::after { opacity: 1; transform: translateX(0); }
+@media (max-width: 1024px) {
+    .dot-nav { right: 2px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    html { scroll-behavior: auto; }
+}
+

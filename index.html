@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="planches-general.css">
     <link rel="stylesheet" href="intro.css">
     <link rel="stylesheet" href="projets.css">
+    <link rel="stylesheet" href="interactions.css">
 </head>
 
 <body>
-    <nav class="dot-nav">
+    <nav class="dot-nav" aria-label="Navigation des projets">
         <a href="#intro" class="dot active" title="Introduction"></a>
         <a href="#projet-1" class="dot" title="Tatamiam"></a>
         <a href="#projet-2" class="dot" title="IsekaiWar!"></a>
@@ -24,16 +25,14 @@
     <main class="scroll-container">
 
         <section class="planche" id="intro">
-            <video autoplay loop muted playsinline preload="auto" class="video-bg">
-                <source src="Intro/video-Intro.mp4" type="video/mp4">
-            </video>
+            <canvas id="hypercube" aria-hidden="true"></canvas>
 
             <div class="content">
                 <h1>MAHIOU Ryad</h1>
                 <p>Portfolio de développeur</p>
             </div>
             
-            <a href="#projet-1" id="transition-btn" title="Aller aux projets">&#10140;</a>
+            <a href="#projet-1" id="transition-btn" title="Aller aux projets" aria-label="Aller aux projets">&#10140;</a>
         </section>
 
         <section class="planche" id="projet-1">
@@ -71,8 +70,8 @@
                 </div>
 
                 <div class="project-video-container">
-                    <video class="click-video" muted loop playsinline preload="auto" poster="Tatamiam/Thumbnail.png">
-                        <source src="Tatamiam/Gameplay.mp4" type="video/mp4">
+                    <video class="click-video" muted loop playsinline preload="none" poster="Tatamiam/Thumbnail.png">
+                        <source data-src="Tatamiam/Gameplay.mp4" type="video/mp4">
                     </video>
                     <div class="video-hint">Cliquer pour jouer</div>
                 </div>
@@ -113,8 +112,8 @@
                 </div>
 
                 <div class="project-video-container">
-                    <video class="click-video" muted loop playsinline preload="auto" poster="IsekaiWar/Thumbnail.png">
-                        <source src="IsekaiWar/Gameplay.mp4" type="video/mp4">
+                    <video class="click-video" muted loop playsinline preload="none" poster="IsekaiWar/Thumbnail.png">
+                        <source data-src="IsekaiWar/Gameplay.mp4" type="video/mp4">
                     </video>
                     <div class="video-hint">Cliquer pour jouer</div>
                 </div>
@@ -155,8 +154,8 @@
                 </div>
 
                 <div class="project-video-container">
-                    <video class="click-video" muted loop playsinline preload="auto" poster="EntreCote/Thumbnail.png">
-                        <source src="EntreCote/Gameplay.mp4" type="video/mp4">
+                    <video class="click-video" muted loop playsinline preload="none" poster="Entrecote/Thumbnail.png">
+                        <source data-src="Entrecote/Gameplay.mp4" type="video/mp4">
                     </video>
                     <div class="video-hint">Cliquer pour jouer</div>
                 </div>
@@ -197,8 +196,8 @@
                 </div>
 
                 <div class="project-video-container">
-                    <video class="click-video" muted loop playsinline preload="auto" poster="SpaceRunner/Thumbnail.png">
-                        <source src="SpaceRunner/Gameplay.mp4" type="video/mp4">
+                    <video class="click-video" muted loop playsinline preload="none" poster="SpaceRunner/Thumbnail.png">
+                        <source data-src="SpaceRunner/Gameplay.mp4" type="video/mp4">
                     </video>
                     <div class="video-hint">Cliquer pour jouer</div>
                 </div>
@@ -207,6 +206,7 @@
 
     </main>
 
+    <script src="hypercube.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,186 +1,170 @@
-// --- PARAMÈTRES ---
-const duration = 800; // Ton temps d'animation (0.8s)
 const container = document.querySelector('.scroll-container');
-const sections = document.querySelectorAll('.planche');
-
-// Variables d'état principales
+const sections = [...document.querySelectorAll('.planche')];
+const dots = [...document.querySelectorAll('.dot')];
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 let currentSectionIndex = 0;
-let isAnimating = false; 
-
-// --- VARIABLES DU BUFFER ---
-let bufferedDirection = 0; // Pour la molette (+1, -1 ou 0)
-let bufferedIndex = null;  // NOUVEAU : Pour les clics sur les boutons/dots (null ou index cible)
-const bufferThreshold = 0.7; // 70% : fenêtre d'acceptation du prochain input
-let currentProgress = 0; 
-
-// --- FONCTION MOTEUR D'ANIMATION ---
-function scrollToSection(index) {
-    // Sécurité de limite
-    if (index < 0 || index >= sections.length) {
-        bufferedDirection = 0; 
-        bufferedIndex = null;
-        container.style.scrollSnapType = 'y mandatory';
-        isAnimating = false;
-        return;
-    }
-    
-    isAnimating = true;
+let scrollFrame = 0;
+function updateNavigation(index) {
     currentSectionIndex = index;
-
-    // Mise à jour visuelle des dots
-    const dots = document.querySelectorAll('.dot');
-    dots.forEach(dot => dot.classList.remove('active'));
-    if (dots[index]) dots[index].classList.add('active');
-
-    const targetSection = sections[index];
-    const startPos = container.scrollTop;
-    const targetPos = targetSection.offsetTop;
-    const distance = targetPos - startPos;
-    let startTime = null;
-
-    container.style.scrollSnapType = 'none';
-
-    function animation(currentTime) {
-        if (startTime === null) startTime = currentTime;
-        const timeElapsed = currentTime - startTime;
-        
-        currentProgress = Math.min(timeElapsed / duration, 1);
-        const ease = currentProgress; 
-
-        container.scrollTop = startPos + (distance * ease);
-
-        if (timeElapsed < duration) {
-            requestAnimationFrame(animation);
-        } else {
-            history.pushState(null, null, '#' + targetSection.id);
-            isAnimating = false;
-            
-            // 2. LECTURE DU DOUBLE BUFFER (Priorité au clic si l'utilisateur a fait les deux)
-            if (bufferedIndex !== null) {
-                const nextIndex = bufferedIndex;
-                bufferedIndex = null;
-                bufferedDirection = 0; // On purge l'autre action
-                scrollToSection(nextIndex); // On enchaîne direct !
-                
-            } else if (bufferedDirection !== 0) {
-                const nextIndex = currentSectionIndex + bufferedDirection;
-                bufferedDirection = 0; 
-                scrollToSection(nextIndex); // On enchaîne direct !
-                
-            } else {
-                container.style.scrollSnapType = 'y mandatory';
-            }
-        }
-    }
-
-    requestAnimationFrame(animation);
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+        if (i === index) dot.setAttribute('aria-current', 'location');
+        else dot.removeAttribute('aria-current');
+    });
 }
-
-// --- ÉCOUTEUR 1 : LA MOLETTE DE SOURIS ---
-container.addEventListener('wheel', function(e) {
-    e.preventDefault(); 
-    const direction = e.deltaY > 0 ? 1 : -1;
-
-    if (isAnimating) {
-        if (currentProgress >= bufferThreshold) {
-            bufferedDirection = direction;
-            bufferedIndex = null; // La molette annule un clic potentiellement mémorisé
+function scrollToSection(index) {
+    if (index < 0 || index >= sections.length) return;
+    cancelAnimationFrame(scrollFrame);
+    const start = container.scrollTop, target = sections[index].offsetTop;
+    const started = performance.now();
+    container.style.scrollSnapType = 'none';
+    updateNavigation(index);
+    function step(now) {
+        const progress = reducedMotion.matches ? 1 : Math.min((now - started) / 650, 1);
+        const eased = progress < 0.5 ? 4 * progress ** 3 : 1 - (-2 * progress + 2) ** 3 / 2;
+        container.scrollTop = start + (target - start) * eased;
+        if (progress < 1) scrollFrame = requestAnimationFrame(step);
+        else {
+            scrollFrame = 0;
+            container.style.scrollSnapType = '';
+            history.replaceState(null, '', '#' + sections[index].id);
         }
-        return; 
     }
-
-    scrollToSection(currentSectionIndex + direction);
-}, { passive: false }); 
-
-// --- ÉCOUTEUR 2 : LES BOUTONS ET LES DOTS ---
+    scrollFrame = requestAnimationFrame(step);
+}
+dots.forEach(dot => dot.setAttribute('aria-label', dot.title));
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href').substring(1);
-        const targetIndex = Array.from(sections).findIndex(sec => sec.id === targetId);
-        
-        if (targetIndex !== -1) {
-            if (isAnimating) {
-                // 3. ENREGISTREMENT DU BUFFER DE CLIC
-                // Si on est à la fin de l'animation, on mémorise la destination !
-                if (currentProgress >= bufferThreshold) {
-                    bufferedIndex = targetIndex;
-                    bufferedDirection = 0; // Le clic annule une molette potentiellement mémorisée
-                }
-                // Quoi qu'il arrive, on bloque l'exécution immédiate pour ne pas casser l'animation
-                return; 
-            }
-            
-            // Si aucune animation n'est en cours, on y va direct
-            bufferedDirection = 0; 
-            bufferedIndex = null;
-            scrollToSection(targetIndex);
-        }
+    anchor.addEventListener('click', event => {
+        const index = sections.findIndex(section => '#' + section.id === anchor.hash);
+        if (index < 0) return;
+        event.preventDefault();
+        scrollToSection(index);
     });
 });
-
-// =========================================
-// GESTION DE LA VIDÉO DE FOND
-// =========================================
-document.addEventListener('DOMContentLoaded', () => {
-    const backgroundVideo = document.querySelector('.video-bg');
-    
-    if (backgroundVideo) {
-        // Règle la vitesse de lecture. 
-        // 1.0 = Vitesse normale (100%)
-        // 0.5 = Moitié de la vitesse (50%)
-        // 0.8 = Un peu plus lent (80%)
-        backgroundVideo.playbackRate = 0.1; 
+// Keep native touch/keyboard scrolling and allow scrolling inside tall panels.
+let lastWheel = 0;
+container.addEventListener('wheel', event => {
+    if (event.ctrlKey || Math.abs(event.deltaY) < 4 || Math.abs(event.deltaX) > Math.abs(event.deltaY)) return;
+    const panel = event.target.closest('.planche');
+    const direction = Math.sign(event.deltaY);
+    if (panel && (direction > 0 ? panel.scrollTop + panel.clientHeight < panel.scrollHeight - 2 : panel.scrollTop > 2)) return;
+    event.preventDefault();
+    const now = performance.now(), continuingGesture = now - lastWheel < 180;
+    lastWheel = now;
+    if (scrollFrame || continuingGesture) return;
+    scrollToSection(currentSectionIndex + direction);
+}, { passive: false });
+const navigationObserver = new IntersectionObserver(entries => {
+    if (scrollFrame) return;
+    entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.55) updateNavigation(sections.indexOf(entry.target));
+    });
+}, { root: container, threshold: 0.55 });
+sections.forEach(section => navigationObserver.observe(section));
+window.addEventListener('hashchange', () => {
+    const index = sections.findIndex(section => '#' + section.id === location.hash);
+    if (index >= 0) scrollToSection(index);
+});
+window.addEventListener('resize', () => { if (scrollFrame) scrollToSection(currentSectionIndex); });
+const players = [];
+document.querySelectorAll('.project-video-container').forEach((panel, index) => {
+    const video = panel.querySelector('video');
+    const section = panel.closest('.planche');
+    const expand = section.querySelector('.expand-btn');
+    const title = section.querySelector('h2').textContent;
+    const source = video.querySelector('source').dataset.src;
+    panel.querySelector('.video-hint').remove();
+    video.controls = true;
+    video.setAttribute('aria-label', 'Gameplay de ' + title);
+    const toggle = document.createElement('button');
+    toggle.className = 'video-toggle';
+    toggle.type = 'button';
+    const status = document.createElement('span');
+    status.className = 'video-status';
+    status.setAttribute('role', 'status');
+    panel.append(toggle, status);
+    panel.id = 'player-' + index;
+    panel.inert = true;
+    expand.setAttribute('aria-controls', panel.id);
+    let requested = false, position = 0, attempt = 0;
+    function state(name) {
+        panel.dataset.state = name;
+        panel.setAttribute('aria-busy', String(name === 'loading'));
+        toggle.hidden = name === 'playing';
+        toggle.textContent = name === 'loading' ? 'Annuler' : name === 'error' ? '↻ Réessayer' : '▶ Lire la vidéo';
+        toggle.setAttribute('aria-label', (name === 'loading' ? 'Annuler le chargement de ' : 'Lire le gameplay de ') + title);
+        status.textContent = name === 'loading' ? 'Chargement de la vidéo…' : name === 'error' ? 'Lecture impossible. Réessayez.' : '';
     }
-});
-
-// =========================================
-// GESTION DES VIDÉOS AU CLIC (Click to Play)
-// =========================================
-document.addEventListener('DOMContentLoaded', () => {
-    const videoContainers = document.querySelectorAll('.project-video-container');
-
-    videoContainers.forEach(container => {
-        const video = container.querySelector('video');
-
-        container.addEventListener('click', () => {
-            if (video.paused) {
-                // On lance la vidéo
-                video.play()
-                    .then(() => {
-                        container.classList.add('is-playing');
-                    })
-                    .catch(error => console.log("Erreur lecture :", error));
-            } else {
-                // On met en pause
-                video.pause();
-                container.classList.remove('is-playing');
-                // Optionnel : video.currentTime = 0; // Si tu veux revenir au poster
-            }
-        });
+    function mount() {
+        if (video.hasAttribute('src')) return;
+        video.preload = 'auto';
+        video.src = source;
+        video.load();
+    }
+    function stop(release = false) {
+        attempt++;
+        requested = false;
+        video.pause();
+        if (release && video.hasAttribute('src')) {
+            position = video.currentTime;
+            video.removeAttribute('src');
+            video.preload = 'none';
+            video.load();
+        }
+        state('paused');
+    }
+    function labelExpansion() {
+        const open = section.classList.contains('is-expanded');
+        expand.title = (open ? 'Masquer' : 'Voir') + ' la vidéo';
+        expand.setAttribute('aria-label', expand.title + ' — ' + title);
+        expand.setAttribute('aria-expanded', String(open));
+        panel.inert = !open;
+    }
+    expand.addEventListener('click', () => {
+        section.classList.toggle('is-expanded');
+        labelExpansion();
+        if (section.classList.contains('is-expanded')) {
+            players.forEach(player => { if (player.video !== video) player.stop(true); });
+            mount();
+        } else stop(true);
     });
-});
-
-// =========================================
-// GESTION DU BOUTON D'EXPANSION DE PROJET
-// =========================================
-document.addEventListener('DOMContentLoaded', () => {
-    // On cible le bouton via document.body pour que ça marche même si on en ajoute dynamiquement
-    document.body.addEventListener('click', function(e) {
-        
-        // On vérifie si l'élément cliqué (ou son parent) a la classe expand-btn
-        const btn = e.target.closest('.expand-btn');
-        
-        if (btn) {
-            e.preventDefault(); 
-            // On cherche la section "planche" correspondante
-            const parentPlanche = btn.closest('.planche');
-            
-            // On active/désactive le mode large et le fade
-            if (parentPlanche) {
-                parentPlanche.classList.toggle('is-expanded');
+    toggle.addEventListener('click', async () => {
+        if (requested) { stop(true); return; }
+        players.forEach(player => { if (player.video !== video) player.stop(true); });
+        if (video.error) stop(true);
+        mount();
+        requested = true;
+        const token = ++attempt;
+        state('loading');
+        try { await video.play(); }
+        catch (error) {
+            if (token === attempt && error.name !== 'AbortError') {
+                requested = false;
+                state('error');
             }
         }
     });
+    video.addEventListener('loadedmetadata', () => {
+        if (position > 0 && position < video.duration) video.currentTime = position;
+    });
+    video.addEventListener('play', () => {
+        requested = true;
+        players.forEach(player => { if (player.video !== video) player.stop(true); });
+    });
+    video.addEventListener('playing', () => state('playing'));
+    video.addEventListener('waiting', () => { if (requested) state('loading'); });
+    video.addEventListener('pause', () => {
+        requested = false;
+        state(video.error ? 'error' : 'paused');
+    });
+    video.addEventListener('error', () => { requested = false; state('error'); });
+    labelExpansion();
+    state('paused');
+    new IntersectionObserver(entries => {
+        if (entries[0].intersectionRatio < 0.1) stop(true);
+    }, { root: container, threshold: 0.1 }).observe(section);
+    players.push({ video, stop });
+});
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) players.forEach(player => player.stop(true));
 });
