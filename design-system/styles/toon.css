@@ -1,0 +1,237 @@
+/* Adopted Toon / Slime theme. Add ds-toon to a ds-ui root after loading the shared styles. */
+.ds-toon {
+    --ds-radius-small: 12px;
+    --ds-radius-control: 20px;
+    --ds-radius-card: 24px;
+    --ds-toon-outline: #897993;
+    --ds-toon-edge: #ac7188;
+    --ds-toon-shadow: #74455c;
+    --ds-toon-shape: 20px 24px 20px 23px / 21px 19px 23px 20px;
+    /* Approved irregular silhouette: closed control and expanded panel. */
+    --ds-toon-menu-shape: var(--ds-toon-shape);
+    --ds-toon-menu-expanded-shape: 58px 38px 64px 34px / 52px 30px 58px 44px;
+    --ds-toon-menu-background: rgb(35 33 54 / .84);
+    --ds-toon-duration: 700ms;
+    --ds-toon-dot-duration: 650ms;
+    --ds-toon-return: 230ms;
+    --ds-toon-amplitude: 1;
+    --ds-toon-ease: cubic-bezier(.2, .85, .3, 1.2);
+    --ds-toon-menu-open: 300ms;
+    --ds-toon-globe-stretch: 200ms;
+    --ds-toon-globe-hang: 100ms;
+    --ds-toon-globe-settle: 200ms;
+    --ds-toon-globe-travel: 15px;
+    --ds-toon-globe-widen: 5%;
+    --ds-toon-globe-flatten: 7%;
+    --ds-toon-globe-start: 55%;
+}
+.ds-toon[data-intensity="subtle"] { --ds-toon-duration: 550ms; --ds-toon-dot-duration: 500ms; --ds-toon-return: 180ms; --ds-toon-amplitude: .65; --ds-toon-globe-stretch: 80ms; --ds-toon-globe-hang: 140ms; --ds-toon-globe-settle: 140ms; }
+
+/* Contents follow the skin. The hit area and focus outline stay still. */
+.ds-toon-text { display: inline-block; }
+.ds-toon [data-toon-content] { transition: none; }
+/* The skip link keeps its fixed layout even when it uses the button skin. */
+.ds-toon .ds-button.ds-skip { position: fixed; }
+.ds-toon .ds-social-link { --ds-toon-component-amplitude: .25; isolation: isolate; }
+.ds-toon .ds-social-link::before { content: ''; position: absolute; inset: 0; border-radius: inherit; background: transparent; transform-origin: 50% 85%; pointer-events: none; }
+.ds-toon :is(.ds-button, .ds-menu-toggle, .ds-language-toggle, .ds-filters button, .ds-menu-panel a, .ds-menu-panel button, .ds-language-panel button) {
+    --ds-toon-component-amplitude: .25;
+    --ds-toon-motion-strength: calc(var(--ds-toon-amplitude) * var(--ds-toon-component-amplitude));
+    position: relative;
+    isolation: isolate;
+    overflow: visible;
+    border: 2px solid transparent;
+    background: transparent;
+    border-radius: var(--ds-radius-control);
+    transform: none;
+    transition: color 160ms ease;
+}
+.ds-toon :is(.ds-button, .ds-menu-toggle, .ds-language-toggle, .ds-filters button, .ds-menu-panel a, .ds-menu-panel button, .ds-language-panel button)::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: -2px;
+    border: 2px solid var(--ds-toon-edge);
+    border-radius: var(--ds-toon-shape);
+    background: var(--ds-color-accent);
+    box-shadow: 0 4px 0 var(--ds-toon-shadow), inset 0 2px 0 #ffffff50;
+    transform-origin: 50% 85%;
+    transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+    pointer-events: none;
+}
+.ds-toon .ds-button:not(:disabled):is(:hover, :focus-visible) { background: transparent; transform: none; }
+.ds-toon .ds-button:not(:disabled):is(:hover, :focus-visible)::before {
+    background: var(--ds-color-accent-hover);
+    box-shadow: 0 4px 0 var(--ds-toon-shadow), inset 0 2px 0 #ffffff60;
+}
+.ds-toon .ds-button:not(:disabled):is(:active, [data-toon-pressed])::before {
+    transform: translateY(1px) scale(1.14, .8);
+    box-shadow: 0 1px 0 var(--ds-toon-shadow), inset 0 2px 0 #ffffff35;
+}
+.ds-toon .ds-button--secondary { color: var(--ds-color-accent); }
+.ds-toon .ds-filters button::before,
+.ds-toon :is(.ds-menu-panel a, .ds-menu-panel button, .ds-language-panel button)::before {
+    background: var(--ds-color-surface);
+    border-color: var(--ds-toon-outline);
+    box-shadow: 0 4px 0 #100e19, inset 0 2px 0 #ffffff0b;
+}
+.ds-toon .ds-button.ds-button--secondary::before {
+    background: transparent;
+    border-color: var(--ds-color-accent);
+    box-shadow: none;
+}
+.ds-toon .ds-button.ds-button--secondary:not(:disabled):is(:hover, :focus-visible)::before { background: transparent; border-color: var(--ds-color-accent-hover); box-shadow: none; }
+.ds-toon .ds-button:disabled {
+    background: transparent;
+    color: var(--ds-color-muted);
+    border-color: transparent;
+    transform: none;
+}
+.ds-toon .ds-button:disabled::before {
+    background: transparent;
+    border-color: #55495f;
+    box-shadow: none;
+    transform: none;
+}
+.ds-toon .ds-button.ds-button--flat::before,
+.ds-toon .ds-button.ds-button--flat:is(:hover, :focus-visible, :active, [data-toon-pressed])::before { box-shadow: none; }
+.ds-toon .ds-button.ds-button--secondary:is(:active, [data-toon-pressed])::before { box-shadow: none; }
+.ds-toon .ds-button--circle { border-radius: 18px; }
+.ds-toon .ds-button.ds-button--circle::before { border-radius: 18px 20px 17px 19px; }
+.ds-toon .ds-button--circle:hover { color: var(--ds-color-accent); }
+.ds-toon .ds-button.ds-button--circle::before { background: transparent; border-color: var(--ds-color-accent); box-shadow: none; }
+
+.ds-toon .ds-filters button { color: var(--ds-color-muted); padding-inline: 22px; }
+.ds-toon .ds-filters button:is(:hover, :focus-visible) { background: transparent; color: var(--ds-color-text); border-color: transparent; }
+.ds-toon .ds-filters button:is(:hover, :focus-visible)::before { border-color: var(--ds-color-accent); }
+.ds-toon .ds-filters button[aria-pressed="true"] { background: transparent; border-color: transparent; color: var(--ds-color-background); }
+.ds-toon .ds-filters button[aria-pressed="true"]::before { background: var(--ds-color-accent); border-color: var(--ds-toon-edge); box-shadow: 0 4px 0 var(--ds-toon-shadow), inset 0 2px 0 #ffffff50; }
+.ds-toon .ds-filters button:is(:active, [data-toon-pressed])::before { transform: translateY(1px) scale(1.14, .8); }
+
+.ds-toon .ds-compact-controls :is(.ds-button, .ds-menu-toggle, .ds-language-toggle) { background: transparent; border-color: transparent; color: var(--ds-color-text); }
+.ds-toon .ds-compact-controls :is(.ds-button, .ds-menu-toggle, .ds-language-toggle)::before { background: var(--ds-color-background); border-color: var(--ds-toon-outline); box-shadow: 0 4px 0 #030207; }
+.ds-toon .ds-compact-controls .ds-button.ds-button--secondary { color: var(--ds-color-accent); }
+.ds-toon .ds-compact-controls .ds-button.ds-button--secondary::before { background: transparent; border-color: var(--ds-color-accent); box-shadow: none; }
+.ds-toon :is(.ds-menu-toggle, .ds-language-toggle)::before { border-radius: var(--ds-toon-menu-shape); }
+.ds-toon :is(.ds-button, .ds-menu-toggle, .ds-language-toggle, .ds-filters button):is(:active, [data-toon-pressed])::before,
+.ds-toon :is(.ds-button, .ds-menu-toggle, .ds-language-toggle, .ds-filters button):is(:active, [data-toon-pressed]) > [data-toon-content] { transform: translateY(calc(1px * var(--ds-toon-motion-strength))) scale(calc(1 + .14 * var(--ds-toon-motion-strength)), calc(1 - .2 * var(--ds-toon-motion-strength))); }
+.ds-toon .ds-compact-controls .ds-button:hover,
+.ds-toon .ds-compact-controls :is(.ds-menu-toggle, .ds-language-toggle):is(:hover, :focus-visible, [aria-expanded="true"]) { background: transparent; color: var(--ds-color-accent); }
+.ds-toon .ds-menu-toggle[aria-expanded="true"]::before { background: var(--ds-color-surface); border-color: var(--ds-color-accent); }
+.ds-toon .ds-menu-panel { border: 2px solid var(--ds-toon-outline); border-radius: 24px 20px 22px 24px; box-shadow: 0 7px 0 #05040c; padding: 14px; }
+.ds-toon :is(.ds-menu-panel a, .ds-menu-panel button, .ds-language-panel button) { display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-3); min-height: var(--ds-target-min); padding: var(--ds-space-2) 15px; font: 400 var(--ds-text-detail) / var(--ds-leading-body) var(--ds-font-family); text-align: left; }
+.ds-toon :is(.ds-menu-panel a, .ds-menu-panel button, .ds-language-panel button)::before { border-color: transparent; background: transparent; box-shadow: none; border-radius: 14px; }
+.ds-toon :is(.ds-menu-panel a, .ds-menu-panel button, .ds-language-panel button):hover { background: transparent; }
+.ds-toon :is(.ds-menu-panel a, .ds-menu-panel button, .ds-language-panel button):is(:hover, :focus-visible) { color: var(--ds-color-accent); }
+.ds-toon :is(.ds-menu-panel a, .ds-menu-panel button, .ds-language-panel button):is(:hover, :focus-visible)::before { background: var(--ds-color-card); border-color: #51455e; }
+.ds-language-check { display: none; }
+.ds-toon .ds-language-check { display: inline-block; visibility: hidden; }
+.ds-toon .ds-language-panel button[aria-pressed="true"] .ds-language-check { visibility: visible; }
+.ds-toon .ds-language-panel button::after { content: none; }
+
+/* Each icon owns a single surface that expands into its dropdown. */
+.ds-compact-item { position: relative; flex: 0 0 var(--ds-control-height); width: var(--ds-control-height); }
+.ds-compact-item :is(.ds-menu-panel, .ds-language-panel) { position: absolute; top: var(--ds-control-height); right: 0; }
+.ds-toon-menu-surface { display: none; }
+.ds-toon [data-toon-compact-item] { isolation: isolate; }
+.ds-toon [data-toon-menu] .ds-toon-menu-surface {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    border: 2px solid #89799388;
+    border-radius: var(--ds-toon-menu-shape);
+    background: var(--ds-toon-menu-background);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 8px 22px #05040c35, inset 0 2px 1px #ffffff12;
+    transform-origin: 50% 85%;
+}
+.ds-toon [data-toon-menu] :is(.ds-menu-toggle, .ds-language-toggle)::before { opacity: 0; box-shadow: none; }
+.ds-toon [data-toon-menu] :is(.ds-menu-panel, .ds-language-panel) {
+    position: absolute;
+    top: var(--ds-control-height);
+    right: 0;
+    margin: 0;
+    padding: 16px 20px 22px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+.ds-toon [data-toon-menu] :is(.ds-menu-panel a, .ds-menu-panel button, .ds-language-panel button) { padding-inline: 14px; }
+.ds-toon [data-toon-menu] .ds-menu-panel { width: min(var(--ds-menu-width), var(--ds-toon-menu-available-width, calc(100vw - 2 * var(--ds-nav-inset) - var(--ds-control-height) - var(--ds-nav-gap) - var(--ds-toon-globe-travel) - var(--ds-space-1)))); }
+.ds-toon [data-toon-menu] :is(.ds-menu-panel a, .ds-menu-panel button, .ds-language-panel button):is(:hover, :focus-visible)::before { background: #e0def40b; border-color: #89799340; }
+
+/* A software name is ordinary content, always visible beside its logo. */
+.ds-stack { display: grid; gap: 20px; font-size: var(--ds-text-detail); }
+.ds-stack-technical { display: grid; gap: 16px; margin: 0; }
+.ds-stack-technical > div, .ds-stack-tools { display: grid; grid-template-columns: 68px minmax(0, 1fr); align-items: center; gap: 16px; }
+.ds-stack-technical dt { color: var(--ds-color-muted); }
+.ds-stack-technical dd { margin: 0; }
+.ds-software { display: inline-flex; align-items: center; gap: 9px; min-height: 32px; color: var(--ds-color-text); white-space: nowrap; }
+.ds-software img { display: block; width: 24px; height: 24px; object-fit: contain; flex-shrink: 0; }
+.ds-software--monochrome img { filter: brightness(0) invert(1); }
+.ds-toon .ds-technical, .ds-toon .ds-technical > div { align-items: center; }
+.ds-software-list { display: flex; flex-wrap: wrap; gap: 8px 24px; list-style: none; margin: 0; padding: 0; }
+.ds-tooltip-trigger { position: relative; display: inline-flex; align-items: center; gap: 7px; min-height: 36px; margin-top: 16px; padding: 6px 0; border: 0; background: transparent; color: var(--ds-color-muted); font: 400 12px / 1.5 var(--ds-font-family); cursor: help; text-align: left; }
+.ds-tooltip-trigger > span:first-of-type { text-decoration: underline dotted #897993; text-underline-offset: .3em; }
+.ds-tooltip-trigger:hover { color: var(--ds-color-text); }
+.ds-tooltip-trigger > svg { flex-shrink: 0; }
+.ds-ui[data-toon-root][data-tooltip-policy="quiet"] :is(.dot, .ds-tooltip-trigger) .ds-tooltip { padding: 9px 12px; max-width: min(260px, calc(100vw - 32px)); border: 1px solid #89799388; border-radius: 10px 12px 10px 11px; box-shadow: none; background: var(--ds-color-surface); font: 400 12px / 1.5 var(--ds-font-family); color: var(--ds-color-text); text-align: left; scale: 1; opacity: 0; visibility: hidden; transition: opacity 100ms ease; }
+.ds-ui[data-toon-root][data-tooltip-policy="quiet"] :is(.dot, .ds-tooltip-trigger).is-tooltip-open:not(.is-tooltip-dismissed) .ds-tooltip { opacity: 1; visibility: visible; }
+.ds-tooltip[data-placement="below"]::after { inset: auto 0 100%; }
+.ds-tooltip[data-placement="left"]::after { inset: 0 auto 0 100%; width: 8px; height: auto; }
+.ds-tooltip[data-placement="right"]::after { inset: 0 100% 0 auto; width: 8px; height: auto; }
+.ds-toon .ds-card { --ds-toon-component-amplitude: .12; position: relative; isolation: isolate; background: transparent; border: 2px solid transparent; border-radius: var(--ds-radius-card); overflow: visible; }
+.ds-toon .ds-card::before { content: ''; position: absolute; z-index: -1; inset: -2px; border: 2px solid #51455e; border-radius: 24px 26px 23px 25px; background: var(--ds-color-card); box-shadow: 0 6px 0 #05040c; transform-origin: center; transition: border-color 180ms ease; pointer-events: none; }
+.ds-toon .ds-card:is(:hover, :focus-visible) { border-color: transparent; transform: none; }
+.ds-toon .ds-card:is(:hover, :focus-visible)::before { border-color: var(--ds-color-accent); }
+.ds-toon .ds-card > img { border-radius: 22px 24px 0 0; }
+.ds-toon .ds-card:is(:hover, :focus-visible) .ds-card-cta > span { transform: translateX(3px); }
+.ds-toon .ds-card-cta > span { display: inline-block; transition: transform 250ms var(--ds-toon-ease); }
+
+.ds-toon .ds-details { border: 2px solid #51455e; border-radius: 20px; background: var(--ds-color-card); }
+.ds-toon .ds-details summary { list-style: none; position: relative; padding: 14px 56px 14px 20px; font-weight: 600; }
+.ds-toon .ds-details summary::-webkit-details-marker { display: none; }
+.ds-toon .ds-details summary::after { content: ''; position: absolute; right: 23px; top: 23px; width: 8px; height: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); transition: transform 260ms var(--ds-toon-ease); }
+.ds-toon .ds-details[open] summary::after { transform: translateY(4px) rotate(225deg); }
+.ds-toon .ds-details summary:is(:hover, :focus-visible) { color: var(--ds-color-text); }
+.ds-toon .ds-details ul { padding: 4px 24px 22px 40px; }
+
+.ds-toon .ds-logo { --ds-toon-component-amplitude: .45; position: relative; isolation: isolate; border-radius: 14px; }
+.ds-toon .ds-logo::before { content: ''; position: absolute; z-index: -1; inset: 0; background: var(--ds-color-surface); border: 2px solid #51455e; border-radius: 14px 16px 13px 15px; opacity: 0; transition: opacity 160ms ease; pointer-events: none; }
+.ds-toon .ds-logo:is(:hover, :focus)::before { opacity: 1; }
+.ds-toon .ds-logo:is(:hover, :focus) img { transform: none; }
+.ds-toon .ds-tooltip { padding: 7px 12px; border: 2px solid var(--ds-toon-outline); border-radius: 12px 14px 12px 13px; box-shadow: 0 4px 0 #05040c; scale: .96; transition: opacity 150ms ease, visibility 150ms ease, scale 300ms var(--ds-toon-ease); }
+.ds-toon :is(.ds-logo:is(:hover, :focus), .dot:is(:hover, :focus-visible), .is-tooltip-open) .ds-tooltip { scale: 1; }
+.ds-toon .dot::before { width: 13px; height: 13px; border-width: 2px; }
+.ds-toon .dot:is(:hover, :focus-visible, :active, .active)::before { transform: none; }
+.ds-toon .dot:is(:hover, :focus-visible)::before { border-color: var(--ds-color-accent); }
+.ds-toon .dot.active::before { box-shadow: 0 2px 0 var(--ds-toon-shadow); }
+.ds-toon .ds-link { text-decoration-thickness: 2px; text-underline-offset: .25em; }
+.ds-toon .ds-link:hover { text-underline-offset: .35em; }
+.ds-toon .ds-contact { border: 2px solid #51455e; border-radius: 26px 24px 28px 25px; box-shadow: 0 7px 0 #05040c; }
+.ds-toon .ds-empty { border: 2px dashed #65596f; border-radius: 20px; }
+.ds-toon .ds-video-dialog { border: 0; border-radius: 26px; box-shadow: none; }
+.ds-toon .ds-video-header { padding: 14px 20px; }
+
+/* A manual switch and the OS preference both suppress every decorative motion. */
+.ds-toon[data-motion="off"] *, .ds-toon[data-motion="off"] *::before, .ds-toon[data-motion="off"] *::after { animation: none !important; transition: none !important; }
+.ds-toon[data-motion="off"] :is(.ds-button, .ds-menu-toggle, .ds-language-toggle, .ds-filters button, .ds-menu-panel a, .ds-menu-panel button, .ds-language-panel button, .ds-card, .ds-logo)::before,
+.ds-toon[data-motion="off"] .dot::before,
+.ds-toon[data-motion="off"] [data-toon-content],
+.ds-toon[data-motion="off"] .ds-card-cta > span,
+.ds-toon[data-motion="off"] .ds-scroll-cue svg,
+.ds-toon[data-motion="off"] .ds-toon-menu-surface { transform: none !important; }
+@media (prefers-reduced-motion: reduce) {
+    .ds-toon *, .ds-toon *::before, .ds-toon *::after { animation: none !important; transition: none !important; }
+    .ds-toon :is(.ds-button, .ds-menu-toggle, .ds-language-toggle, .ds-filters button, .ds-menu-panel a, .ds-menu-panel button, .ds-language-panel button, .ds-card, .ds-logo)::before,
+    .ds-toon .dot::before,
+    .ds-toon [data-toon-content],
+    .ds-toon .ds-card-cta > span, .ds-toon .ds-scroll-cue svg,
+    .ds-toon .ds-toon-menu-surface { transform: none !important; }
+}
+
+/* Native playback controls retain focus; no pink frame around the entire movie. */
+.ds-toon .ds-video-dialog, .ds-toon .ds-video-frame video:focus-visible { outline: none; }

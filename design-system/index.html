@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <script src="../assets/scripts/i18n.js?v=1.1"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Design system Toon et Slime adopté pour le design system du portfolio de Ryad Mahiou.">
+    <title>Design system Toon / Slime · Ryad Mahiou</title>
+    <link rel="icon" type="image/png" href="../assets/icons/Hypercube.png">
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/components.css?v=1.1">
+    <link rel="stylesheet" href="styles/toon.css?v=1.1">
+    <link rel="stylesheet" href="styles/toon-gallery.css?v=1.1">
+    <script src="scripts/components.js?v=1.1" defer></script>
+    <script src="scripts/scroll-cue.js" defer></script>
+    <script src="../assets/scripts/catalogue.js" defer></script>
+    <script src="scripts/toon-gallery.js?v=1.1" defer></script>
+    <script src="scripts/toon-motion.js?v=1.1" defer></script>
+</head>
+<body class="ds-ui ds-toon" data-toon-root data-intensity="flamby" data-motion="on" data-tooltip-policy="quiet" id="top">
+    <a class="ds-skip ds-button" href="#content">Aller au contenu</a>
+    <header class="lab-header lab-wrap">
+        <a class="lab-brand" href="#top">MAHIOU <span>Ryad</span><span class="lab-brand-note">Design system</span></a>
+        <nav aria-label="Sections du design system">
+            <a href="#actions">Composants</a>
+            <a href="#icones">Icônes</a>
+            <a href="#collection">En contexte</a>
+            <a href="#regles">Règles</a>
+        </nav>
+        <span class="lab-version">Version 1.1 · Référence</span>
+    </header>
+    <main class="lab-wrap" id="content" tabindex="-1">
+        <section class="lab-hero" aria-labelledby="hero-title">
+            <div class="lab-hero-copy">
+                <p class="lab-eyebrow"><span aria-hidden="true"></span> La référence du portfolio</p>
+                <h1 id="hero-title">Design system<br><span>Toon / Slime.</span></h1>
+                <p class="lab-intro">Des formes souples, un peu de volume et des réactions élastiques. La palette de ton portfolio reste le point de départ.</p>
+                <p class="lab-subtext">Survole les composants et maintiens un bouton enfoncé pour sentir la compression. Le texte et les icônes suivent la déformation du fond.</p>
+                <p class="lab-os-note" data-os-note hidden>Mouvement réduit du système respecté.</p>
+            </div>
+            <div class="lab-stage" aria-label="Exemple principal du bouton souple">
+                <div class="lab-stage-grid" aria-hidden="true"></div>
+                <span class="lab-stage-label">Bouton principal</span>
+                <button class="ds-button ds-button--flat" type="button" data-open-dialog data-motion-sample><span aria-hidden="true">▶</span><span>Voir la vidéo</span></button>
+                <span class="lab-stage-note">Survole, appuie, puis ouvre l’aperçu.</span>
+                <span class="lab-material">700 ms <span aria-hidden="true">·</span> rebond amorti</span>
+            </div>
+        </section>
+
+
+        <section class="lab-section" id="actions" aria-labelledby="actions-title">
+            <div class="lab-section-header"><span class="lab-index">01</span><div><h2 id="actions-title">Actions et états</h2><p>Le même caractère, avec une priorité claire entre les actions.</p></div></div>
+            <div class="lab-actions-grid">
+                <div class="lab-example">
+                    <div class="lab-example-heading"><h3>Boutons</h3><span>48 px minimum</span></div>
+                    <div class="lab-controls">
+                        <button class="ds-button ds-button--flat" type="button" data-open-dialog><span aria-hidden="true">▶</span><span>Voir la vidéo</span></button>
+                        <a class="ds-button ds-button--secondary" href="https://github.com/gto634/Necromancer-x-MagicalGirl" target="_blank" rel="noopener noreferrer" data-i18n-region aria-label="Code source de Necromancer x Magical Girl sur GitHub (nouvel onglet)" data-i18n-aria-label="necro.sourceLabel"><span class="ds-repo-icon" aria-hidden="true"></span><span data-i18n="action.source">Code source</span><span aria-hidden="true">↗</span></a>
+                        <button class="ds-button ds-button--secondary" type="button" disabled><span class="ds-repo-icon" aria-hidden="true"></span><span>Code source — à venir</span></button>
+                    </div>
+                    <p class="lab-caption">Deux styles : rose plein sans ombre et contour rose sur fond transparent. Le lien Code source utilise le logo GitHub ; une ressource indisponible reste désactivée. En 700 ms, un mouvement léger de 0,5 px avec une déformation limitée à 4 % en largeur et 7 % en hauteur. Le texte et l’icône suivent, puis tout retrouve sa forme normale.</p>
+            <a class="ds-link ds-nav-link" href="#regles">Lire les règles du système</a>
+                </div>
+                <div class="lab-example">
+                    <div class="lab-example-heading"><h3>Direction et progression</h3><span>Formes simples</span></div>
+                    <div class="lab-direction-row">
+                        <a class="ds-scroll-cue" id="toon-scroll-cue" href="#collection" aria-label="Aller aux exemples de projets" data-scroll-cue><svg class="ds-scroll-cue-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 6.5H20.5L12 20Z" fill="currentColor" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg></a>
+                        <nav class="dot-nav lab-dots" aria-label="Navigation entre les exemples"><a class="dot active" href="#actions" aria-current="location" title="Actions et états"></a><a class="dot" href="#collection" title="Cartes de projets"></a><a class="dot" href="#navigation" title="Navigation et détails"></a><a class="dot" href="#regles" title="Règles du système"></a></nav>
+                    </div>
+                    <p class="lab-caption">Le triangle de l’intro garde son saut de 7 px, avec un étirement plus marqué en 900 ms. Survole-le ou utilise le clavier pour voir son rebond. Tous les points, y compris le point courant, terminent leur rebond de 650 ms même après la sortie du pointeur.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="lab-section" id="icones" aria-labelledby="icons-title">
+            <div class="lab-section-header"><span class="lab-index">02</span><div><h2 id="icons-title">Icônes et logos</h2><p>Les mêmes symboles dans le menu, les actions et les liens de contact.</p></div></div>
+            <ul class="lab-icon-grid" aria-label="Icônes du portfolio">
+                <li><span class="ds-icon ds-icon--home" aria-hidden="true"></span><span>Accueil</span></li>
+                <li><span class="ds-icon ds-icon--sparkles" aria-hidden="true"></span><span>À la une</span></li>
+                <li><span class="ds-icon ds-icon--collection" aria-hidden="true"></span><span>Projets</span></li>
+                <li><span class="ds-icon ds-icon--phone" aria-hidden="true"></span><span>Contact</span></li>
+                <li><span class="ds-repo-icon" aria-hidden="true"></span><span>GitHub</span></li>
+                <li class="ds-social-link--linkedin"><span class="ds-social-icon" aria-hidden="true"></span><span>LinkedIn</span></li>
+            </ul>
+            <p class="lab-caption">Icônes de 24 px, teintées avec la couleur du composant. Les profils gardent une cible de 44 px et un nom accessible ; les logiciels affichent leur nom à côté du logo.</p>
+        </section>
+
+        <section class="lab-section filter-demo" id="collection" aria-labelledby="collection-title">
+            <div class="lab-section-header"><span class="lab-index">03</span><div><h2 id="collection-title">Cartes et filtres</h2><p>Les surfaces ont du volume. Les visuels et les informations gardent leur place.</p></div></div>
+            <div class="lab-collection-toolbar"><div class="ds-filters catalogue-filters" role="group" aria-label="Filtrer les exemples de cartes" hidden><button type="button" data-filter="all" aria-pressed="true">Tous</button><button type="button" data-filter="jeu" aria-pressed="false">Jeux</button><button type="button" data-filter="moteur" aria-pressed="false">Moteurs</button></div><p class="catalogue-count ds-muted" role="status" aria-live="polite" aria-atomic="true">2 projets</p></div>
+            <p class="catalogue-empty ds-empty" hidden>Aucun projet dans cette catégorie. Choisis « Tous ».</p>
+            <ul class="lab-card-grid" aria-label="Exemples avec les visuels du portfolio">
+                <li class="project-card" data-category="jeu"><a class="ds-card" href="#apercu-projet" data-card-preview data-project-title="Tatamiam" data-project-image="../assets/thumbnails/tatamiam.webp"><img src="../assets/thumbnails/tatamiam.webp" alt="" width="960" height="540" loading="lazy"><div class="ds-card-body"><div class="ds-card-meta"><span>Jeu</span><span>2026</span></div><h3 class="ds-card-title">Tatamiam</h3><p>Un jeu de cuisine en ligne où vous incarnez un sushi et gérez un restaurant-dojo avec vos amis.</p><span class="ds-card-cta">Aperçu de la carte <span aria-hidden="true">→</span></span></div></a></li>
+                <li class="project-card" data-category="moteur"><a class="ds-card" href="#apercu-projet" data-card-preview data-project-title="EntreCôte" data-project-image="../assets/thumbnails/entrecote.webp"><img src="../assets/thumbnails/entrecote.webp" alt="" width="960" height="540" loading="lazy"><div class="ds-card-body"><div class="ds-card-meta"><span>Moteur</span><span>2026</span></div><h3 class="ds-card-title">EntreCôte</h3><p>Un moteur 3D avec un rendu DirectX 12 et une architecture à entités et composants.</p><span class="ds-card-cta">Aperçu de la carte <span aria-hidden="true">→</span></span></div></a></li>
+            </ul>
+            <p class="lab-caption">Ces deux descriptions proviennent de la collection actuelle. Les cartes ouvrent un aperçu dans cette galerie.</p>
+        </section>
+
+        <section class="lab-section" id="navigation" aria-labelledby="navigation-title">
+            <div class="lab-section-header"><span class="lab-index">04</span><div><h2 id="navigation-title">Navigation et informations</h2><p>Une réaction plus discrète pour les composants que l’on utilise souvent.</p></div></div>
+            <div class="lab-actions-grid">
+                <div class="lab-example">
+                    <div class="lab-example-heading"><h3>Menu compact</h3><span>Clic et clavier</span></div>
+                    <div class="lab-menu-stage">
+                        <div class="ds-compact-nav ds-compact-nav--example" data-compact-nav data-i18n-region>
+                            <div class="ds-compact-controls">
+                                <div class="ds-compact-item ds-language-item" data-toon-compact-item>
+                                    <button class="ds-language-toggle" type="button" aria-expanded="false" aria-controls="toon-languages" aria-label="Choisir la langue, français sélectionné" data-i18n-aria-label="language.open" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></button>
+                                    <div class="ds-language-panel" id="toon-languages" role="group" aria-label="Langue du site" data-i18n-aria-label="language.label" hidden><button type="button" data-language="fr" lang="fr" aria-pressed="true"><span>Français</span><span class="ds-language-check" aria-hidden="true">✓</span></button><button type="button" data-language="en" lang="en" aria-pressed="false"><span>English</span><span class="ds-language-check" aria-hidden="true">✓</span></button></div>
+                                </div>
+                                <div class="ds-compact-item ds-navigation-item" data-toon-compact-item>
+                                    <button class="ds-menu-toggle" type="button" aria-expanded="false" aria-controls="toon-menu" aria-label="Ouvrir le menu" data-i18n-aria-label="nav.open" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+                                    <nav class="ds-menu-panel" id="toon-menu" aria-label="Navigation du portfolio" data-i18n-aria-label="nav.label"><a href="#top"><span data-i18n="nav.home">Accueil</span><span class="ds-icon ds-icon--home" aria-hidden="true"></span></a><a href="#collection"><span data-i18n="nav.featured">À la une</span><span class="ds-icon ds-icon--sparkles" aria-hidden="true"></span></a><a href="#contact-demo"><span data-i18n="nav.contact">Contact</span><span class="ds-icon ds-icon--phone" aria-hidden="true"></span></a><a href="#collection"><span data-i18n="nav.collection">Tout mes projets</span><span class="ds-icon ds-icon--collection" aria-hidden="true"></span></a></nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="lab-caption">Le globe commence à s’étirer pendant la fin de l’ouverture, prolonge son élan, puis reste suspendu avant son retour. Les panneaux se déploient jusqu’à leur taille finale. Le mouvement conserve les valeurs validées : 300 ms d’ouverture et une inertie du globe de 665 ms au total.</p>
+                </div>
+                <div class="lab-example">
+                    <div class="lab-example-heading"><h3>Outils et infobulles</h3><span>Noms visibles</span></div>
+                    <div class="ds-stack" data-i18n-region>
+                        <dl class="ds-stack-technical"><div><dt data-i18n="technical.language">Langage</dt><dd>C#</dd></div><div><dt data-i18n="technical.engine">Moteur</dt><dd><span class="ds-software ds-software--monochrome"><img src="../assets/icons/Unity.svg" alt="" width="24" height="24"><span>Unity 6</span></span></dd></div></dl>
+                        <div class="ds-stack-tools"><span class="ds-tools-label" data-i18n="tools.title">Outils</span><ul class="ds-software-list" aria-label="Outils de création utilisés" data-i18n-aria-label="tools.label"><li class="ds-software"><img src="../assets/icons/Blender.png" alt="" width="24" height="24"><span>Blender</span></li><li class="ds-software"><img src="../assets/icons/Figma.png" alt="" width="24" height="24"><span>Figma</span></li></ul></div>
+                    </div>
+                    <button class="ds-tooltip-trigger" type="button" aria-label="Pourquoi afficher les noms ?" aria-describedby="toon-tool-tip"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7v1"/></svg><span>Pourquoi afficher les noms ?</span><span class="ds-tooltip" role="tooltip" id="toon-tool-tip">Le logo aide à repérer le logiciel. Son nom reste visible pour l’identifier sans avoir à le survoler.</span></button>
+                    <p class="lab-caption">Logo et nom partagent la même ligne. Les logiciels restent lisibles sans survol ; seules les précisions supplémentaires apparaissent dans une infobulle.</p>
+                </div>
+            </div>
+            <details class="ds-details lab-details"><summary>Détails du comportement des composants</summary><ul><li>Les boutons utilisent 25 % de la déformation initiale, pour garder leurs libellés lisibles.</li><li>Les cartes utilisent 12 % de la recette initiale, avec leur visuel et leur texte.</li><li>Le contour du menu devient celui du panneau ; ses liens apparaissent sans être étirés.</li><li>Les informations techniques restent en texte, avec les logiciels dans un groupe séparé.</li></ul></details>
+            <div class="lab-long-button"><span class="lab-label">Un libellé long reste lisible</span><button class="ds-button ds-button--secondary" type="button" data-open-dialog>Découvrir le lecteur au premier plan et ses commandes de fermeture <span aria-hidden="true">→</span></button></div>
+        </section>
+
+        <section class="lab-section" id="contact-demo" aria-labelledby="contact-title">
+            <div class="lab-section-header"><span class="lab-index">05</span><div><h2 id="contact-title">Contact et lecteur</h2><p>Des cadres adoucis et des commandes cohérentes avec le reste de l’interface.</p></div></div>
+            <div class="ds-contact ds-contact--grid"><div><p class="ds-contact-label"><span>Et si on échangeait ?</span><span class="ds-icon ds-icon--phone" aria-hidden="true"></span></p><h3>Restons en contact</h3><div class="ds-contact-links"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rmahiou.pro%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Écrire à rmahiou.pro@gmail.com dans Gmail (nouvel onglet)" >rmahiou.pro@gmail.com</a><div class="ds-contact-socials" role="group" aria-label="Profils professionnels"><a class="ds-social-link ds-social-link--linkedin" href="https://www.linkedin.com/in/ryad-mahiou-98a06532b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Ryad Mahiou (nouvel onglet)"><span class="ds-social-icon" aria-hidden="true"></span><span class="ds-tooltip" aria-hidden="true">LinkedIn</span></a><a class="ds-social-link ds-social-link--github" href="https://github.com/gto634" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Ryad Mahiou (nouvel onglet)"><span class="ds-social-icon" aria-hidden="true"></span><span class="ds-tooltip" aria-hidden="true">GitHub</span></a></div></div><p class="ds-muted">Lyon, France</p></div><div class="end-banner-more ds-contact-actions"><a class="ds-button ds-button--flat" href="#collection"><span class="ds-icon ds-icon--collection" aria-hidden="true"></span>Tout mes projets</a><a class="ds-button ds-button--secondary" href="#top"><span class="ds-icon ds-icon--home" aria-hidden="true"></span>Retour à l’accueil</a></div></div>
+            <p class="lab-caption">L’aperçu montre le lecteur avec une image fixe, sans croix, contour ni ombre. Échap et le clic extérieur ferment le lecteur et rendent le focus au bouton d’ouverture.</p>
+        </section>
+
+        <section class="lab-section" id="regles" aria-labelledby="rules-title">
+            <div class="lab-section-header"><span class="lab-index">06</span><div><h2 id="rules-title">Les règles du système</h2><p>Un langage commun, avec une animation adaptée à chaque composant.</p></div></div>
+            <div class="lab-rules"><article><span class="lab-rule-number">01</span><h3>Tout suit le mouvement</h3><p>Le contour se tasse, s’allonge et s’arrondit pendant le petit saut. Le texte et les icônes suivent ; la zone de clic et le focus restent stables.</p></article><article><span class="lab-rule-number">02</span><h3>Le rebond s’amortit</h3><p>Les commandes retrouvent leur taille normale même si le pointeur reste dessus. Tous les points partagent le même rebond, y compris le point courant.</p></article><article><span class="lab-rule-number">03</span><h3>Deux styles de boutons</h3><p>Une action rose pleine et une alternative à contour rose sur fond transparent. Le rebond est commun ; couleurs et contour indiquent le survol après sa fin.</p></article></div>
+            <div class="lab-spec"><div><span>Rayons</span><strong>12 / 20 / 24 px</strong></div><div><span>Survol des boutons</span><strong>700 ms</strong></div><div><span>Pression</span><strong>110 ms</strong></div><div><span>Zone d’action</span><strong>44–48 px min.</strong></div></div>
+            <p class="lab-caption">Les animations utilisent les valeurs validées. La préférence système de mouvement réduit supprime les mouvements tout en gardant les couleurs, les actions et le focus. <a class="ds-link" href="https://www.w3.org/WAI/WCAG22/Techniques/css/C39" target="_blank" rel="noopener noreferrer">Repère W3C<span class="ds-sr-only"> (nouvel onglet)</span></a></p>
+        </section>
+        <p class="lab-caption"><a class="ds-link" href="docs/DESIGN-SYSTEM.md">Règles, palette et typographie</a> · <a class="ds-link" href="docs/REGLES-PAGES.md">Gabarits des pages</a> · <a class="ds-link" href="../index.html">Ouvrir le portfolio</a></p><footer class="lab-footer"><p>Ryad Mahiou <span>· Design system Toon / Slime</span></p><a class="ds-link ds-nav-link" href="#top">Retour en haut <span aria-hidden="true">↑</span></a></footer>
+    </main>
+    <dialog class="ds-video-dialog lab-dialog" id="apercu-projet" aria-labelledby="preview-dialog-title" aria-describedby="preview-dialog-help" tabindex="-1" autofocus><div class="ds-video-shell"><h2 class="ds-sr-only" id="preview-dialog-title">Aperçu du lecteur</h2><p class="ds-sr-only" id="preview-dialog-help">Appuyez sur Échap ou cliquez à l’extérieur pour fermer l’aperçu.</p><div class="ds-video-frame"><img src="../assets/thumbnails/tatamiam.webp" alt="Aperçu de Tatamiam" width="960" height="540" data-dialog-image></div></div></dialog>
+</body>
+</html>

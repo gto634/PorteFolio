@@ -1,0 +1,61 @@
+/* Project composition. Buttons, type, facts and disclosures are shared. */
+/* Keep image URLs beside their consuming stylesheet so folder moves stay portable. */
+#necromancer-magical-girl { --project-image: url('../backgrounds/necromancer.webp'); }
+#projet-1 { --project-image: url('../backgrounds/tatamiam.webp'); }
+#projet-2 { --project-image: url('../backgrounds/isekaiwar.webp'); }
+#projet-3 { --project-image: url('../backgrounds/entrecote.webp'); }
+#projet-4 { --project-image: url('../backgrounds/spacerunner.webp'); }
+.project-screen {
+    --project-gutter: var(--ds-page-gutter);
+    --project-copy-width: min(620px, 50vw);
+    --project-right-gutter: var(--project-gutter);
+    --project-top-space: var(--ds-space-8);
+    --project-image-position: center;
+    --project-veil: linear-gradient(90deg, var(--ds-color-veil-strong) 0%, var(--ds-color-veil-copy) calc(var(--project-gutter) + var(--project-copy-width) + 32px), var(--ds-color-veil-fade) 85%, var(--ds-color-veil-edge) 100%);
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    overflow: visible;
+    background-color: var(--ds-color-background);
+}
+/* One viewport-sized background stays in place while the long copy is read. */
+.project-screen::before {
+    content: '';
+    grid-area: 1 / 1;
+    position: sticky;
+    top: 0;
+    align-self: start;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    pointer-events: none;
+    background-color: var(--ds-color-background);
+    background-image: var(--project-veil), var(--project-image);
+    background-size: cover;
+    background-position: var(--project-image-position);
+    background-repeat: no-repeat;
+}
+.project-screen.is-reversed {
+    --project-top-space: max(var(--ds-space-8), calc(var(--ds-navigation-clearance, 320px) + var(--ds-space-6)));
+    --project-veil: linear-gradient(270deg, var(--ds-color-veil-strong) 0%, var(--ds-color-veil-copy) calc(var(--project-gutter) + var(--project-copy-width) + 32px), var(--ds-color-veil-fade) 85%, var(--ds-color-veil-edge) 100%);
+}
+.ds-project-copy { grid-area: 1 / 1; position: relative; align-self: center; justify-self: start; display: grid; gap: var(--ds-space-6); width: var(--project-copy-width); max-width: calc(100% - var(--project-gutter) - var(--project-right-gutter)); margin: var(--project-top-space) var(--project-right-gutter) var(--ds-space-8) var(--project-gutter); text-align: left; }
+.is-reversed .ds-project-copy { justify-self: end; }
+.ds-project-copy > p { margin: 0; font-size: var(--ds-text-body); line-height: var(--ds-leading-body); }
+.project-screen:focus { outline: none; }
+.end-banner { padding-inline: var(--ds-page-gutter); }
+.end-banner-more { display: grid; justify-items: start; gap: var(--ds-space-2); }
+.end-banner-more > p { margin: 0; font-size: var(--ds-text-detail); color: var(--ds-color-muted); }
+
+@media (max-width: 1024px) {
+    .project-screen { --project-gutter: 24px; --project-right-gutter: 48px; --project-copy-width: 620px; --project-veil: var(--ds-project-veil-mobile); --project-top-space: calc(var(--ds-navigation-clearance, 320px) + var(--ds-space-6)); --project-image-position: 75% center; }
+    .project-screen.is-reversed { --project-veil: var(--ds-project-veil-mobile); --project-image-position: 25% center; }
+    .ds-project-copy, .is-reversed .ds-project-copy { justify-self: start; }
+}
+@media (max-width: 380px) {
+    .project-screen { --project-gutter: 16px; }
+    .ds-project-title { overflow-wrap: anywhere; }
+}

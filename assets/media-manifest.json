@@ -1,0 +1,158 @@
+{
+  "images": [
+    {
+      "source": "projects/NecromancerMagicalGirl/Splashscreen.png",
+      "output": "assets/backgrounds/necromancer.webp",
+      "source_bytes": 2589106,
+      "output_bytes": 97964,
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "source": "projects/NecromancerMagicalGirl/Thumbnail.png",
+      "output": "assets/thumbnails/necromancer.webp",
+      "source_bytes": 922229,
+      "output_bytes": 28946,
+      "size": [
+        960,
+        540
+      ]
+    },
+    {
+      "source": "projects/Tatamiam/Splashscreen.png",
+      "output": "assets/backgrounds/tatamiam.webp",
+      "source_bytes": 2140059,
+      "output_bytes": 125240,
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "source": "projects/Tatamiam/Thumbnail.png",
+      "output": "assets/thumbnails/tatamiam.webp",
+      "source_bytes": 1413724,
+      "output_bytes": 38598,
+      "size": [
+        960,
+        540
+      ]
+    },
+    {
+      "source": "projects/IsekaiWar/Splashscreen.png",
+      "output": "assets/backgrounds/isekaiwar.webp",
+      "source_bytes": 2166157,
+      "output_bytes": 206470,
+      "size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "source": "projects/IsekaiWar/Thumbnail.png",
+      "output": "assets/thumbnails/isekaiwar.webp",
+      "source_bytes": 272189,
+      "output_bytes": 15436,
+      "size": [
+        640,
+        360
+      ]
+    },
+    {
+      "source": "projects/Entrecote/Splashscreen.png",
+      "output": "assets/backgrounds/entrecote.webp",
+      "source_bytes": 1239795,
+      "output_bytes": 75280,
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "source": "projects/Entrecote/Thumbnail.png",
+      "output": "assets/thumbnails/entrecote.webp",
+      "source_bytes": 681873,
+      "output_bytes": 24164,
+      "size": [
+        960,
+        540
+      ]
+    },
+    {
+      "source": "projects/SpaceRunner/Splashscreen.png",
+      "output": "assets/backgrounds/spacerunner.webp",
+      "source_bytes": 9268095,
+      "output_bytes": 237476,
+      "size": [
+        1920,
+        1132
+      ]
+    },
+    {
+      "source": "projects/SpaceRunner/Thumbnail.png",
+      "output": "assets/thumbnails/spacerunner.webp",
+      "source_bytes": 7771273,
+      "output_bytes": 59388,
+      "size": [
+        960,
+        566
+      ]
+    }
+  ],
+  "videos": [
+    {
+      "source": "projects/Tatamiam/Gameplay.mp4",
+      "output": "assets/videos/tatamiam.mp4",
+      "source_bytes": 92821784,
+      "output_bytes": 61510196,
+      "resolution": [
+        2560,
+        1440
+      ],
+      "fps": 30.0,
+      "duration": 49.92,
+      "faststart": true
+    },
+    {
+      "source": "projects/IsekaiWar/Gameplay.mp4",
+      "output": "assets/videos/isekaiwar.mp4",
+      "source_bytes": 78299763,
+      "output_bytes": 39725271,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "fps": 30.0,
+      "duration": 64.18,
+      "faststart": true
+    },
+    {
+      "source": "projects/Entrecote/Gameplay.mp4",
+      "output": "assets/videos/entrecote.mp4",
+      "source_bytes": 60556062,
+      "output_bytes": 8041739,
+      "resolution": [
+        2560,
+        1440
+      ],
+      "fps": 60.0,
+      "duration": 36.08,
+      "faststart": true
+    },
+    {
+      "source": "projects/SpaceRunner/Gameplay.mp4",
+      "output": "assets/videos/spacerunner.mp4",
+      "source_bytes": 97000128,
+      "output_bytes": 53105899,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "fps": 60.0,
+      "duration": 53.85,
+      "faststart": true
+    }
+  ]
+}

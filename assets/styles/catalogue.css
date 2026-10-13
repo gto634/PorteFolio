@@ -1,0 +1,20 @@
+/* Collection layout. Cards, filters, links and header use shared components. */
+.catalogue-page { width: 100%; height: auto; min-height: 100vh; overflow: auto; }
+.catalogue { max-width: var(--ds-content-width); margin-inline: auto; padding: var(--ds-space-8) var(--ds-page-gutter) 0; }
+.catalogue-eyebrow { margin-bottom: var(--ds-space-4); color: var(--ds-color-accent); font-size: var(--ds-text-xs); letter-spacing: 0.12em; text-transform: uppercase; }
+.catalogue-intro h1 { margin-bottom: var(--ds-space-4); font-size: clamp(2.5rem, 4.5vw, 3.5rem); line-height: var(--ds-leading-heading); letter-spacing: -0.04em; width: fit-content; max-width: 100%; }
+.catalogue-intro h1 span { color: var(--ds-color-accent); }
+.catalogue-description { max-width: var(--ds-copy-width); color: var(--ds-color-muted); }
+.catalogue-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--ds-space-4); margin: var(--ds-space-6) 0 var(--ds-space-4); padding-bottom: var(--ds-space-4); border-bottom: 1px solid var(--ds-color-border); }
+.catalogue-count { font-size: var(--ds-text-detail); }
+.project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--ds-space-6); list-style: none; }
+.project-card { min-width: 0; }
+.project-card[hidden] { display: none; }
+.project-card .ds-card { height: 100%; display: flex; flex-direction: column; }
+.project-card .ds-card-body { flex: 1; display: flex; flex-direction: column; align-items: flex-start; }
+.project-card .ds-card-cta { margin-top: auto; padding-top: var(--ds-space-6); }
+.catalogue-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--ds-space-6); margin-top: var(--ds-space-16); padding-block: var(--ds-space-6); border-top: 1px solid var(--ds-color-border); font-size: var(--ds-text-detail); }
+.catalogue-footer p span { color: var(--ds-color-muted); }
+.catalogue-footer > div { display: flex; gap: var(--ds-space-6); }
+@media (max-width: 1024px) { .catalogue { padding-top: calc(var(--ds-navigation-clearance, 320px) + var(--ds-space-6)); } }
+@media (max-width: 700px) { .project-grid { grid-template-columns: minmax(0, 1fr); } }

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr" data-i18n-page>
+<head>
+    <meta charset="UTF-8">
+    <script src="assets/scripts/i18n.js?v=1.0.6"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Les jeux et moteurs de Ryad Mahiou : Necromancer x Magical Girl, Tatamiam, IsekaiWar!, EntreCôte et SpaceRunner." data-i18n-content="collection.meta">
+    <title data-i18n="collection.pageTitle">Tous les projets — MAHIOU Ryad</title>
+    <link rel="icon" type="image/png" href="assets/icons/Hypercube.png">
+    <link rel="stylesheet" href="design-system/styles/tokens.css">
+    <link rel="stylesheet" href="assets/styles/base.css">
+    <link rel="stylesheet" href="design-system/styles/components.css?v=1.0.6">
+    <link rel="stylesheet" href="assets/styles/catalogue.css">
+    <script src="design-system/scripts/components.js?v=1.0.6" defer></script>
+    <script src="assets/scripts/catalogue.js" defer></script>
+    <link rel="stylesheet" href="design-system/styles/toon.css?v=1.0.6">
+</head>
+<body class="ds-ui catalogue-page ds-toon" data-toon-root data-intensity="flamby" data-motion="on" data-tooltip-policy="quiet">
+    <a class="ds-button ds-skip" href="#catalogue" data-i18n="skip.projects">Aller aux projets</a>
+    <header class="ds-compact-nav" data-compact-nav aria-label="Navigation du portfolio" data-i18n-aria-label="nav.label">
+        <div class="ds-compact-controls">
+            <div class="ds-compact-item ds-language-item" data-toon-compact-item>
+                <button class="ds-language-toggle" type="button" aria-expanded="false" aria-controls="portfolio-menu-language" hidden aria-label="Choisir la langue, français sélectionné" data-i18n-aria-label="language.open">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
+            </button>
+                <div class="ds-language-panel" id="portfolio-menu-language" role="group" aria-label="Langue du site" data-i18n-aria-label="language.label" hidden>
+            <button type="button" data-language="fr" lang="fr" aria-pressed="true"><span>Français</span><span class="ds-language-check" aria-hidden="true">✓</span></button>
+            <button type="button" data-language="en" lang="en" aria-pressed="false"><span>English</span><span class="ds-language-check" aria-hidden="true">✓</span></button>
+        </div>
+            </div>
+            <div class="ds-compact-item ds-navigation-item" data-toon-compact-item>
+                <button class="ds-menu-toggle" type="button" aria-expanded="false" aria-controls="portfolio-menu" hidden aria-label="Ouvrir le menu" data-i18n-aria-label="nav.open"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+                <nav class="ds-menu-panel" id="portfolio-menu" aria-label="Navigation principale" data-i18n-aria-label="nav.main">
+            <a href="./index.html#intro" data-nav-destination="intro"><span data-i18n="nav.home">Accueil</span><span class="ds-icon ds-icon--home" aria-hidden="true"></span></a>
+            <a href="./index.html#necromancer-magical-girl" data-nav-destination="featured"><span data-i18n="nav.featured">À la une</span><span class="ds-icon ds-icon--sparkles" aria-hidden="true"></span></a>
+            <a href="./index.html#contact" data-nav-destination="contact"><span data-i18n="nav.contact">Contact</span><span class="ds-icon ds-icon--phone" aria-hidden="true"></span></a>
+            <a href="./projets.html" data-nav-destination="collection" aria-current="page"><span data-i18n="nav.collection">Tout mes projets</span><span class="ds-icon ds-icon--collection" aria-hidden="true"></span></a>
+        </nav>
+            </div>
+        </div>
+    </header>
+    <main class="catalogue" id="catalogue" tabindex="-1">
+        <div class="catalogue-intro">
+            <p class="catalogue-eyebrow">Portfolio / Collection</p>
+            <h1 tabindex="-1" data-i18n-html="collection.title">Tous les <span>projets.</span></h1>
+            <p class="catalogue-description" data-i18n="collection.description">Jeux, moteurs et expérimentations. Découvrez mes projets et les systèmes sur lesquels j’ai travaillé.</p>
+        </div>
+        <div class="catalogue-toolbar">
+            <div class="ds-filters catalogue-filters" role="group" aria-label="Filtrer les projets par type" data-i18n-aria-label="collection.filterLabel" hidden>
+                <button type="button" data-filter="all" aria-pressed="true" data-i18n="collection.all">Tous</button>
+                <button type="button" data-filter="jeu" aria-pressed="false" data-i18n="collection.games">Jeux</button>
+                <button type="button" data-filter="moteur" aria-pressed="false" data-i18n="collection.engines">Moteurs</button>
+            </div>
+            <p class="ds-muted catalogue-count" role="status" aria-live="polite" aria-atomic="true">5 projets</p>
+        </div>
+        <p class="ds-empty catalogue-empty" hidden data-i18n="collection.empty">Aucun projet dans cette catégorie. Choisissez « Tous » pour retrouver la collection.</p>
+        <ul class="project-grid" aria-label="Liste des projets" data-i18n-aria-label="collection.list">
+            <li class="project-card" data-category="jeu">
+                <a class="ds-card" href="index.html#necromancer-magical-girl" aria-labelledby="card-necromancer">
+                    <img src="assets/thumbnails/necromancer.webp" alt="" width="960" height="540" loading="eager" decoding="async">
+                    <div class="ds-card-body">
+                        <div class="ds-card-meta"><span data-i18n="collection.game">Jeu</span><span>2026</span></div>
+                        <h2 class="ds-card-title" id="card-necromancer">Necromancer x Magical Girl</h2>
+                        <p data-i18n="necro.card">Explorez un donjon à deux et enrôlez vos ennemis pour bâtir votre armée.</p>
+                        <p class="ds-card-proof" data-i18n="necro.work1">Systèmes de combat : projectiles, hitboxes, dégâts et knockback.</p>
+                        <span class="ds-card-cta"><span data-i18n="action.discover">Découvrir le projet</span> <span aria-hidden="true">→</span></span>
+                    </div>
+                </a>
+            </li><li class="project-card" data-category="jeu">
+                <a class="ds-card" href="index.html#projet-1" aria-labelledby="card-tatamiam">
+                    <img src="assets/thumbnails/tatamiam.webp" alt="" width="960" height="540" loading="lazy" decoding="async">
+                    <div class="ds-card-body">
+                        <div class="ds-card-meta"><span data-i18n="collection.game">Jeu</span><span>2026</span></div>
+                        <h2 class="ds-card-title" id="card-tatamiam">Tatamiam</h2>
+                        <p data-i18n="tatamiam.card">Un jeu de cuisine en ligne où vous incarnez un sushi et gérez un restaurant-dojo avec vos amis.</p>
+                        <p class="ds-card-proof" data-i18n="tatamiam.work1">Intégration d’une API multijoueur dans un moteur custom.</p>
+                        <span class="ds-card-cta"><span data-i18n="action.discover">Découvrir le projet</span> <span aria-hidden="true">→</span></span>
+                    </div>
+                </a>
+            </li><li class="project-card" data-category="jeu">
+                <a class="ds-card" href="index.html#projet-2" aria-labelledby="card-isekaiwar">
+                    <img src="assets/thumbnails/isekaiwar.webp" alt="" width="960" height="540" loading="lazy" decoding="async">
+                    <div class="ds-card-body">
+                        <div class="ds-card-meta"><span data-i18n="collection.game">Jeu</span><span>2024</span></div>
+                        <h2 class="ds-card-title" id="card-isekaiwar">IsekaiWar!</h2>
+                        <p data-i18n="isekai.card">Protégez votre monde magique des vaisseaux aliens dans un shoot ’em up 2D.</p>
+                        <p class="ds-card-proof" data-i18n="isekai.work1">Développement d’une architecture d’héritage complète.</p>
+                        <span class="ds-card-cta"><span data-i18n="action.discover">Découvrir le projet</span> <span aria-hidden="true">→</span></span>
+                    </div>
+                </a>
+            </li><li class="project-card" data-category="moteur">
+                <a class="ds-card" href="index.html#projet-3" aria-labelledby="card-entrecote">
+                    <img src="assets/thumbnails/entrecote.webp" alt="" width="960" height="540" loading="lazy" decoding="async">
+                    <div class="ds-card-body">
+                        <div class="ds-card-meta"><span data-i18n="technical.engine">Moteur</span><span>2026</span></div>
+                        <h2 class="ds-card-title" id="card-entrecote">EntreCôte</h2>
+                        <p data-i18n="entrecote.card">Un moteur 3D avec un rendu DirectX 12 et une architecture à entités et composants.</p>
+                        <p class="ds-card-proof" data-i18n="entrecote.work1">Gestion du pipeline de rendu 3D.</p>
+                        <span class="ds-card-cta"><span data-i18n="action.discover">Découvrir le projet</span> <span aria-hidden="true">→</span></span>
+                    </div>
+                </a>
+            </li><li class="project-card" data-category="jeu">
+                <a class="ds-card" href="spacerunner.html#projet-4" aria-labelledby="card-spacerunner">
+                    <img src="assets/thumbnails/spacerunner.webp" alt="" width="960" height="540" loading="lazy" decoding="async">
+                    <div class="ds-card-body">
+                        <div class="ds-card-meta"><span data-i18n="collection.game">Jeu</span><span>2025</span></div>
+                        <h2 class="ds-card-title" id="card-spacerunner">SpaceRunner</h2>
+                        <p data-i18n="space.card">Une course infinie dans l’espace, conçue en deux semaines avec GC Engine.</p>
+                        <p class="ds-card-proof" data-i18n="space.work1">Développement d’un jeu 3D à base de tuiles dans GC Engine.</p>
+                        <span class="ds-card-cta"><span data-i18n="action.discover">Découvrir le projet</span> <span aria-hidden="true">→</span></span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <footer class="catalogue-footer">
+            <p>MAHIOU Ryad <span data-i18n="collection.footer">· Jeux & moteurs</span></p>
+            <div><a class="ds-link ds-nav-link" href="index.html#necromancer-magical-girl"><span data-i18n="nav.featured">À la une</span> <span aria-hidden="true">→</span></a><a class="ds-link ds-nav-link" href="index.html#contact">Contact <span aria-hidden="true">→</span></a></div>
+        </footer>
+    </main>
+    <script src="design-system/scripts/toon-motion.js?v=1.0.6"></script>
+</body>
+</html>

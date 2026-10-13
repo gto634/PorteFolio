@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <script src="../assets/scripts/i18n.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Référence graphique du portfolio de Ryad Mahiou : couleurs, typographie, composants et gabarits.">
+    <title>Design system · Ryad Mahiou</title>
+    <link rel="icon" type="image/png" href="../assets/icons/Hypercube.png">
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/preview.css">
+    <script src="scripts/components.js" defer></script>
+    <script src="scripts/scroll-cue.js" defer></script>
+    <script src="../assets/scripts/video-modal.js" defer></script>
+    <script src="../assets/scripts/catalogue.js" defer></script>
+    <script src="scripts/gallery.js" defer></script>
+</head>
+<body class="ds-ui" id="top">
+    <a class="ds-button preview-skip" href="#content">Aller au contenu</a>
+    <header class="preview-header preview-wrap">
+        <a class="preview-brand ds-nav-link" href="../index.html">MAHIOU <span>&nbsp;Ryad</span></a>
+        <nav aria-label="Sections de la galerie">
+            <a class="ds-link ds-nav-link" href="#fondations">Fondations</a>
+            <a class="ds-link ds-nav-link" href="#composants">Composants</a>
+            <a class="ds-link ds-nav-link" href="#gabarits">Gabarits</a>
+        </nav>
+    </header>
+    <main id="content" class="preview-wrap">
+        <div class="preview-hero">
+            <p class="preview-eyebrow">Design system · version 0.5</p>
+            <h1>Des projets singuliers.<br><span>Une identité commune.</span></h1>
+            <p class="preview-intro">Le fond s’efface, les jeux s’expriment et les interactions restent familières. Voici les premières règles communes du portfolio : une palette, une hiérarchie et des composants partagés.</p>
+            <div class="preview-doc-links">
+                <a class="ds-button" href="docs/REGLES-PAGES.md">Règles de chaque page <span aria-hidden="true">→</span></a>
+                <a class="ds-link ds-nav-link" href="docs/DESIGN-SYSTEM.md">Lire le design system</a>
+                <a class="ds-link ds-nav-link" href="README.md">Guide du dossier</a>
+            </div>
+            <p class="preview-caption" style="margin-top: var(--ds-space-6); margin-bottom: 0;">Les fiches, la collection et la navigation utilisent ces composants partagés. L’introduction conserve sa composition actuelle.</p>
+        </div>
+
+        <section class="preview-section" id="fondations" aria-labelledby="fondations-title">
+            <div class="preview-heading"><span aria-hidden="true">01</span><h2 id="fondations-title">Les fondations</h2></div>
+            <p class="preview-caption">Un violet nuit constant, un rose pour orienter le regard et des surfaces discrètes. Les couleurs propres aux jeux restent dans leurs visuels.</p>
+            <div class="preview-swatches">
+                <figure class="preview-swatch"><div class="preview-swatch-color" style="--swatch: var(--ds-color-background);"></div><figcaption>Nuit <code>#0C0B14</code></figcaption></figure>
+                <figure class="preview-swatch"><div class="preview-swatch-color" style="--swatch: var(--ds-color-surface);"></div><figcaption>Surface <code>#232136</code></figcaption></figure>
+                <figure class="preview-swatch"><div class="preview-swatch-color" style="--swatch: var(--ds-color-card);"></div><figcaption>Carte <code>#161420</code></figcaption></figure>
+                <figure class="preview-swatch"><div class="preview-swatch-color" style="--swatch: var(--ds-color-accent);"></div><figcaption>Accent <code>#F7BACF</code></figcaption></figure>
+                <figure class="preview-swatch"><div class="preview-swatch-color" style="--swatch: var(--ds-color-text);"></div><figcaption>Texte <code>#E0DEF4</code></figcaption></figure>
+                <figure class="preview-swatch"><div class="preview-swatch-color" style="--swatch: var(--ds-color-muted);"></div><figcaption>Secondaire <code>#B9B6C9</code></figcaption></figure>
+            </div>
+            <div class="preview-type">
+                <div>
+                    <h3>Une typographie, plusieurs niveaux</h3>
+                    <p class="preview-type-sample">Le projet.<br><span>Le travail accompli.</span></p>
+                    <p class="ds-muted">Segoe UI et polices système · titres affirmés, paragraphes lisibles, métadonnées discrètes.</p>
+                </div>
+                <div>
+                    <h3>Un rythme régulier</h3>
+                    <p>4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96 px</p>
+                    <p class="ds-muted">Les espacements viennent d’une même échelle. Le texte respire sans disperser les informations d’un projet.</p>
+                    <p><span class="preview-measure" aria-hidden="true"></span>48 px pour une action principale.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="preview-section" id="composants" aria-labelledby="composants-title">
+            <div class="preview-heading"><span aria-hidden="true">02</span><h2 id="composants-title">Les composants</h2></div>
+            <p class="preview-caption">Survole les actions ou parcours-les avec Tab : focus commun et comportements cohérents. Le triangle de l’intro apporte la référence bouncy ; les animations respectent la préférence de mouvement réduit.</p>
+            <div class="preview-panels">
+                <div class="preview-panel">
+                    <h3>Actions et liens</h3>
+                    <div class="preview-controls">
+                        <a class="ds-button" href="../projets.html">Tous les projets <span aria-hidden="true">→</span></a>
+                        <a class="ds-button ds-button--secondary" href="../index.html">À la une</a>
+                        <a class="ds-link ds-nav-link" href="#contact-example">Voir le contact</a>
+                        <a class="ds-scroll-cue" id="gallery-scroll-cue" href="#gabarits" aria-label="Voir les gabarits" data-scroll-cue data-scroll-cue-repeat data-scroll-cue-toggle="gallery-cue-motion"><svg class="ds-scroll-cue-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 6.5H20.5L12 20Z" fill="currentColor" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg></a>
+                    </div>
+                    <p>Une action prioritaire, des alternatives plus discrètes. Les boutons de cette galerie mènent à leur vraie destination.</p>
+                    <p>Triangle de l’intro : sans cercle, zone de clic de 48 px. Compression, saut de 7 px, étirement marqué et retombée en 900 ms ; un rebond toutes les 1,5 seconde.</p>
+                    <button class="ds-button ds-button--secondary" id="gallery-cue-motion" type="button" aria-pressed="true" aria-controls="gallery-scroll-cue" hidden>Rebonds du triangle <span data-cue-state>Activés</span></button>
+                </div>
+                <div class="preview-panel">
+                    <h3>Logiciels</h3>
+                    <ul class="ds-logos" aria-label="Logiciels utilisés pour Necromancer x Magical Girl">
+                        <li class="ds-logo ds-logo--monochrome" tabindex="0" aria-label="Unity 6" title="Unity 6"><img src="../assets/icons/Unity.svg" alt="" width="32" height="32"><span class="ds-tooltip" aria-hidden="true">Unity 6</span></li>
+                        <li class="ds-logo" tabindex="0" aria-label="Blender" title="Blender"><img src="../assets/icons/Blender.png" alt="" width="32" height="32"><span class="ds-tooltip" aria-hidden="true">Blender</span></li>
+                        <li class="ds-logo" tabindex="0" aria-label="Figma" title="Figma"><img src="../assets/icons/Figma.png" alt="" width="32" height="32"><span class="ds-tooltip" aria-hidden="true">Figma</span></li>
+                    </ul>
+                    <p>Logos seuls, nom au survol et au focus. Unity 6, Blender et Figma sont les trois logiciels retenus pour ce projet.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="preview-section" id="gabarits" aria-labelledby="gabarits-title">
+            <div class="preview-heading"><span aria-hidden="true">03</span><h2 id="gabarits-title">Le projet à la une</h2></div>
+            <p class="preview-caption">L’ordre de lecture reste stable : titre, langage et technologie, outils, pitch, faits, contributions, détails et deux actions. Le visuel apporte l’univers ; le texte met en valeur le travail personnel.</p>
+            <article class="preview-project" aria-labelledby="project-title">
+                <div class="preview-project-copy">
+                    <h3 class="ds-project-title" id="project-title" tabindex="-1">Necromancer <span>x Magical Girl</span></h3>
+                    <dl class="ds-technical"><div><dt>Langage</dt><dd>C#</dd></div><div><dt>Moteur</dt><dd>Unity 6</dd></div></dl>
+                    <div class="ds-tools"><span class="ds-tools-label">Outils</span><ul class="ds-logos" aria-label="Outils utilisés">
+                        <li class="ds-logo ds-logo--monochrome" tabindex="0" aria-label="Unity 6" title="Unity 6"><img src="../assets/icons/Unity.svg" alt="" width="32" height="32"><span class="ds-tooltip" aria-hidden="true">Unity 6</span></li>
+                        <li class="ds-logo" tabindex="0" aria-label="Blender" title="Blender"><img src="../assets/icons/Blender.png" alt="" width="32" height="32"><span class="ds-tooltip" aria-hidden="true">Blender</span></li>
+                        <li class="ds-logo" tabindex="0" aria-label="Figma" title="Figma"><img src="../assets/icons/Figma.png" alt="" width="32" height="32"><span class="ds-tooltip" aria-hidden="true">Figma</span></li>
+                    </ul></div>
+                    <p>Incarne un Nécromancien ou une Magical Girl et explore un donjon à deux en coopération locale. Terrasse tes ennemis à coups de magie, de tête boomerang et de téléportation, puis recrute-les pour bâtir ton armée et rivaliser avec celle de ton partenaire.</p>
+                    <dl class="ds-facts">
+                        <div><dt>Mon rôle</dt><dd>Gameplay &amp; intégration visuelle</dd></div>
+                        <div><dt>Équipe</dt><dd>2 personnes</dd></div>
+                        <div><dt>Durée</dt><dd>3 semaines</dd></div>
+                    </dl>
+                    <ul class="ds-proof" aria-label="Mes réalisations principales"><li>Systèmes de combat : projectiles, hitboxes, dégâts et knockback.</li><li>Moveset des deux personnages : capacités, déplacement et visée.</li></ul>
+                    <details class="ds-details">
+                        <summary>Détails de mes réalisations</summary>
+                        <ul>
+                            <li>Intégration et modification des assets et des animations.</li>
+                            <li>Intégration des feedbacks visuels : effets, particules, flashs et réactions aux impacts.</li>
+                        </ul>
+                    </details>
+                    <div class="ds-project-actions"><button class="ds-button" type="button" disabled><span aria-hidden="true">▶</span> Vidéo — à venir</button><button class="ds-button ds-button--secondary" type="button" disabled>GitHub — à venir <span aria-hidden="true">↗</span></button></div>
+                </div>
+            </article>
+            <div class="preview-context">
+                <a class="ds-card" href="../index.html#necromancer-magical-girl">
+                    <img src="../assets/thumbnails/necromancer.webp" width="960" height="540" loading="lazy" alt="">
+                    <div class="ds-card-body">
+                        <div class="ds-card-meta"><span>Jeu · Coopération locale</span><span>2026</span></div>
+                        <h3 class="ds-card-title">Necromancer x Magical Girl</h3>
+                        <p>Explore un donjon à deux et recrute tes ennemis pour bâtir ton armée.</p>
+                        <span class="ds-card-cta">Découvrir le projet <span aria-hidden="true">→</span></span>
+                    </div>
+                </a>
+                <div class="preview-note">
+                    <h3>Une carte, la même identité.</h3>
+                    <p>La collection donne envie d’ouvrir la fiche sans répéter tout son contenu.</p>
+                    <ol>
+                        <li>Une miniature au format 16:9.</li>
+                        <li>Un titre, une année et un pitch bref.</li>
+                        <li>Une seule destination sur toute la carte.</li>
+                    </ol>
+                    <a class="ds-link ds-nav-link" href="docs/REGLES-PAGES.md">Consulter tous les gabarits</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="preview-section" id="contact-example" aria-labelledby="contact-title">
+            <div class="preview-heading"><span aria-hidden="true">04</span><h2 id="contact-title">La bannière de contact</h2></div>
+            <p class="preview-caption">Une fin de parcours courte, avec une continuité vers les autres jeux. Sur l’accueil, le projet précédent reste largement visible au-dessus.</p>
+            <div class="ds-contact">
+                <div>
+                    <p class="preview-banner-label">Et si on échangeait ?</p>
+                    <h3>Restons en contact</h3>
+                    <div class="ds-contact-links">
+                        <a class="ds-link ds-nav-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rmahiou.pro%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Écrire à rmahiou.pro@gmail.com dans Gmail (nouvel onglet)" >rmahiou.pro@gmail.com</a>
+                        <a class="ds-link ds-nav-link" href="https://www.linkedin.com/in/ryad-mahiou-98a06532b/" target="_blank" rel="noopener noreferrer">LinkedIn <span class="ds-sr-only"> (nouvel onglet)</span></a>
+                    </div>
+                    <p class="ds-muted">Lyon, France</p>
+                </div>
+                <a class="ds-button" href="../projets.html">Voir tous mes projets <span aria-hidden="true">→</span></a>
+            </div>
+        </section>
+        <section class="preview-section" id="states" aria-labelledby="states-title">
+            <div class="preview-heading"><span aria-hidden="true">05</span><h2 id="states-title">États et contraintes</h2></div>
+            <p class="preview-caption">Les exemples interactifs utilisent les mêmes composants et scripts que les pages du portfolio. Les états figés servent à comparer leur apparence.</p>
+            <div class="preview-panels">
+                <div class="preview-panel">
+                    <h3>Repos, survol, focus et pression</h3>
+                    <div class="preview-controls"><span class="ds-button">Repos</span><span class="ds-button" data-demo-state="hover">Survol</span><span class="ds-button" data-demo-state="focus">Focus</span><span class="ds-button" data-demo-state="active">Pression</span></div>
+                    <p>Spécimens visuels. Pour tester une vraie action et son texte long :</p>
+                    <a class="ds-button ds-button--secondary" href="../projets.html">Retrouver tous mes jeux et moteurs dans la collection <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="preview-panel">
+                    <h3>Menu fermé / ouvert, état courant et noms longs</h3>
+                    <div class="ds-compact-nav ds-compact-nav--example" data-compact-nav data-i18n-region>
+                        <div class="ds-compact-controls"><button class="ds-language-toggle" type="button" aria-expanded="false" aria-controls="gallery-menu-language" hidden aria-label="Choisir la langue, français sélectionné" data-i18n-aria-label="language.open">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
+            </button><button class="ds-menu-toggle" type="button" aria-expanded="false" aria-controls="gallery-menu" hidden aria-label="Ouvrir le menu" data-i18n-aria-label="nav.open"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button></div>
+                        <div class="ds-language-panel" id="gallery-menu-language" role="group" aria-label="Langue du site" data-i18n-aria-label="language.label" hidden>
+            <button type="button" data-language="fr" lang="fr" aria-pressed="true">Français</button>
+            <button type="button" data-language="en" lang="en" aria-pressed="false">English</button>
+        </div>
+        <nav class="ds-menu-panel" id="gallery-menu" aria-label="Exemple de navigation compacte"><a href="../index.html#intro" data-i18n="nav.home">Accueil</a><a href="../index.html#necromancer-magical-girl" data-i18n="nav.featured">À la une</a><a href="../projets.html" data-nav-destination="collection" data-i18n="nav.collection">Tous les projets</a><a href="#contact-example" aria-current="location" data-i18n="nav.contact">Contact</a></nav>
+                    </div>
+                    <ul class="ds-logos" aria-label="Exemple d’infobulle longue"><li class="ds-logo" tabindex="0" aria-label="Unity 6 — un nom de logiciel volontairement long pour vérifier la limite de l’écran"><img src="../assets/icons/Unity.svg" alt="" width="32" height="32"><span class="ds-tooltip" aria-hidden="true">Unity 6 — un nom de logiciel volontairement long pour vérifier la limite de l’écran</span></li></ul>
+                    <p>Le Menu utilise le script de production : clic, Entrée, Espace, Tab, Échap et clic extérieur. Le nom de l’infobulle reste dans la fenêtre ; Échap la masque.</p>
+                </div>
+                <div class="preview-panel">
+                    <h3>Lecture au premier plan</h3>
+                    <div class="ds-project-actions"><button class="ds-button" type="button" data-video-src="../assets/videos/tatamiam.mp4" data-video-poster="../assets/thumbnails/tatamiam.webp" data-video-title="Tatamiam"><span aria-hidden="true">▶</span> Voir la vidéo</button><button class="ds-button ds-button--secondary" type="button" disabled>GitHub — à venir <span aria-hidden="true">↗</span></button></div>
+                    <p>La vidéo seule, dimensionnée au ratio du média, sans bandeau ni croix. Commandes natives, son conservé, plein écran, fermeture par Échap ou clic extérieur et retour au bouton : le lecteur de production.</p>
+                    <div class="gallery-video-states"><p class="ds-muted">Prévisualisation des messages, sans téléchargement :</p><div class="preview-controls"><button type="button" class="ds-button ds-button--secondary" data-show-video-state="loading">Chargement</button><button type="button" class="ds-button ds-button--secondary" data-show-video-state="error">Erreur</button></div><p class="ds-video-status gallery-video-status" role="status">Choisis un état à prévisualiser.</p><button class="ds-button gallery-video-reset" type="button" hidden>Annuler</button></div>
+                </div>
+                <div class="preview-panel filter-demo">
+                    <h3>Filtres, résultat et liste vide</h3>
+                    <div class="ds-filters catalogue-filters" role="group" aria-label="Filtrer les exemples" hidden><button type="button" data-filter="all" aria-pressed="true">Tous</button><button type="button" data-filter="jeu" aria-pressed="false">Jeux</button><button type="button" data-filter="moteur" aria-pressed="false">Moteurs</button></div>
+                    <p class="catalogue-count" role="status" aria-live="polite" aria-atomic="true">1 projet</p>
+                    <p class="ds-empty catalogue-empty" hidden>Aucun projet dans cette catégorie. Choisissez « Tous ».</p>
+                    <ul class="gallery-projects"><li class="project-card" data-category="jeu"><a class="ds-card" href="../index.html#necromancer-magical-girl"><div class="ds-card-body"><h3 class="ds-card-title">Necromancer x Magical Girl — exemple de titre long</h3><p>Une seule destination, même avec un titre sur plusieurs lignes.</p></div></a></li></ul>
+                    <p>« Moteurs » montre l’état vide. Sans JavaScript, le lien de la carte reste disponible.</p>
+                </div>
+            </div>
+            <details class="ds-details gallery-long-details"><summary>Exemple de réalisations longues</summary><ul><li>Un système de combat composé de projectiles, de hitboxes configurables, de délais d’activation, de dégâts et de réactions aux impacts.</li><li>Les capacités, le déplacement et la visée des deux personnages, présentés avec suffisamment de détails pour vérifier les retours à la ligne.</li><li>L’intégration et la modification des assets, ainsi que le travail sur les animations des personnages et de leur environnement.</li><li>Les effets visuels, les particules, les flashs de matériaux et les réactions aux impacts, sans masquer l’action disponible après cette liste.</li></ul></details>
+            <p class="preview-caption">Sur la sélection à la une : un geste de molette ou de trackpad déclenche une transition de 350 ms. Une fiche longue se parcourt jusqu’aux actions avant la transition suivante ; le focus d’une ancre arrive près du titre. <a class="ds-link" href="../index.html#projet-1">Tester sur Tatamiam</a>.</p>
+            <a class="ds-link ds-nav-link" href="../projets.html">Action après les détails : retrouver la collection <span aria-hidden="true">→</span></a>
+        </section>
+    </main>
+    <footer class="preview-footer preview-wrap">
+        <p>Ryad Mahiou · Référence graphique · 11 octobre 2026</p>
+        <a class="ds-link ds-nav-link" href="#top">Retour en haut <span aria-hidden="true">&nbsp;↑</span></a>
+    </footer>
+</body>
+</html>

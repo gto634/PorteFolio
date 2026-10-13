@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr" data-i18n-page>
+<head>
+    <meta charset="UTF-8">
+    <script src="assets/scripts/i18n.js?v=1.0.6"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SpaceRunner, un jeu de course infini en 3D développé par Ryad Mahiou en binôme avec GC Engine." data-i18n-content="space.meta">
+    <title>SpaceRunner — MAHIOU Ryad</title>
+    <link rel="icon" type="image/png" href="assets/icons/Hypercube.png">
+    <link rel="stylesheet" href="design-system/styles/tokens.css">
+    <link rel="stylesheet" href="assets/styles/base.css">
+    <link rel="stylesheet" href="design-system/styles/components.css?v=1.0.6">
+    <link rel="stylesheet" href="assets/styles/planches-general.css">
+    <link rel="stylesheet" href="assets/styles/projets.css">
+    <link rel="stylesheet" href="design-system/styles/toon.css?v=1.0.6">
+</head>
+<body class="ds-ui project-page ds-toon" data-toon-root data-intensity="flamby" data-motion="on" data-tooltip-policy="quiet">
+    <a class="ds-button ds-skip" href="#projet-4" data-i18n="skip.project">Aller au projet</a>
+    <header class="ds-compact-nav" data-compact-nav aria-label="Navigation du portfolio" data-i18n-aria-label="nav.label">
+        <div class="ds-compact-controls">
+            <div class="ds-compact-item ds-language-item" data-toon-compact-item>
+                <button class="ds-language-toggle" type="button" aria-expanded="false" aria-controls="portfolio-menu-language" hidden aria-label="Choisir la langue, français sélectionné" data-i18n-aria-label="language.open">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
+            </button>
+                <div class="ds-language-panel" id="portfolio-menu-language" role="group" aria-label="Langue du site" data-i18n-aria-label="language.label" hidden>
+            <button type="button" data-language="fr" lang="fr" aria-pressed="true"><span>Français</span><span class="ds-language-check" aria-hidden="true">✓</span></button>
+            <button type="button" data-language="en" lang="en" aria-pressed="false"><span>English</span><span class="ds-language-check" aria-hidden="true">✓</span></button>
+        </div>
+            </div>
+            <div class="ds-compact-item ds-navigation-item" data-toon-compact-item>
+                <button class="ds-menu-toggle" type="button" aria-expanded="false" aria-controls="portfolio-menu" hidden aria-label="Ouvrir le menu" data-i18n-aria-label="nav.open"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+                <nav class="ds-menu-panel" id="portfolio-menu" aria-label="Navigation principale" data-i18n-aria-label="nav.main">
+            <a href="./index.html#intro" data-nav-destination="intro"><span data-i18n="nav.home">Accueil</span><span class="ds-icon ds-icon--home" aria-hidden="true"></span></a>
+            <a href="./index.html#necromancer-magical-girl" data-nav-destination="featured"><span data-i18n="nav.featured">À la une</span><span class="ds-icon ds-icon--sparkles" aria-hidden="true"></span></a>
+            <a href="./index.html#contact" data-nav-destination="contact"><span data-i18n="nav.contact">Contact</span><span class="ds-icon ds-icon--phone" aria-hidden="true"></span></a>
+            <a href="./projets.html" data-nav-destination="collection"><span data-i18n="nav.collection">Tout mes projets</span><span class="ds-icon ds-icon--collection" aria-hidden="true"></span></a>
+        </nav>
+            </div>
+        </div>
+    </header>
+    <main class="scroll-container">
+        <section class="planche project-screen is-reversed" id="projet-4" aria-labelledby="spacerunner-title" tabindex="-1">
+            <div class="ds-project-copy">
+                <h1 class="ds-project-title" id="spacerunner-title" tabindex="-1">SpaceRunner</h1>
+                <div class="ds-stack"><dl class="ds-stack-technical"><div><dt data-i18n="technical.language">Langage</dt><dd>C++</dd></div><div><dt data-i18n="technical.engine">Moteur</dt><dd>GC Engine</dd></div></dl><div class="ds-stack-tools"><span class="ds-tools-label" data-i18n="tools.title">Outils</span><ul class="ds-software-list" aria-label="Outils de création utilisés" data-i18n-aria-label="tools.label"><li class="ds-software" aria-label="Blender"><img src="assets/icons/Blender.png" alt="" width="24" height="24"><span>Blender</span></li></ul></div></div>
+                <p class="project-lead" data-i18n="space.pitch">Lance-toi dans une course infinie à travers un environnement spatial. Découvre un jeu 3D réalisé avec GC Engine, le moteur de notre école.</p>
+                <dl class="ds-facts"><div><dt data-i18n="facts.role">Mon rôle</dt><dd data-i18n="facts.generalist">Co-création · développement généraliste</dd></div><div><dt data-i18n="facts.team">Équipe</dt><dd data-i18n="facts.twoDevelopers">2 développeurs</dd></div><div><dt data-i18n="facts.duration">Durée</dt><dd data-i18n="facts.twoWeeks">2 semaines</dd></div></dl>
+                <ul class="ds-proof" aria-label="Mes réalisations principales" data-i18n-aria-label="work.label"><li data-i18n="space.work1">Développement d’un jeu 3D à base de tuiles dans GC Engine.</li><li data-i18n="space.work2">Optimisation des performances dans un moteur personnalisé.</li><li data-i18n="space.detail1">Adaptation du gameplay aux fonctionnalités disponibles dans GC Engine.</li><li data-i18n="space.detail2">Level design réalisé en tenant compte des contraintes du gameplay.</li></ul>
+                <div class="ds-project-actions"><button class="ds-button ds-button--flat" type="button" data-video-src="assets/videos/spacerunner.mp4" data-video-poster="assets/thumbnails/spacerunner.webp" data-video-title="SpaceRunner"><span aria-hidden="true">▶</span> <span data-i18n="action.video">Voir la vidéo</span></button><a class="ds-button ds-button--secondary" href="https://github.com/gto634/SpaceRunner" target="_blank" rel="noopener noreferrer" aria-label="Code source de SpaceRunner sur GitHub (nouvel onglet)" data-i18n-aria-label="space.sourceLabel"><span class="ds-repo-icon" aria-hidden="true"></span><span data-i18n="action.source">Code source</span><span aria-hidden="true">↗</span></a></div>
+            </div>
+        </section>
+    </main>
+    <script src="design-system/scripts/components.js?v=1.0.6"></script>
+    <script src="assets/scripts/video-modal.js?v=1.0.7"></script>
+    <script src="assets/scripts/script.js"></script>
+    <script src="design-system/scripts/toon-motion.js?v=1.0.6"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+# Local drafts, screenshots and old one-off AI experiments.
+/tools/ai/archive/
+/tools/ai/local/
+/tools/ai/reports/
+
+# Generated caches and operating-system files.
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Blender autosaves and interrupted media processing.
+*.blend[0-9]
+*.blend[0-9][0-9]
+*.faststart.tmp

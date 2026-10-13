@@ -1,212 +1,153 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-i18n-page>
 <head>
     <meta charset="UTF-8">
+    <script src="assets/scripts/i18n.js?v=1.0.6"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>MAHIOU Ryad</title> 
+    <link rel="icon" type="image/png" href="assets/icons/Hypercube.png">
 
-    <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="planches-general.css">
-    <link rel="stylesheet" href="intro.css">
-    <link rel="stylesheet" href="projets.css">
-    <link rel="stylesheet" href="interactions.css">
+    <link rel="stylesheet" href="design-system/styles/tokens.css">
+    <link rel="stylesheet" href="assets/styles/base.css">
+    <link rel="stylesheet" href="design-system/styles/components.css?v=1.0.6">
+    <link rel="stylesheet" href="assets/styles/planches-general.css">
+    <link rel="stylesheet" href="assets/styles/intro.css">
+    <link rel="stylesheet" href="assets/styles/projets.css">
+    <link rel="stylesheet" href="design-system/styles/toon.css?v=1.0.6">
 </head>
 
-<body>
-    <nav class="dot-nav" aria-label="Navigation des projets">
-        <a href="#intro" class="dot active" title="Introduction"></a>
+<body class="ds-ui showcase-page ds-toon" data-toon-root data-intensity="flamby" data-motion="on" data-tooltip-policy="quiet">
+    <a class="ds-button ds-skip" href="#necromancer-magical-girl" data-i18n="skip.projects">Aller aux projets</a>
+    <header class="ds-compact-nav" data-compact-nav aria-label="Navigation du portfolio" data-i18n-aria-label="nav.label">
+        <div class="ds-compact-controls">
+            <div class="ds-compact-item ds-language-item" data-toon-compact-item>
+                <button class="ds-language-toggle" type="button" aria-expanded="false" aria-controls="portfolio-menu-language" hidden aria-label="Choisir la langue, français sélectionné" data-i18n-aria-label="language.open">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
+            </button>
+                <div class="ds-language-panel" id="portfolio-menu-language" role="group" aria-label="Langue du site" data-i18n-aria-label="language.label" hidden>
+            <button type="button" data-language="fr" lang="fr" aria-pressed="true"><span>Français</span><span class="ds-language-check" aria-hidden="true">✓</span></button>
+            <button type="button" data-language="en" lang="en" aria-pressed="false"><span>English</span><span class="ds-language-check" aria-hidden="true">✓</span></button>
+        </div>
+            </div>
+            <div class="ds-compact-item ds-navigation-item" data-toon-compact-item>
+                <button class="ds-menu-toggle" type="button" aria-expanded="false" aria-controls="portfolio-menu" hidden aria-label="Ouvrir le menu" data-i18n-aria-label="nav.open"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+                <nav class="ds-menu-panel" id="portfolio-menu" aria-label="Navigation principale" data-i18n-aria-label="nav.main">
+            <a href="#intro" data-nav-destination="intro"><span data-i18n="nav.home">Accueil</span><span class="ds-icon ds-icon--home" aria-hidden="true"></span></a>
+            <a href="#necromancer-magical-girl" data-nav-destination="featured"><span data-i18n="nav.featured">À la une</span><span class="ds-icon ds-icon--sparkles" aria-hidden="true"></span></a>
+            <a href="#contact" data-nav-destination="contact"><span data-i18n="nav.contact">Contact</span><span class="ds-icon ds-icon--phone" aria-hidden="true"></span></a>
+            <a href="projets.html" data-nav-destination="collection"><span data-i18n="nav.collection">Tout mes projets</span><span class="ds-icon ds-icon--collection" aria-hidden="true"></span></a>
+        </nav>
+            </div>
+        </div>
+    </header>
+
+    <nav class="dot-nav" aria-label="Navigation des projets" data-i18n-aria-label="dots.label">
+        <a href="#intro" class="dot active" aria-label="Introduction" data-i18n-aria-label="dots.intro"></a>
+        <a href="#necromancer-magical-girl" class="dot" title="Necromancer x Magical Girl"></a>
         <a href="#projet-1" class="dot" title="Tatamiam"></a>
         <a href="#projet-2" class="dot" title="IsekaiWar!"></a>
         <a href="#projet-3" class="dot" title="EntreCôte"></a>
-        <a href="#projet-4" class="dot" title="SpaceRunner"></a>
+        <a href="#contact" class="dot" aria-label="Contact et autres projets" data-i18n-aria-label="dots.contact"></a>
     </nav>
 
     <main class="scroll-container">
 
-        <section class="planche" id="intro">
+        <section class="planche ds-ui" id="intro" aria-labelledby="intro-title">
+            <div class="intro-backdrop" aria-hidden="true"><div class="intro-grid"></div></div>
             <canvas id="hypercube" aria-hidden="true"></canvas>
 
-            <div class="content">
-                <h1>MAHIOU Ryad</h1>
-                <p>Portfolio de développeur</p>
+            <div class="intro-layout">
+                <div class="content intro-copy">
+                    <p class="intro-eyebrow">Portfolio</p>
+                    <h1 id="intro-title">MAHIOU <span>Ryad</span></h1>
+                    <p class="intro-role" data-i18n="intro.role">Développeur de jeux vidéo</p>
+                </div>
+
+                <div class="intro-visual" aria-hidden="true">
+                    <img class="hypercube-fallback" src="assets/models/hypercube-poster.png" alt="" width="768" height="768" fetchpriority="high" decoding="async">
+                </div>
             </div>
-            
-            <a href="#projet-1" id="transition-btn" title="Aller aux projets" aria-label="Aller aux projets">&#10140;</a>
+
+            <a href="#necromancer-magical-girl" id="transition-btn" title="Aller aux projets" data-i18n-title="skip.projects" aria-label="Aller aux projets" data-i18n-aria-label="skip.projects">
+                <svg class="intro-triangle" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M3.5 6.5H20.5L12 20Z" fill="currentColor" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" />
+                </svg>
+            </a>
         </section>
 
-        <section class="planche" id="projet-1">
-            <div class="content">
-                <div class="project-header">
-                    <h2 class="text-accent">Tatamiam</h2> 
-                    <button class="expand-btn" title="Plus d'informations">➔</button>
-                </div>
-                
-                <div class="project-details">
-                    <div class="tech-stack">
-                        <img src="Icons/C++.png" alt="C++" title="C++">
-                        <img src="Icons/Blender.png" alt="Blender" title="Blender">
-                        <img src="Icons/Figma.png" alt="Figma" title="Figma">
-                        <span class="custom-badge">EntreCôte</span>
-                    </div>
-
-                    <div class="project-text">
-                        <p>Jeu de cuisine multijoueur en ligne à la première personne.</p>
-                        <p>Réalisé avec notre propre moteur de jeu : EntreCôte.</p>
-                        <ul>
-                            <li><strong>Rôle :</strong> Lead Développeur, Moteur & Gameplay, Game Designer</li>
-                            <li><strong>Année :</strong> 2026</li>
-                            <li><strong>Équipe :</strong> 3 développeurs</li>
-                            <li><strong>Temps :</strong> 1 semaine de pré-prod + 3 semaines de programmation</li>
-                        </ul>
-                        <p>
-                            <strong>Points clés :</strong><br>
-                            - Gestion de projet et Méthodologie AGILE.<br>
-                            - Implémentation d'une API multijoueur dans un moteur personnalisé.<br>
-                            - Rendre un jeu fluide grâce au Gamefeel.<br>
-                            - Créer une architechture à partir d'un EC.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="project-video-container">
-                    <video class="click-video" muted loop playsinline preload="none" poster="Tatamiam/Thumbnail.png">
-                        <source data-src="Tatamiam/Gameplay.mp4" type="video/mp4">
-                    </video>
-                    <div class="video-hint">Cliquer pour jouer</div>
-                </div>
+        <section class="planche project-screen" id="necromancer-magical-girl" aria-labelledby="necromancer-title" tabindex="-1">
+            <div class="ds-project-copy">
+                <h2 class="ds-project-title" id="necromancer-title" tabindex="-1">Necromancer <span>x Magical Girl</span></h2>
+                <div class="ds-stack"><dl class="ds-stack-technical"><div><dt data-i18n="technical.language">Langage</dt><dd>C#</dd></div><div><dt data-i18n="technical.engine">Moteur</dt><dd><span class="ds-software ds-software--monochrome"><img src="assets/icons/Unity.svg" alt="" width="24" height="24"><span>Unity 6</span></span></dd></div></dl><div class="ds-stack-tools"><span class="ds-tools-label" data-i18n="tools.title">Outils</span><ul class="ds-software-list" aria-label="Outils de création utilisés" data-i18n-aria-label="tools.label"><li class="ds-software" aria-label="Blender"><img src="assets/icons/Blender.png" alt="" width="24" height="24"><span>Blender</span></li><li class="ds-software" aria-label="Figma"><img src="assets/icons/Figma.png" alt="" width="24" height="24"><span>Figma</span></li></ul></div></div>
+                <p class="project-lead" data-i18n="necro.pitch">Incarnez un Nécromancien ou une Magical Girl et explorez un donjon en coopération locale. Terrassez les ennemis, puis enrôlez-les dans votre armée pour surpasser celle de votre camarade.</p>
+                <dl class="ds-facts"><div><dt data-i18n="facts.role">Mon rôle</dt><dd data-i18n="necro.role">Gameplay &amp; assets visuels</dd></div><div><dt data-i18n="facts.team">Équipe</dt><dd data-i18n="facts.twoPeople">2 personnes</dd></div><div><dt data-i18n="facts.duration">Durée</dt><dd data-i18n="necro.duration">10 jours</dd></div></dl>
+                <ul class="ds-proof" aria-label="Mes réalisations principales" data-i18n-aria-label="work.label"><li data-i18n="necro.work1">Systèmes de combat : projectiles, hitboxes, dégâts et knockback.</li><li data-i18n="necro.work2">Moveset des deux personnages : capacités, déplacement et visée.</li><li data-i18n="necro.detail1">Intégration et modification des assets et des animations.</li><li data-i18n="necro.detail2">Intégration des feedbacks visuels : effets, particules, flashs et réactions aux impacts.</li></ul>
+                <div class="ds-project-actions"><button class="ds-button ds-button--flat" type="button" disabled><span aria-hidden="true">▶</span> <span data-i18n="action.videoSoon">Vidéo — à venir</span></button><a class="ds-button ds-button--secondary" href="https://github.com/gto634/Necromancer-x-MagicalGirl" target="_blank" rel="noopener noreferrer" aria-label="Code source de Necromancer x Magical Girl sur GitHub (nouvel onglet)" data-i18n-aria-label="necro.sourceLabel"><span class="ds-repo-icon" aria-hidden="true"></span><span data-i18n="action.source">Code source</span><span aria-hidden="true">↗</span></a></div>
             </div>
         </section>
 
-        <section class="planche is-reversed" id="projet-2">
-            <div class="content">
-                <div class="project-header">
-                    <h2 class="text-accent">IsekaiWar!</h2>
-                    <button class="expand-btn" title="Plus d'informations">➔</button>
-                </div>
-                
-                <div class="project-details">
-                    <div class="tech-stack">
-                        <img src="Icons/C++.png" alt="C++" title="C++">
-                        <img src="Icons/Figma.png" alt="Figma" title="Figma">
-                        <img src="Icons/Photoshop.png" alt="Photoshop" title="Photoshop">
-                        <span class="custom-badge">SFML</span>
-                    </div>
-
-                    <div class="project-text">
-                        <p>Un Shoot 'em up sur le thème fantasy / sci-fi.</p>
-                        <ul>
-                            <li><strong>Rôle :</strong> Co-créateur / Développeur Généraliste</li>
-                            <li><strong>Année :</strong> 2024</li>
-                            <li><strong>Équipe :</strong> 2 développeurs</li>
-                            <li><strong>Temps :</strong> 3 semaines (Projet de 1ère année)</li>
-                        </ul>
-                        <p>
-                            <strong>Points clés :</strong><br>
-                            - Développement d'un jeu 2D.<br>
-                            - Apprentissage de la gestion d'architecture de code.<br>
-                            - Ajout d'éléments de "Gamefeel".<br>
-                            - Gestion d'une boucle de jeu complète.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="project-video-container">
-                    <video class="click-video" muted loop playsinline preload="none" poster="IsekaiWar/Thumbnail.png">
-                        <source data-src="IsekaiWar/Gameplay.mp4" type="video/mp4">
-                    </video>
-                    <div class="video-hint">Cliquer pour jouer</div>
-                </div>
+        <section class="planche project-screen" id="projet-1" aria-labelledby="tatamiam-title" tabindex="-1">
+            <div class="ds-project-copy">
+                <h2 class="ds-project-title" id="tatamiam-title" tabindex="-1">Tatamiam</h2>
+                <div class="ds-stack"><dl class="ds-stack-technical"><div><dt data-i18n="technical.language">Langage</dt><dd>C++</dd></div><div><dt data-i18n="technical.engine">Moteur</dt><dd>EntreCôte</dd></div></dl><div class="ds-stack-tools"><span class="ds-tools-label" data-i18n="tools.title">Outils</span><ul class="ds-software-list" aria-label="Outils de création utilisés" data-i18n-aria-label="tools.label"><li class="ds-software" aria-label="Blender"><img src="assets/icons/Blender.png" alt="" width="24" height="24"><span>Blender</span></li><li class="ds-software" aria-label="Figma"><img src="assets/icons/Figma.png" alt="" width="24" height="24"><span>Figma</span></li></ul></div></div>
+                <p class="project-lead" data-i18n="tatamiam.pitch">Incarnez un sushi et lancez votre propre restaurant-dojo ! Collaborez avec vos amis en ligne afin de préparer les plats qui correspondent à chaque client.</p>
+                <dl class="ds-facts"><div><dt data-i18n="facts.role">Mon rôle</dt><dd data-i18n="tatamiam.role">Lead Tech · moteur &amp; gameplay</dd></div><div><dt data-i18n="facts.team">Équipe</dt><dd data-i18n="facts.threeDevelopers">3 développeurs</dd></div><div><dt data-i18n="facts.duration">Durée</dt><dd data-i18n="tatamiam.duration">4 semaines</dd></div></dl>
+                <ul class="ds-proof" aria-label="Mes réalisations principales" data-i18n-aria-label="work.label"><li data-i18n="tatamiam.work1">Intégration d’une API multijoueur dans un moteur custom.</li><li data-i18n="tatamiam.work2">Architecture du jeu construite sur une base EC (entités/composants).</li><li data-i18n="tatamiam.detail1">Gameplay du joueur et son intégration visuelle.</li><li data-i18n="tatamiam.detail2">Synchronisation en ligne des différentes features.</li></ul>
+                <div class="ds-project-actions"><button class="ds-button ds-button--flat" type="button" data-video-src="assets/videos/tatamiam.mp4" data-video-poster="assets/thumbnails/tatamiam.webp" data-video-title="Tatamiam"><span aria-hidden="true">▶</span> <span data-i18n="action.video">Voir la vidéo</span></button><a class="ds-button ds-button--secondary" href="https://github.com/gto634/Tata-Miam" target="_blank" rel="noopener noreferrer" aria-label="Code source de Tatamiam sur GitHub (nouvel onglet)" data-i18n-aria-label="tatamiam.sourceLabel"><span class="ds-repo-icon" aria-hidden="true"></span><span data-i18n="action.source">Code source</span><span aria-hidden="true">↗</span></a></div>
             </div>
         </section>
 
-        <section class="planche" id="projet-3">
-            <div class="content">
-                <div class="project-header">
-                    <h2 class="text-accent">EntreCôte</h2>
-                    <button class="expand-btn" title="Plus d'informations">➔</button>
-                </div>
-            
-                <div class="project-details">
-                    <div class="tech-stack">
-                        <img src="Icons/C++.png" alt="C++" title="C++">
-                        <img src="Icons/DX12.png" alt="DX12" title="DX12">
-                        <span class="custom-badge">Direct XII</span>
-                    </div>
-
-                    <div class="project-text">
-                        <p>Moteur de jeu 3D custom utilisant un EC.</p>
-                        <p>Vidéo: Sandbox + Sushi Adventure, mini jeu dévellopé en 3jours.</p>
-                        <ul>
-                            <li><strong>Rôle :</strong> Tech Designer / Développeur Moteur</li>
-                            <li><strong>Année :</strong> 2026</li>
-                            <li><strong>Équipe :</strong> 3 développeurs</li>
-                            <li><strong>Temps :</strong> 3 semaines</li>
-                        </ul>
-                        <p>
-                            <strong>Points clés :</strong><br>
-                            - Gestion de la pipeline de rendu.<br>
-                            - Avoir une architecture propre et évolutive.<br>
-                            - Encapsuler correctement pour supporter différents supports.<br>
-                            - Optimiser et refactorer proprement.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="project-video-container">
-                    <video class="click-video" muted loop playsinline preload="none" poster="Entrecote/Thumbnail.png">
-                        <source data-src="Entrecote/Gameplay.mp4" type="video/mp4">
-                    </video>
-                    <div class="video-hint">Cliquer pour jouer</div>
-                </div>
+        <section class="planche project-screen is-reversed" id="projet-2" aria-labelledby="isekaiwar-title" tabindex="-1">
+            <div class="ds-project-copy">
+                <h2 class="ds-project-title" id="isekaiwar-title" tabindex="-1">IsekaiWar!</h2>
+                <div class="ds-stack"><dl class="ds-stack-technical"><div><dt data-i18n="technical.language">Langage</dt><dd>C++</dd></div><div><dt data-i18n="technical.library">Bibliothèque</dt><dd>SFML</dd></div></dl><div class="ds-stack-tools"><span class="ds-tools-label" data-i18n="tools.title">Outils</span><ul class="ds-software-list" aria-label="Outils de création utilisés" data-i18n-aria-label="tools.label"><li class="ds-software" aria-label="Figma"><img src="assets/icons/Figma.png" alt="" width="24" height="24"><span>Figma</span></li><li class="ds-software" aria-label="Photoshop"><img src="assets/icons/Photoshop.png" alt="" width="24" height="24"><span>Photoshop</span></li></ul></div></div>
+                <p class="project-lead" data-i18n="isekai.pitch">Protégez votre monde magique d’une attaque interdimensionnelle. Terrassez les vaisseaux aliens à l’aide de vos compétences magiques.</p>
+                <dl class="ds-facts"><div><dt data-i18n="facts.role">Mon rôle</dt><dd data-i18n="isekai.role">Dev Gameplay</dd></div><div><dt data-i18n="facts.team">Équipe</dt><dd data-i18n="facts.twoDevelopers">2 développeurs</dd></div><div><dt data-i18n="facts.duration">Durée</dt><dd data-i18n="facts.threeWeeks">3 semaines</dd></div></dl>
+                <ul class="ds-proof" aria-label="Mes réalisations principales" data-i18n-aria-label="work.label"><li data-i18n="isekai.work1">Développement d’une architecture d’héritage complète.</li><li data-i18n="isekai.work2">Intégration des classes abstraites de vie, de tirs et de déplacement.</li><li data-i18n="isekai.detail1">Développement des différents projectiles et power-ups.</li><li data-i18n="isekai.detail2">Intégration visuelle du fond et des projectiles.</li></ul>
+                <div class="ds-project-actions"><button class="ds-button ds-button--flat" type="button" data-video-src="assets/videos/isekaiwar.mp4" data-video-poster="assets/thumbnails/isekaiwar.webp" data-video-title="IsekaiWar!"><span aria-hidden="true">▶</span> <span data-i18n="action.video">Voir la vidéo</span></button><a class="ds-button ds-button--secondary" href="https://github.com/gto634/IsekaiWar" target="_blank" rel="noopener noreferrer" aria-label="Code source de IsekaiWar! sur GitHub (nouvel onglet)" data-i18n-aria-label="isekai.sourceLabel"><span class="ds-repo-icon" aria-hidden="true"></span><span data-i18n="action.source">Code source</span><span aria-hidden="true">↗</span></a></div>
             </div>
         </section>
 
-        <section class="planche is-reversed" id="projet-4">
-            <div class="content">
-                <div class="project-header">
-                    <h2 class="text-accent">SpaceRunner</h2>
-                    <button class="expand-btn" title="Plus d'informations">➔</button>
-                </div>
-                
-                <div class="project-details">
-                    <div class="tech-stack">
-                        <img src="Icons/C++.png" alt="C++" title="C++">
-                        <img src="Icons/Blender.png" alt="Blender" title="Blender">
-                        <span class="custom-badge">GC Engine</span>
-                    </div>
-
-                    <div class="project-text">
-                        <p>Jeu de course infini dans un environnement spatial.</p>
-                        <p>Réalisé avec le moteur custom de mon école: GC Engine.</p>
-                        <ul>
-                            <li><strong>Rôle :</strong> Co-créateur / Développeur Généraliste</li>
-                            <li><strong>Année :</strong> 2025</li>
-                            <li><strong>Équipe :</strong> 2 développeurs</li>
-                            <li><strong>Temps :</strong> 2 semaines</li>
-                        </ul>
-                        <p>
-                            <strong>Points clés :</strong><br>
-                            - Savoir s'adapter à un moteur custom incomplet.<br>
-                            - Optimiser pour de bonnes performances sur ce moteur.<br>
-                            - Développer un jeu 3D avec des Tiles en 2 semaines.<br>
-                            - Travailler le level design malgré les contraintes du Gameplay.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="project-video-container">
-                    <video class="click-video" muted loop playsinline preload="none" poster="SpaceRunner/Thumbnail.png">
-                        <source data-src="SpaceRunner/Gameplay.mp4" type="video/mp4">
-                    </video>
-                    <div class="video-hint">Cliquer pour jouer</div>
-                </div>
+        <section class="planche project-screen" id="projet-3" aria-labelledby="entrecote-title" tabindex="-1">
+            <div class="ds-project-copy">
+                <h2 class="ds-project-title" id="entrecote-title" tabindex="-1">EntreCôte</h2>
+                <div class="ds-stack"><dl class="ds-stack-technical"><div><dt data-i18n="technical.language">Langage</dt><dd>C++</dd></div><div><dt data-i18n="technical.rendering">API de rendu</dt><dd>DirectX 12</dd></div></dl></div>
+                <p class="project-lead" data-i18n="entrecote.pitch">Un moteur de jeu 3D avec un rendu DirectX 12 et une architecture EC (entités/composants). La vidéo présente sa sandbox et Sushi Adventure, un mini-jeu développé en 3 jours.</p>
+                <dl class="ds-facts"><div><dt data-i18n="facts.role">Mon rôle</dt><dd data-i18n="entrecote.role">Dev Moteur</dd></div><div><dt data-i18n="facts.team">Équipe</dt><dd data-i18n="facts.threeDevelopers">3 développeurs</dd></div><div><dt data-i18n="facts.duration">Durée</dt><dd data-i18n="facts.threeWeeks">3 semaines</dd></div></dl>
+                <ul class="ds-proof" aria-label="Mes réalisations principales" data-i18n-aria-label="work.label"><li data-i18n="entrecote.work1">Gestion du pipeline de rendu 3D.</li><li data-i18n="entrecote.work2">Encapsulation de DXII et de la data.</li><li data-i18n="entrecote.detail1">Création du moteur physique avec ses collisions.</li><li data-i18n="entrecote.detail2">Systèmes et composants pour la physique, les renderers et l’animation.</li></ul>
+                <div class="ds-project-actions"><button class="ds-button ds-button--flat" type="button" data-video-src="assets/videos/entrecote.mp4" data-video-poster="assets/thumbnails/entrecote.webp" data-video-title="EntreCôte"><span aria-hidden="true">▶</span> <span data-i18n="action.video">Voir la vidéo</span></button><a class="ds-button ds-button--secondary" href="https://github.com/gto634/EntreCote" target="_blank" rel="noopener noreferrer" aria-label="Code source de EntreCôte sur GitHub (nouvel onglet)" data-i18n-aria-label="entrecote.sourceLabel"><span class="ds-repo-icon" aria-hidden="true"></span><span data-i18n="action.source">Code source</span><span aria-hidden="true">↗</span></a></div>
             </div>
         </section>
 
+        <footer class="end-banner ds-contact ds-contact--grid" id="contact" aria-labelledby="contact-title" tabindex="-1">
+            <div class="end-banner-contact">
+                <p class="ds-contact-label"><span data-i18n="contact.invitation">Et si on échangeait ?</span><span class="ds-icon ds-icon--phone" aria-hidden="true"></span></p>
+                <h2 id="contact-title" data-i18n="contact.title">Restons en contact.</h2>
+                <div class="ds-contact-links">
+                    <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rmahiou.pro%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Écrire à rmahiou.pro@gmail.com dans Gmail (nouvel onglet)" data-i18n-aria-label="contact.email">rmahiou.pro@gmail.com</a>
+                    <div class="ds-contact-socials" role="group" aria-label="Profils professionnels" data-i18n-aria-label="contact.profiles"><a class="ds-social-link ds-social-link--linkedin" href="https://www.linkedin.com/in/ryad-mahiou-98a06532b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Ryad Mahiou (nouvel onglet)" data-i18n-aria-label="contact.linkedin"><span class="ds-social-icon" aria-hidden="true"></span><span class="ds-tooltip" aria-hidden="true">LinkedIn</span></a><a class="ds-social-link ds-social-link--github" href="https://github.com/gto634" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Ryad Mahiou (nouvel onglet)" data-i18n-aria-label="contact.github"><span class="ds-social-icon" aria-hidden="true"></span><span class="ds-tooltip" aria-hidden="true">GitHub</span></a></div>
+                </div>
+                <p class="ds-contact-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Lyon, France</p>
+            </div>
+            <div class="end-banner-more">
+                <p data-i18n="contact.more">La collection continue.</p>
+                <div class="ds-contact-actions">
+                    <a class="ds-button ds-button--flat" href="projets.html"><span class="ds-icon ds-icon--collection" aria-hidden="true"></span><span data-i18n="contact.projects">Tout mes projets</span></a>
+                    <a class="ds-button ds-button--secondary" href="#intro"><span class="ds-icon ds-icon--home" aria-hidden="true"></span><span data-i18n="contact.top">Retour à l’accueil</span></a>
+                </div>
+            </div>
+        </footer>
     </main>
 
-    <script src="hypercube.js"></script>
-    <script src="script.js"></script>
+    <script type="importmap">
+        { "imports": { "three": "./assets/vendor/three/three.module.min.js" } }
+    </script>
+    <script type="module" src="assets/scripts/hypercube.js"></script>
+    <script type="module" src="assets/scripts/intro-navigation.js?v=1.0.6"></script>
+    <script src="design-system/scripts/components.js?v=1.0.6"></script>
+    <script src="assets/scripts/video-modal.js?v=1.0.7"></script>
+    <script src="assets/scripts/script.js"></script>
+    <script src="design-system/scripts/toon-motion.js?v=1.0.6"></script>
 </body>
 </html>

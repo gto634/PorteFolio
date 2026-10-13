@@ -1,0 +1,95 @@
+/* Shared v0.4 — consumed by portfolio pages and component gallery. */
+:root {
+    --ds-color-background: #0c0b14;
+    --ds-color-surface: #232136;
+    --ds-color-card: #161420;
+    --ds-color-text: #e0def4;
+    --ds-color-muted: #b9b6c9;
+    --ds-color-accent: #f7bacf;
+    --ds-color-accent-hover: #ffdae7;
+    --ds-color-border: #e0def426;
+    --ds-color-border-accent: #f7bacf40;
+    --ds-color-veil-strong: #0c0b14f2;
+    --ds-color-veil-copy: #0c0b14ed;
+    --ds-color-veil-fade: #0c0b1466;
+    --ds-color-veil-edge: #0c0b1420;
+    --ds-color-modal-backdrop: #0c0b14df;
+
+    --ds-font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --ds-text-xs: 0.75rem;
+    --ds-text-sm: 0.8rem;
+    --ds-text-detail: 0.9rem;
+    --ds-text-body: 1rem;
+    --ds-text-card: 1.5rem;
+    --ds-text-banner: clamp(1.5rem, 2.8vw, 2.4rem);
+    --ds-text-project: clamp(2rem, 3.3vw, 3.1rem);
+    --ds-text-display: clamp(2.5rem, 6vw, 4.5rem);
+    --ds-leading-body: 1.65;
+    --ds-leading-heading: 1.1;
+
+    --ds-space-1: 4px;
+    --ds-space-2: 8px;
+    --ds-space-3: 12px;
+    --ds-space-4: 16px;
+    --ds-space-6: 24px;
+    --ds-space-8: 32px;
+    --ds-space-12: 48px;
+    --ds-space-16: 64px;
+    --ds-space-24: 96px;
+
+    --ds-radius-small: 6px;
+    --ds-radius-control: 8px;
+    --ds-radius-card: 10px;
+    --ds-radius-circle: 50%;
+    --ds-border-width: 1px;
+    --ds-focus-width: 3px;
+    --ds-focus-offset: 5px;
+    --ds-target-min: 44px;
+    --ds-control-height: 48px;
+    --ds-logo-size: 32px;
+    --ds-dot-size: 12px;
+    --ds-nav-inset: 16px;
+    --ds-nav-gap: 8px;
+    --ds-menu-width: 260px;
+    --ds-menu-padding: 12px;
+    --ds-wheel-idle: 160ms;
+    --ds-wheel-threshold: 10px;
+    --ds-video-margin: 32px;
+    --ds-video-max-width: 1120px;
+    --ds-content-width: 1280px;
+    --ds-copy-width: 620px;
+    --ds-page-gutter: clamp(24px, 6vw, 96px);
+
+    --ds-duration-tooltip: 160ms;
+    --ds-duration-feedback: 180ms;
+    --ds-duration-card: 220ms;
+    --ds-duration-expand: 500ms;
+    --ds-duration-scroll: 350ms;
+    --ds-cue-bounce-duration: 900ms;
+    --ds-cue-bounce-period: 1500ms;
+    --ds-cue-bounce-delay: 650ms;
+    --ds-ease-feedback: ease;
+    --ds-ease-layout: ease-in-out;
+    --ds-hover-lift: -2px;
+
+    --ds-project-veil: linear-gradient(90deg, var(--ds-color-veil-strong) 0%, var(--ds-color-veil-copy) 65%, var(--ds-color-veil-fade) 85%, var(--ds-color-veil-edge) 100%);
+    --ds-project-veil-mobile: linear-gradient(var(--ds-color-veil-copy), var(--ds-color-veil-strong));
+}
+
+/* CSS custom properties cannot be used directly in media query conditions.
+   Shared layout thresholds: 1024 / 700 / 600 / 380 px. */
+@media (max-width: 380px) {
+    :root { --ds-page-gutter: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --ds-duration-tooltip: 0ms;
+        --ds-duration-feedback: 0ms;
+        --ds-duration-card: 0ms;
+        --ds-duration-expand: 0ms;
+        --ds-duration-scroll: 0ms;
+        --ds-cue-bounce-duration: 0ms;
+        --ds-hover-lift: 0px;
+    }
+}

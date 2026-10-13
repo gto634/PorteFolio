@@ -1,0 +1,17 @@
+{
+  "source": "sources/hypercube/Hypercube.blend",
+  "source_sha256": "f6a216cacc99ad54b105571018e8ad34fd349376f967333f94ddbe90c506d4a5",
+  "animation": "Hypercube_Loop",
+  "frames": [
+    1,
+    47
+  ],
+  "fps": 24,
+  "duration_seconds": 1.9166666666666667,
+  "morph_targets": 46,
+  "joint_radius_scale": 0.85,
+  "loop_endpoint_max_error": 4.2146848510894035e-08,
+  "orientation": "rightward morph; Blender Y +90 degrees",
+  "glb_bytes": 4534264,
+  "gzip_bytes": 641480
+}

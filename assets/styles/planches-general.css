@@ -1,0 +1,5 @@
+/* Page layout. Interface components live in design-system/components.css. */
+.scroll-container { height: 100vh; height: 100dvh; overflow-y: auto; overflow-anchor: none; scroll-behavior: auto; scroll-padding-block: calc(var(--ds-navigation-clearance, 64px) + var(--ds-space-4)) var(--ds-space-8); }
+.planche { height: 100vh; height: 100dvh; width: 100%; overflow: hidden; scroll-snap-align: start; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2rem; position: relative; }
+.end-banner { scroll-snap-align: end; }
+@media (prefers-reduced-motion: reduce) { html, .scroll-container { scroll-behavior: auto; } }
