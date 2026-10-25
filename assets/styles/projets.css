@@ -5,6 +5,7 @@
 #projet-2 { --project-image: url('../backgrounds/isekaiwar.webp'); }
 #projet-3 { --project-image: url('../backgrounds/entrecote.webp'); }
 #projet-4 { --project-image: url('../backgrounds/spacerunner.webp'); }
+#projet-5 { --project-image: url('../backgrounds/outtanked.webp'); }
 .project-screen {
     --project-gutter: var(--ds-page-gutter);
     --project-copy-width: min(620px, 50vw);

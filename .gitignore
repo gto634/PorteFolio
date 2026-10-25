@@ -1,7 +1,5 @@
-# Local drafts, screenshots and old one-off AI experiments.
-/tools/ai/archive/
-/tools/ai/local/
-/tools/ai/reports/
+# Local AI instructions, references, drafts, screenshots and archives.
+/tools/ai/
 
 # Generated caches and operating-system files.
 __pycache__/

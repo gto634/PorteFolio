@@ -99,21 +99,56 @@
         960,
         566
       ]
+    },
+    {
+      "source": "projects/Out-Tanked!/Splashscreen.png",
+      "output": "assets/backgrounds/outtanked.webp",
+      "source_bytes": 615787,
+      "output_bytes": 43912,
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "source": "projects/Out-Tanked!/Thumbnail.png",
+      "output": "assets/thumbnails/outtanked.webp",
+      "source_bytes": 529328,
+      "output_bytes": 21908,
+      "size": [
+        960,
+        540
+      ]
     }
   ],
   "videos": [
     {
+      "source": "projects/NecromancerMagicalGirl/Gameplay.mp4",
+      "output": "assets/videos/necromancer.mp4",
+      "source_bytes": 398359488,
+      "output_bytes": 80063714,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "fps": 60.0,
+      "duration": 128.15,
+      "faststart": true,
+      "crf": 26
+    },
+    {
       "source": "projects/Tatamiam/Gameplay.mp4",
       "output": "assets/videos/tatamiam.mp4",
-      "source_bytes": 92821784,
-      "output_bytes": 61510196,
+      "source_bytes": 66728328,
+      "output_bytes": 41016426,
       "resolution": [
-        2560,
-        1440
+        1920,
+        1080
       ],
-      "fps": 30.0,
-      "duration": 49.92,
-      "faststart": true
+      "fps": 60.0,
+      "duration": 49.9,
+      "faststart": true,
+      "audio_streams": 0
     },
     {
       "source": "projects/IsekaiWar/Gameplay.mp4",
@@ -131,15 +166,16 @@
     {
       "source": "projects/Entrecote/Gameplay.mp4",
       "output": "assets/videos/entrecote.mp4",
-      "source_bytes": 60556062,
-      "output_bytes": 8041739,
+      "source_bytes": 25890912,
+      "output_bytes": 4599182,
       "resolution": [
-        2560,
-        1440
+        1920,
+        1080
       ],
       "fps": 60.0,
-      "duration": 36.08,
-      "faststart": true
+      "duration": 36.07,
+      "faststart": true,
+      "audio_streams": 0
     },
     {
       "source": "projects/SpaceRunner/Gameplay.mp4",
@@ -152,6 +188,19 @@
       ],
       "fps": 60.0,
       "duration": 53.85,
+      "faststart": true
+    },
+    {
+      "source": "projects/Out-Tanked!/Gameplay.mp4",
+      "output": "assets/videos/outtanked.mp4",
+      "source_bytes": 38561060,
+      "output_bytes": 8168472,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "fps": 60.0,
+      "duration": 37.01,
       "faststart": true
     }
   ]

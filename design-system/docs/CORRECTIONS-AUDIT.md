@@ -402,3 +402,67 @@ Vérifications : aucune commande de personnalisation dans le DOM ; icônes
 Échap et retour du focus pour le menu et l’aperçu vidéo. Aucune erreur console
 observée. Identifiants, ancres et ressources contrôlés. L’export autonome
 embarque désormais aussi les masques SVG, le fond quadrillé et le favicon.
+
+## Out-Tanked! et texte de SpaceRunner — 17 octobre 2026
+
+- **Out-Tanked!** devient une fiche autonome, `outtanked.html#projet-5`, sur
+  le modèle de SpaceRunner, et la sixième carte de la collection (catégorie
+  Jeu, sans année). Textes repris de `projects/Out-Tanked!/Texte à intégrer.txt` :
+  pitch, rôle, équipe, durée et quatre réalisations. Moteur CPU Engine ; ni
+  langage ni outil affichés. Vidéo disponible ; « GitHub — à venir » désactivé.
+- Médias : fond et miniature WebP générés depuis `Splashscreen.png` et
+  `Thumbnail.png`. La vidéo source était en HEVC, peu lue par les
+  navigateurs : dérivé H.264 de 8,2 Mio, 1920 × 1080, 60 i/s, 37 s,
+  `faststart`. `Visual.png` et `Editable.pdn` restent des sources.
+  `optimize-media.py` et `media-manifest.json` incluent le projet.
+- **SpaceRunner** reprend le texte de `projects/SpaceRunner/Texte à intégrer.txt` :
+  pitch au vouvoiement, rôle « Co-création et dev généraliste » (clé propre
+  `space.role`), équipe « 2 personnes », quatre nouvelles réalisations, aucun
+  outil (Blender retiré). Carte de collection actualisée.
+- Anglais ajouté dans `i18n.js`, chargé en `?v=1.0.7` (galerie `?v=1.1.1`).
+- Vérifications : `check-site.py` sans erreur (31 fichiers, 221 références) ;
+  syntaxe de `i18n.js` ; rendu de la fiche, de SpaceRunner et de la collection
+  en français et en anglais, à 1440 × 900 et 390 × 844, sans débordement ni
+  erreur de page. Lecture vidéo dans le navigateur de Ryad à confirmer.
+- Corrections validées par Ryad le même jour : « tous vos amis » et
+  « Arriverez-vous » dans le pitch d’Out-Tanked! ; réalisation de SpaceRunner
+  reformulée en « Génération aléatoire des tiles et de leur logique. », sur la
+  fiche et la carte de collection.
+
+## Vidéo de Necromancer x Magical Girl — 25 octobre 2026
+
+- Le bouton « Voir la vidéo » ouvre le lecteur commun depuis la fiche à la
+  une, avec la miniature existante et les libellés FR/EN déjà partagés.
+- `assets/videos/necromancer.mp4` est généré par la fonction `video` de
+  `tools/media/optimize-media.py` : H.264, CRF 20, AAC 160 kbit/s, `faststart`.
+  La source est conservée ; résolution 1920 × 1080, 60 i/s et durée 128,15 s
+  inchangées. Le fichier passe de 398 359 488 à 178 276 744 octets.
+- Vérifications : décodage complet audio/vidéo sans erreur, métadonnées MP4
+  avant les données vidéo, 31 fichiers et 223 références locales contrôlés.
+  Bouton actif en français et en anglais, lecture dans le navigateur,
+  fermeture par Échap et libération de la source du lecteur confirmées.
+
+## Tatamiam et EntreCôte sans son — 25 octobre 2026
+
+- Les exports web reprennent les nouvelles sources HEVC de `projects/` en
+  1920 × 1080 à 60 i/s : H.264, CRF 20 et `faststart`. Tatamiam pèse
+  41 016 426 octets et EntreCôte 4 599 182 octets. Les sources restent intactes.
+- Les pistes audio sont retirées avec `-an`. Cette règle est conservée dans
+  `SILENT_VIDEOS` de `optimize-media.py` pour les prochains exports.
+- Vérifications des deux fichiers : exactement une piste vidéo, zéro piste
+  audio dans la structure MP4 et aucune piste audio détectée par FFmpeg ;
+  décodage intégral sans erreur. Les nombres d'images des sources sont
+  conservés : 2 994 pour Tatamiam et 2 164 pour EntreCôte.
+- Le manifeste décrit les nouveaux médias, avec `audio_streams: 0`. Les URL
+  des deux vidéos dans l'accueil portent `?v=20261025` pour renouveler le cache.
+  Le contrôle du site passe : 31 fichiers et 223 références locales.
+
+## Médias compatibles avec GitHub Pages — 25 octobre 2026
+
+- La vidéo web de Necromancer est exportée en H.264 CRF 26 pour respecter la
+  limite de 100 Mio par fichier Git : 80 063 714 octets. La résolution
+  1920 × 1080, les 60 i/s, la durée et la piste audio sont conservées, avec
+  `faststart`. Le manifeste et le guide des médias décrivent cet export.
+- L'original de 398 359 488 octets reste intact et est versionné avec Git LFS.
+  Les vidéos servies par le site restent des fichiers MP4 ordinaires dans Git,
+  afin que GitHub Pages puisse les publier directement.

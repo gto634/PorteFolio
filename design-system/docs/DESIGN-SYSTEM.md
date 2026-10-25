@@ -350,7 +350,9 @@ Unity 6, Blender et Figma restent les logos validés pour Necromancer.
 
 Champs actuels : Necromancer C# / Unity 6 (C# fourni par Ryad dans la fiche
 initiale, pas déduit du logo) ; Tatamiam C++ / EntreCôte ; IsekaiWar! C++ / SFML ;
-EntreCôte C++ / Direct3D 12 ; SpaceRunner C++ / GC Engine.
+EntreCôte C++ / Direct3D 12 ; SpaceRunner C++ / GC Engine ; Out-Tanked! CPU Engine
+(langage à confirmer). SpaceRunner et Out-Tanked! n’affichent aucun outil, à la
+demande de Ryad (« outil : aucun »).
 
 ## 6. Mouvement et navigation
 

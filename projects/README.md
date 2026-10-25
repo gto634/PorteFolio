@@ -1,7 +1,7 @@
 # Médias originaux des projets
 
 Chaque projet conserve son dossier : `NecromancerMagicalGirl`, `Tatamiam`,
-`IsekaiWar`, `Entrecote` et `SpaceRunner`.
+`IsekaiWar`, `Entrecote`, `SpaceRunner` et `Out-Tanked!`.
 
 - `Splashscreen.png` : fond du projet.
 - `Thumbnail.png` : miniature de collection et affiche vidéo.

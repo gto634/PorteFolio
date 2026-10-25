@@ -13,7 +13,7 @@ objectif, leur structure et leur mode de défilement changent.
 | Projets à la une | `index.html#necromancer-magical-girl`, `#projet-1`, `#projet-2`, `#projet-3` | Présenter une sélection et les compétences démontrées. | Écrans extensibles ; un défilement principal, passage automatique par geste. |
 | Contact | `index.html#contact` | Faciliter la prise de contact et l’accès à la collection. | Bannière courte, dernière étape de l’accueil. |
 | Collection | `projets.html` | Explorer l’ensemble des projets. | Page à défilement naturel. |
-| Projet autonome | `spacerunner.html#projet-4` | Conserver un projet hors de la sélection à la une. | Contenu du projet accessible sans dépendre de l’accueil. |
+| Projets autonomes | `spacerunner.html#projet-4`, `outtanked.html#projet-5` | Présenter un projet hors de la sélection à la une. | Contenu du projet accessible sans dépendre de l’accueil. |
 
 ## 1. Navigation compacte commune
 
@@ -88,7 +88,7 @@ L’animation des actions du menu s’applique aussi aux boutons de réglage.
 
 Pour un **jeu**, parler au visiteur à la deuxième personne et à l’impératif.
 Les nouveaux pitches validés utilisent le vouvoiement : « Incarnez… »,
-« Explorez… », « Protégez… ». Conserver la rédaction validée de SpaceRunner.
+« Explorez… », « Protégez… ». La rédaction de SpaceRunner a été actualisée par Ryad le 17 octobre 2026.
 Expliquer ce que le joueur fait ; les détails techniques appartiennent aux réalisations.
 
 Pour un **moteur ou outil**, décrire directement son usage et son intérêt. Ne
@@ -149,6 +149,8 @@ sans cadre sur tout l’écran.
   IsekaiWar! → `https://github.com/gto634/IsekaiWar`,
   EntreCôte → `https://github.com/gto634/EntreCote`,
   SpaceRunner → `https://github.com/gto634/SpaceRunner`.
+- Out-Tanked! (fiche autonome) : vidéo disponible, **GitHub — à venir** tant
+  que l’URL du dépôt n’est pas fournie.
 - À la publication, utiliser les URL exactes fournies par Ryad et les vérifier
   dans une session sans connexion avant activation.
 
@@ -210,7 +212,9 @@ de résultats → grille → pied de page.
   entre une carte et sa destination.
 
 Ordre actuel : Necromancer x Magical Girl, Tatamiam, IsekaiWar!, EntreCôte,
-SpaceRunner. **SpaceRunner est conservé dans la collection, hors de l’accueil.**
+SpaceRunner, Out-Tanked!. **SpaceRunner et Out-Tanked! figurent dans la
+collection, hors de l’accueil.** La carte d’Out-Tanked! n’affiche pas d’année
+tant qu’elle n’est pas renseignée.
 
 ## 6. Fiche autonome / projet conservé
 
@@ -219,7 +223,9 @@ réalisations, Vidéo / GitHub et média disponible. Le défilement reste nature
 aucun geste ne déclenche une navigation vers une autre page. Le titre devient le `h1` du document. Fournir un
 lien explicite « Tous les projets » pour revenir à la collection.
 
-SpaceRunner utilise désormais un `h1` et reste accessible via `spacerunner.html#projet-4`. Conserver sa page,
+SpaceRunner utilise désormais un `h1` et reste accessible via `spacerunner.html#projet-4`.
+Out-Tanked! suit le même modèle : `outtanked.html#projet-5`, sans outil ni
+langage affiché, en l’absence de ces informations. Conserver sa page,
 son ancre et ses médias, même s’il n’apparaît plus à la une. Retirer un projet
 de la sélection ne signifie pas supprimer ses fichiers.
 

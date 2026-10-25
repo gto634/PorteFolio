@@ -8,6 +8,9 @@ dérivés optimisés :
   qualité 88. Les proportions sont conservées ; le composant peut recadrer la carte.
 - `videos/<projet>.mp4` : vidéo complète en H.264, CRF 20, AAC 160 kbit/s,
   `faststart`. Résolution, cadence et durée conservées.
+  Tatamiam et EntreCôte sont exportés sans aucune piste audio (`-an`).
+  Necromancer utilise un CRF de 26 pour rester sous la limite de 100 Mio
+  par fichier de GitHub et rester compatible avec GitHub Pages.
 - `media-manifest.json` : correspondance avec les sources, tailles et données
   vérifiées lors de la migration.
 
