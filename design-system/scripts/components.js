@@ -84,9 +84,11 @@
     document.addEventListener('focusin', event => {
         const target = event.target;
         const nav = document.querySelector('.ds-compact-nav:not(.ds-compact-nav--example)');
-        if (!nav || nav.contains(target) || document.body.hasAttribute('data-video-open') || !target.matches(':focus-visible')) return;
-        const box = target.getBoundingClientRect(), cover = navigationBounds(nav);
-        if (box.left < cover.right && box.right > cover.left && box.top < cover.bottom + 8 && box.bottom > cover.top) {
+        if (!nav || nav.contains(target) || target.closest('.project-back') || document.body.hasAttribute('data-video-open') || !target.matches(':focus-visible')) return;
+        const box = target.getBoundingClientRect();
+        const covers = [navigationBounds(nav), ...[...document.querySelectorAll('.project-back')].map(link => link.getBoundingClientRect())];
+        const cover = covers.find(cover => box.left < cover.right && box.right > cover.left && box.top < cover.bottom + 8 && box.bottom > cover.top);
+        if (cover) {
             const scroll = target.closest('.scroll-container') || document.scrollingElement;
             const section = target.closest('.project-screen');
             const sectionStart = section ? section.getBoundingClientRect().top - scroll.getBoundingClientRect().top + scroll.scrollTop : 0;

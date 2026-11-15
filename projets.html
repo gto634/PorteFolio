@@ -2,9 +2,9 @@
 <html lang="fr" data-i18n-page>
 <head>
     <meta charset="UTF-8">
-    <script src="assets/scripts/i18n.js?v=1.0.7"></script>
+    <script src="assets/scripts/i18n.js?v=1.1.2"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Les jeux et moteurs de Ryad Mahiou : Necromancer x Magical Girl, Tatamiam, IsekaiWar!, EntreCôte, SpaceRunner et Out-Tanked!." data-i18n-content="collection.meta">
+    <meta name="description" content="Les jeux et moteurs de Ryad Mahiou : Dungeon Roller, Necromancer x Magical Girl, Tatamiam, EntreCôte, SpaceRunner et Out-Tanked!." data-i18n-content="collection.meta">
     <title data-i18n="collection.pageTitle">Tous les projets — MAHIOU Ryad</title>
     <link rel="icon" type="image/png" href="assets/icons/Hypercube.png">
     <link rel="stylesheet" href="design-system/styles/tokens.css">
@@ -32,7 +32,7 @@
                 <button class="ds-menu-toggle" type="button" aria-expanded="false" aria-controls="portfolio-menu" hidden aria-label="Ouvrir le menu" data-i18n-aria-label="nav.open"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
                 <nav class="ds-menu-panel" id="portfolio-menu" aria-label="Navigation principale" data-i18n-aria-label="nav.main">
             <a href="./index.html#intro" data-nav-destination="intro"><span data-i18n="nav.home">Accueil</span><span class="ds-icon ds-icon--home" aria-hidden="true"></span></a>
-            <a href="./index.html#necromancer-magical-girl" data-nav-destination="featured"><span data-i18n="nav.featured">À la une</span><span class="ds-icon ds-icon--sparkles" aria-hidden="true"></span></a>
+            <a href="./index.html#dungeon-roller" data-nav-destination="featured"><span data-i18n="nav.featured">À la une</span><span class="ds-icon ds-icon--sparkles" aria-hidden="true"></span></a>
             <a href="./index.html#contact" data-nav-destination="contact"><span data-i18n="nav.contact">Contact</span><span class="ds-icon ds-icon--phone" aria-hidden="true"></span></a>
             <a href="./projets.html" data-nav-destination="collection" aria-current="page"><span data-i18n="nav.collection">Tout mes projets</span><span class="ds-icon ds-icon--collection" aria-hidden="true"></span></a>
         </nav>
@@ -56,7 +56,19 @@
         <p class="ds-empty catalogue-empty" hidden data-i18n="collection.empty">Aucun projet dans cette catégorie. Choisissez « Tous » pour retrouver la collection.</p>
         <ul class="project-grid" aria-label="Liste des projets" data-i18n-aria-label="collection.list">
             <li class="project-card" data-category="jeu">
-                <a class="ds-card" href="index.html#necromancer-magical-girl" aria-labelledby="card-necromancer">
+                <a class="ds-card" href="dungeonroller.html" aria-labelledby="card-dungeonroller">
+                    <img src="assets/thumbnails/dungeonroller.webp" alt="" width="960" height="540" loading="eager" decoding="async">
+                    <div class="ds-card-body">
+                        <div class="ds-card-meta"><span data-i18n="collection.game">Jeu</span></div>
+                        <h2 class="ds-card-title" id="card-dungeonroller">Dungeon Roller</h2>
+                        <p data-i18n="dungeon.card">Roulez à travers un donjon, évitez les pièges et récoltez de l’expérience pour atteindre la sortie.</p>
+                        <p class="ds-card-proof" data-i18n="dungeon.work1">Génération du donjon et des pièges (BSP, SRP, Noise).</p>
+                        <span class="ds-card-cta"><span data-i18n="action.discover">Découvrir le projet</span> <span aria-hidden="true">→</span></span>
+                    </div>
+                </a>
+            </li>
+            <li class="project-card" data-category="jeu">
+                <a class="ds-card" href="necromancer.html" aria-labelledby="card-necromancer">
                     <img src="assets/thumbnails/necromancer.webp" alt="" width="960" height="540" loading="eager" decoding="async">
                     <div class="ds-card-body">
                         <div class="ds-card-meta"><span data-i18n="collection.game">Jeu</span><span>2026</span></div>
@@ -67,7 +79,7 @@
                     </div>
                 </a>
             </li><li class="project-card" data-category="jeu">
-                <a class="ds-card" href="index.html#projet-1" aria-labelledby="card-tatamiam">
+                <a class="ds-card" href="tatamiam.html" aria-labelledby="card-tatamiam">
                     <img src="assets/thumbnails/tatamiam.webp" alt="" width="960" height="540" loading="lazy" decoding="async">
                     <div class="ds-card-body">
                         <div class="ds-card-meta"><span data-i18n="collection.game">Jeu</span><span>2026</span></div>
@@ -77,19 +89,8 @@
                         <span class="ds-card-cta"><span data-i18n="action.discover">Découvrir le projet</span> <span aria-hidden="true">→</span></span>
                     </div>
                 </a>
-            </li><li class="project-card" data-category="jeu">
-                <a class="ds-card" href="index.html#projet-2" aria-labelledby="card-isekaiwar">
-                    <img src="assets/thumbnails/isekaiwar.webp" alt="" width="960" height="540" loading="lazy" decoding="async">
-                    <div class="ds-card-body">
-                        <div class="ds-card-meta"><span data-i18n="collection.game">Jeu</span><span>2024</span></div>
-                        <h2 class="ds-card-title" id="card-isekaiwar">IsekaiWar!</h2>
-                        <p data-i18n="isekai.card">Protégez votre monde magique des vaisseaux aliens dans un shoot ’em up 2D.</p>
-                        <p class="ds-card-proof" data-i18n="isekai.work1">Développement d’une architecture d’héritage complète.</p>
-                        <span class="ds-card-cta"><span data-i18n="action.discover">Découvrir le projet</span> <span aria-hidden="true">→</span></span>
-                    </div>
-                </a>
             </li><li class="project-card" data-category="moteur">
-                <a class="ds-card" href="index.html#projet-3" aria-labelledby="card-entrecote">
+                <a class="ds-card" href="entrecote.html" aria-labelledby="card-entrecote">
                     <img src="assets/thumbnails/entrecote.webp" alt="" width="960" height="540" loading="lazy" decoding="async">
                     <div class="ds-card-body">
                         <div class="ds-card-meta"><span data-i18n="technical.engine">Moteur</span><span>2026</span></div>
@@ -125,7 +126,7 @@
         </ul>
         <footer class="catalogue-footer">
             <p>MAHIOU Ryad <span data-i18n="collection.footer">· Jeux & moteurs</span></p>
-            <div><a class="ds-link ds-nav-link" href="index.html#necromancer-magical-girl"><span data-i18n="nav.featured">À la une</span> <span aria-hidden="true">→</span></a><a class="ds-link ds-nav-link" href="index.html#contact">Contact <span aria-hidden="true">→</span></a></div>
+            <div><a class="ds-link ds-nav-link" href="index.html#dungeon-roller"><span data-i18n="nav.featured">À la une</span> <span aria-hidden="true">→</span></a><a class="ds-link ds-nav-link" href="index.html#contact">Contact <span aria-hidden="true">→</span></a></div>
         </footer>
     </main>
     <script src="design-system/scripts/toon-motion.js?v=1.0.6"></script>

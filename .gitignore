@@ -1,6 +1,9 @@
 # Local AI instructions, references, drafts, screenshots and archives.
 /tools/ai/
 
+# Large local gameplay source. The portfolio serves the optimized web copy.
+/projects/DungeonRoller/Gameplay.mp4
+
 # Generated caches and operating-system files.
 __pycache__/
 *.py[cod]

@@ -1,0 +1,15 @@
+durée : 2 semaines | équipe : 3 | moteur : unity | logiciels : Blender / Photoshop | language : c#
+
+
+Roulez à travers un donjon afin de trouver la sortie !
+
+Slalomez entre les différents pièges jusqu'à atteindre le ressort géant et vous envoler dans les cieux.
+
+À travers les différentes salles, récoltez un maximum d'expérience pour améliorer vos statistiques et survivre au mieux.
+
+rôle: dev gameplay
+
+- Génération du donjon, et des pièges (BSP, SRP, Noise)
+- Shader visuel, et cohérence graphique.
+- Boucle de jeu, du menu à l'écran de fin
+- Modifications d'assets et intégration en jeu

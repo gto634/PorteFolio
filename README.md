@@ -1,7 +1,7 @@
 # Portfolio — Ryad Mahiou
 
-Portfolio statique de jeux et moteurs. Les trois pages publiques restent à la
-racine : `index.html`, `projets.html` et `spacerunner.html`. Aucun build ni
+Portfolio statique de jeux et moteurs. Les pages publiques restent à la
+racine : `index.html`, `projets.html` et une page dédiée par projet. Aucun build ni
 serveur applicatif n’est nécessaire pour les publier.
 
 ## Organisation
@@ -42,6 +42,12 @@ de lancement. Pour les recréer sous Windows : `tools/create-shortcuts.ps1`.
 Le français se modifie dans le HTML. L’anglais et les libellés dynamiques se
 trouvent dans [i18n.js](assets/scripts/i18n.js). Les règles graphiques sont dans
 [les règles de pages](design-system/docs/REGLES-PAGES.md).
+
+Chaque carte de la collection ouvre sa fiche dédiée (`dungeonroller.html`,
+`necromancer.html`, `tatamiam.html`, `entrecote.html`, `spacerunner.html` ou
+`outtanked.html`). Le bouton en haut à gauche de chaque fiche revient à la
+collection. Les projets à la une gardent aussi leur présentation sur l’accueil :
+actualiser les deux versions de leur contenu lors d’une modification.
 
 Déposer les visuels dans `projects/<NomDuProjet>/`, puis suivre
 [le guide des médias](assets/README.md) pour régénérer les versions web.

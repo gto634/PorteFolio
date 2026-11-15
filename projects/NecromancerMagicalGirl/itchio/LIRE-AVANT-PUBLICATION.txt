@@ -1,0 +1,14 @@
+FICHE ITCH.IO — NECROMANCER × MAGICAL GIRL
+
+Référence : https://thib387.itch.io/tata-miam
+Texte anglais prêt à coller : description-en.html ou description-en.txt.
+Titre et champs de la fiche : publication.json.
+Bannière : images/banner-title.png, déjà transparente.
+Couverture : images/cover.png, copie de Visual.png.
+Fond : images/background.png, copie de Splashscreen2.png.
+Six captures de gameplay : images/01-*.png à images/06-*.png.
+Ordre, minutages et légendes : captures.csv.
+Fichier du jeu : Necromancer-X-MagicalGirl-Windows.zip.
+Le build original est intact ; seule sa copie de diffusion exclut le dossier BurstDebugInformation_DoNotShip. Tous les fichiers runtime sont identiques à ceux fournis.
+Plateforme vérifiée : Windows x64. Intégrité ZIP vérifiée. Le programme n’a pas été exécuté pendant cette préparation.
+La fiche est préparée en brouillon, pour relecture avant publication.

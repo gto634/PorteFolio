@@ -10,10 +10,10 @@ objectif, leur structure et leur mode de défilement changent.
 | Écran | Destination actuelle | Objectif | Défilement |
 | --- | --- | --- | --- |
 | Introduction | `index.html#intro` | Identifier Ryad et inviter à découvrir ses projets. | Premier écran de l’accueil. |
-| Projets à la une | `index.html#necromancer-magical-girl`, `#projet-1`, `#projet-2`, `#projet-3` | Présenter une sélection et les compétences démontrées. | Écrans extensibles ; un défilement principal, passage automatique par geste. |
+| Projets à la une | `index.html#dungeon-roller`, `#necromancer-magical-girl`, `#projet-1`, `#projet-3` | Présenter une sélection et les compétences démontrées. | Écrans extensibles ; un défilement principal, passage automatique par geste. |
 | Contact | `index.html#contact` | Faciliter la prise de contact et l’accès à la collection. | Bannière courte, dernière étape de l’accueil. |
 | Collection | `projets.html` | Explorer l’ensemble des projets. | Page à défilement naturel. |
-| Projets autonomes | `spacerunner.html#projet-4`, `outtanked.html#projet-5` | Présenter un projet hors de la sélection à la une. | Contenu du projet accessible sans dépendre de l’accueil. |
+| Fiches dédiées | `dungeonroller.html`, `necromancer.html`, `tatamiam.html`, `entrecote.html`, `spacerunner.html`, `outtanked.html` | Présenter chaque projet depuis la collection. | Contenu du projet accessible sans dépendre de l’accueil. |
 
 ## 1. Navigation compacte commune
 
@@ -74,10 +74,11 @@ ordre, que la colonne soit à gauche ou à droite :
 4. **Mon rôle · Équipe · Durée**, dans une liste de faits compacte.
 5. **Mes réalisations** : quatre contributions directement visibles dans
    `ul.ds-proof`, sans dépliable « Détails de mes réalisations ».
-6. **Deux actions constantes** : Vidéo principale, puis Code source secondaire,
-   avec le logo GitHub et un lien vers le dépôt du projet.
-   Si une ressource manque : bouton désactivé « Vidéo — à venir » ou
-   « GitHub — à venir », sans faux href ni lecteur vide.
+6. **Actions disponibles** : Vidéo principale, puis Code source secondaire
+   avec le logo GitHub uniquement si le lien vers le dépôt du projet est fourni.
+   Sans lien de code source, ne pas afficher cette action, même désactivée,
+   ni de libellé d’attente. Si la vidéo manque, utiliser le bouton désactivé
+   « Vidéo — à venir », sans faux href ni lecteur vide.
 
 Le groupe technique réutilise `ds-stack` : `ds-stack-technical` pour le langage
 et la technologie, `ds-stack-tools` pour les logiciels. Logo et nom d’un
@@ -144,13 +145,18 @@ sans cadre sur tout l’écran.
 - Langage : **C#**, renseigné par Ryad dans sa fiche initiale ; moteur **Unity 6**.
 - Actions : **Vidéo — à venir** et **Code source**, vers
   `https://github.com/gto634/Necromancer-x-MagicalGirl`.
-- Les quatre autres fiches ont une vidéo disponible et un lien Code source :
+- Dungeon Roller ouvre la sélection et reprend ce gabarit : **C# / Unity**,
+  outils **Blender / Photoshop**, faits **Dev Gameplay · 3 personnes · 2 semaines**.
+  Son pitch et ses quatre réalisations proviennent de
+  `projects/DungeonRoller/Texte à intégrer.txt`. L’accueil et la fiche dédiée
+  proposent **Voir la vidéo** (`assets/videos/dungeonroller.mp4`) et
+  **Code source** (`https://github.com/gto634/Dungeon-Roller`).
+- Les trois autres fiches ont une vidéo disponible et un lien Code source :
   Tatamiam → `https://github.com/gto634/Tata-Miam`,
-  IsekaiWar! → `https://github.com/gto634/IsekaiWar`,
   EntreCôte → `https://github.com/gto634/EntreCote`,
   SpaceRunner → `https://github.com/gto634/SpaceRunner`.
-- Out-Tanked! (fiche autonome) : vidéo disponible, **GitHub — à venir** tant
-  que l’URL du dépôt n’est pas fournie.
+- Out-Tanked! (fiche autonome) : vidéo disponible ; aucune action Code source
+  tant que l’URL du dépôt n’est pas fournie.
 - À la publication, utiliser les URL exactes fournies par Ryad et les vérifier
   dans une session sans connexion avant activation.
 
@@ -207,21 +213,31 @@ de résultats → grille → pied de page.
 - Filtres « Tous », « Jeux », « Moteurs » avec état `aria-pressed` et nombre
   de résultats annoncé. Prévoir un message si un filtre n’a aucun résultat.
 - Sans JavaScript, les cartes restent visibles et leurs liens utilisables.
-- Les projets de la sélection renvoient à leur ancre d’accueil ; les autres
-  disposent d’une fiche autonome. Garder les titres et les visuels cohérents
+- Toutes les cartes ouvrent une fiche dédiée, y compris les projets à la une.
+  Garder les titres, les textes et les visuels cohérents
   entre une carte et sa destination.
 
-Ordre actuel : Necromancer x Magical Girl, Tatamiam, IsekaiWar!, EntreCôte,
+Ordre actuel : Dungeon Roller, Necromancer x Magical Girl, Tatamiam, EntreCôte,
 SpaceRunner, Out-Tanked!. **SpaceRunner et Out-Tanked! figurent dans la
 collection, hors de l’accueil.** La carte d’Out-Tanked! n’affiche pas d’année
-tant qu’elle n’est pas renseignée.
+tant qu’elle n’est pas renseignée. IsekaiWar! est retiré de l’accueil et de la
+collection ; ses médias originaux restent conservés.
 
 ## 6. Fiche autonome / projet conservé
 
 Réutiliser le gabarit : titre, langage / technologie, outils, pitch, faits,
-réalisations, Vidéo / GitHub et média disponible. Le défilement reste naturel ;
+réalisations, action Vidéo et action Code source si son lien est fourni, puis
+média disponible. Le défilement reste naturel ;
 aucun geste ne déclenche une navigation vers une autre page. Le titre devient le `h1` du document. Fournir un
-lien explicite « Tous les projets » pour revenir à la collection.
+lien explicite « Tous les projets » pour revenir à la collection : bouton fixe
+en haut à gauche, flèche de retour décorative, destination `projets.html`.
+Il reste disponible pendant le défilement et se masque avec les autres commandes
+pendant la vidéo. Sous 600 px, les menus occupent la ligne suivante pour ne pas
+recouvrir le retour. Réserver l’espace supérieur sur toutes les fiches.
+
+Les projets à la une disposent aussi de `dungeonroller.html`, `necromancer.html`,
+`tatamiam.html` et `entrecote.html`. Leur contenu reprend exactement celui de
+l’accueil, avec un `h1` ; conserver les deux présentations synchronisées.
 
 SpaceRunner utilise désormais un `h1` et reste accessible via `spacerunner.html#projet-4`.
 Out-Tanked! suit le même modèle : `outtanked.html#projet-5`, sans outil ni
@@ -244,7 +260,7 @@ Rassembler les informations suivantes, sans inventer celles qui manquent :
 | Année | Pour la collection, si renseignée. |
 | Fond et miniature | Images paysage, idéalement 16:9 ; sujet à préserver au recadrage. |
 | Vidéo | Facultative ; fichier disponible et affiche du lecteur. |
-| Liens | URL publique GitHub confirmée ; sinon état à venir. |
+| Liens | URL publique GitHub confirmée ; sinon aucune action Code source. |
 | Position | À la une ou collection seule ; ordre voulu et éventuel projet remplacé. |
 
 Créer un dossier de projet selon la convention existante, par exemple
@@ -262,7 +278,7 @@ inline dont le chemin serait résolu ailleurs lors de son utilisation.
 - [ ] Pitch distinct des réalisations ; faits cohérents sur carte et fiche.
 - [ ] Ordre des projets, ancres et navigation mis à jour ensemble.
 - [ ] Aucun contenu fictif, lien vide, média cassé ou lecteur sans vidéo.
-- [ ] Deux actions Vidéo / GitHub dans cet ordre ; états à venir explicites.
+- [ ] Vidéo puis Code source si son URL est fournie ; aucune action de code source sans lien.
 - [ ] Langage visible distinct des outils ; technologie correctement classée.
 - [ ] Menu testé au clic, Entrée, Espace, Tab, Échap et clic extérieur.
 - [ ] Rendu vérifié à 320, 390, 768 et 1440 px et au zoom 200 %.

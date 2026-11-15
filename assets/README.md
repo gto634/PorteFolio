@@ -11,6 +11,8 @@ dérivés optimisés :
   Tatamiam et EntreCôte sont exportés sans aucune piste audio (`-an`).
   Necromancer utilise un CRF de 26 pour rester sous la limite de 100 Mio
   par fichier de GitHub et rester compatible avec GitHub Pages.
+  Dungeon Roller passe de 1440p à 1080p à 60 i/s, avec un débit vidéo cible de
+  3 Mbit/s. Le fichier source de 1,18 Go reste en local.
 - `media-manifest.json` : correspondance avec les sources, tailles et données
   vérifiées lors de la migration.
 

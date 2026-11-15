@@ -105,10 +105,12 @@ quand il est ouvert. Les fiches peuvent s’allonger dans le défilement princip
 Les flèches purement décoratives sont `aria-hidden`. Un lien qui ouvre un nouvel
 onglet l’indique aux technologies d’assistance et utilise `rel="noopener
 noreferrer"`. Un changement de page est un lien ; une ouverture de lecteur ou
-un filtre est un bouton. Chaque fiche garde deux actions dans cet ordre :
-« ▶ Voir la vidéo » principale, puis « Code source ↗ » secondaire avec logo GitHub. Une ressource
-non publiée utilise un vrai bouton désactivé « Vidéo — à venir » ou
-« GitHub — à venir ». Sa couleur secondaire reste lisible, sans opacité globale.
+un filtre est un bouton. Les actions de chaque fiche suivent cet ordre :
+« ▶ Voir la vidéo » principale, puis « Code source ↗ » secondaire avec logo
+GitHub uniquement lorsqu’une URL de dépôt est disponible. Sans lien de code
+source, ne montrer aucun bouton, logo GitHub ni libellé d’attente pour cette action.
+Une vidéo non publiée utilise un vrai bouton désactivé « Vidéo — à venir ».
+Sa couleur secondaire reste lisible, sans opacité globale.
 Aucun faux lien, href vide ou chargement d’un média manquant.
 
 Pour Necromancer x Magical Girl, afficher **Unity 6, Blender et Figma**. Les
@@ -348,8 +350,9 @@ aligne ces libellés et valeurs ; la technologie utilise `ds-stack-technical`,
 les outils `ds-stack-tools`. Aucun logo C++ dupliqué.
 Unity 6, Blender et Figma restent les logos validés pour Necromancer.
 
-Champs actuels : Necromancer C# / Unity 6 (C# fourni par Ryad dans la fiche
-initiale, pas déduit du logo) ; Tatamiam C++ / EntreCôte ; IsekaiWar! C++ / SFML ;
+Champs actuels : Dungeon Roller C# / Unity (outils Blender et Photoshop) ;
+Necromancer C# / Unity 6 (C# fourni par Ryad dans la fiche
+initiale, pas déduit du logo) ; Tatamiam C++ / EntreCôte ;
 EntreCôte C++ / Direct3D 12 ; SpaceRunner C++ / GC Engine ; Out-Tanked! CPU Engine
 (langage à confirmer). SpaceRunner et Out-Tanked! n’affichent aucun outil, à la
 demande de Ryad (« outil : aucun »).

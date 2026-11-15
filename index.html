@@ -2,7 +2,7 @@
 <html lang="fr" data-i18n-page>
 <head>
     <meta charset="UTF-8">
-    <script src="assets/scripts/i18n.js?v=1.0.7"></script>
+    <script src="assets/scripts/i18n.js?v=1.1.2"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>MAHIOU Ryad</title> 
@@ -13,12 +13,12 @@
     <link rel="stylesheet" href="design-system/styles/components.css?v=1.0.6">
     <link rel="stylesheet" href="assets/styles/planches-general.css">
     <link rel="stylesheet" href="assets/styles/intro.css">
-    <link rel="stylesheet" href="assets/styles/projets.css">
+    <link rel="stylesheet" href="assets/styles/projets.css?v=1.0.1">
     <link rel="stylesheet" href="design-system/styles/toon.css?v=1.0.6">
 </head>
 
 <body class="ds-ui showcase-page ds-toon" data-toon-root data-intensity="flamby" data-motion="on" data-tooltip-policy="quiet">
-    <a class="ds-button ds-skip" href="#necromancer-magical-girl" data-i18n="skip.projects">Aller aux projets</a>
+    <a class="ds-button ds-skip" href="#dungeon-roller" data-i18n="skip.projects">Aller aux projets</a>
     <header class="ds-compact-nav" data-compact-nav aria-label="Navigation du portfolio" data-i18n-aria-label="nav.label">
         <div class="ds-compact-controls">
             <div class="ds-compact-item ds-language-item" data-toon-compact-item>
@@ -34,7 +34,7 @@
                 <button class="ds-menu-toggle" type="button" aria-expanded="false" aria-controls="portfolio-menu" hidden aria-label="Ouvrir le menu" data-i18n-aria-label="nav.open"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
                 <nav class="ds-menu-panel" id="portfolio-menu" aria-label="Navigation principale" data-i18n-aria-label="nav.main">
             <a href="#intro" data-nav-destination="intro"><span data-i18n="nav.home">Accueil</span><span class="ds-icon ds-icon--home" aria-hidden="true"></span></a>
-            <a href="#necromancer-magical-girl" data-nav-destination="featured"><span data-i18n="nav.featured">À la une</span><span class="ds-icon ds-icon--sparkles" aria-hidden="true"></span></a>
+            <a href="#dungeon-roller" data-nav-destination="featured"><span data-i18n="nav.featured">À la une</span><span class="ds-icon ds-icon--sparkles" aria-hidden="true"></span></a>
             <a href="#contact" data-nav-destination="contact"><span data-i18n="nav.contact">Contact</span><span class="ds-icon ds-icon--phone" aria-hidden="true"></span></a>
             <a href="projets.html" data-nav-destination="collection"><span data-i18n="nav.collection">Tout mes projets</span><span class="ds-icon ds-icon--collection" aria-hidden="true"></span></a>
         </nav>
@@ -44,9 +44,9 @@
 
     <nav class="dot-nav" aria-label="Navigation des projets" data-i18n-aria-label="dots.label">
         <a href="#intro" class="dot active" aria-label="Introduction" data-i18n-aria-label="dots.intro"></a>
+        <a href="#dungeon-roller" class="dot" title="Dungeon Roller"></a>
         <a href="#necromancer-magical-girl" class="dot" title="Necromancer x Magical Girl"></a>
         <a href="#projet-1" class="dot" title="Tatamiam"></a>
-        <a href="#projet-2" class="dot" title="IsekaiWar!"></a>
         <a href="#projet-3" class="dot" title="EntreCôte"></a>
         <a href="#contact" class="dot" aria-label="Contact et autres projets" data-i18n-aria-label="dots.contact"></a>
     </nav>
@@ -69,11 +69,29 @@
                 </div>
             </div>
 
-            <a href="#necromancer-magical-girl" id="transition-btn" title="Aller aux projets" data-i18n-title="skip.projects" aria-label="Aller aux projets" data-i18n-aria-label="skip.projects">
+            <a href="#dungeon-roller" id="transition-btn" title="Aller aux projets" data-i18n-title="skip.projects" aria-label="Aller aux projets" data-i18n-aria-label="skip.projects">
                 <svg class="intro-triangle" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                     <path d="M3.5 6.5H20.5L12 20Z" fill="currentColor" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" />
                 </svg>
             </a>
+        </section>
+
+        <section class="planche project-screen" id="dungeon-roller" aria-labelledby="dungeon-title" tabindex="-1">
+            <div class="ds-project-copy">
+                <h2 class="ds-project-title" id="dungeon-title" tabindex="-1">Dungeon <span>Roller</span></h2>
+                <div class="ds-stack"><dl class="ds-stack-technical"><div><dt data-i18n="technical.language">Langage</dt><dd>C#</dd></div><div><dt data-i18n="technical.engine">Moteur</dt><dd><span class="ds-software ds-software--monochrome"><img src="assets/icons/Unity.svg" alt="" width="24" height="24"><span>Unity</span></span></dd></div></dl><div class="ds-stack-tools"><span class="ds-tools-label" data-i18n="tools.title">Outils</span><ul class="ds-software-list" aria-label="Outils de création utilisés" data-i18n-aria-label="tools.label"><li class="ds-software" aria-label="Blender"><img src="assets/icons/Blender.png" alt="" width="24" height="24"><span>Blender</span></li><li class="ds-software" aria-label="Photoshop"><img src="assets/icons/Photoshop.png" alt="" width="24" height="24"><span>Photoshop</span></li></ul></div></div>
+                <p class="project-lead" data-i18n="dungeon.pitch">Roulez à travers un donjon afin de trouver la sortie ! Slalomez entre les différents pièges jusqu’à atteindre le ressort géant et vous envoler dans les cieux. À travers les différentes salles, récoltez un maximum d’expérience pour améliorer vos statistiques et survivre au mieux.</p>
+                <dl class="ds-facts"><div><dt data-i18n="facts.role">Mon rôle</dt><dd data-i18n="dungeon.role">Dev Gameplay</dd></div><div><dt data-i18n="facts.team">Équipe</dt><dd data-i18n="dungeon.team">3 personnes</dd></div><div><dt data-i18n="facts.duration">Durée</dt><dd data-i18n="dungeon.duration">2 semaines</dd></div></dl>
+                <ul class="ds-proof" aria-label="Mes réalisations principales" data-i18n-aria-label="work.label"><li data-i18n="dungeon.work1">Génération du donjon et des pièges (BSP, SRP, Noise).</li><li data-i18n="dungeon.work2">Shader visuel et cohérence graphique.</li><li data-i18n="dungeon.work3">Boucle de jeu, du menu à l’écran de fin.</li><li data-i18n="dungeon.work4">Modifications d’assets et intégration en jeu.</li></ul>
+                <div class="ds-project-actions">
+                    <button class="ds-button ds-button--flat" type="button" data-video-src="assets/videos/dungeonroller.mp4" data-video-poster="assets/thumbnails/dungeonroller.webp" data-video-title="Dungeon Roller">
+                        <span aria-hidden="true">▶</span> <span data-i18n="action.video">Voir la vidéo</span>
+                    </button>
+                    <a class="ds-button ds-button--secondary" href="https://github.com/gto634/Dungeon-Roller" target="_blank" rel="noopener noreferrer" aria-label="Code source de Dungeon Roller sur GitHub (nouvel onglet)" data-i18n-aria-label="dungeon.sourceLabel">
+                        <span class="ds-repo-icon" aria-hidden="true"></span><span data-i18n="action.source">Code source</span><span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </div>
         </section>
 
         <section class="planche project-screen" id="necromancer-magical-girl" aria-labelledby="necromancer-title" tabindex="-1">
@@ -95,17 +113,6 @@
                 <dl class="ds-facts"><div><dt data-i18n="facts.role">Mon rôle</dt><dd data-i18n="tatamiam.role">Lead Tech · moteur &amp; gameplay</dd></div><div><dt data-i18n="facts.team">Équipe</dt><dd data-i18n="facts.threeDevelopers">3 développeurs</dd></div><div><dt data-i18n="facts.duration">Durée</dt><dd data-i18n="tatamiam.duration">4 semaines</dd></div></dl>
                 <ul class="ds-proof" aria-label="Mes réalisations principales" data-i18n-aria-label="work.label"><li data-i18n="tatamiam.work1">Intégration d’une API multijoueur dans un moteur custom.</li><li data-i18n="tatamiam.work2">Architecture du jeu construite sur une base EC (entités/composants).</li><li data-i18n="tatamiam.detail1">Gameplay du joueur et son intégration visuelle.</li><li data-i18n="tatamiam.detail2">Synchronisation en ligne des différentes features.</li></ul>
                 <div class="ds-project-actions"><button class="ds-button ds-button--flat" type="button" data-video-src="assets/videos/tatamiam.mp4?v=20261025" data-video-poster="assets/thumbnails/tatamiam.webp" data-video-title="Tatamiam"><span aria-hidden="true">▶</span> <span data-i18n="action.video">Voir la vidéo</span></button><a class="ds-button ds-button--secondary" href="https://github.com/gto634/Tata-Miam" target="_blank" rel="noopener noreferrer" aria-label="Code source de Tatamiam sur GitHub (nouvel onglet)" data-i18n-aria-label="tatamiam.sourceLabel"><span class="ds-repo-icon" aria-hidden="true"></span><span data-i18n="action.source">Code source</span><span aria-hidden="true">↗</span></a></div>
-            </div>
-        </section>
-
-        <section class="planche project-screen is-reversed" id="projet-2" aria-labelledby="isekaiwar-title" tabindex="-1">
-            <div class="ds-project-copy">
-                <h2 class="ds-project-title" id="isekaiwar-title" tabindex="-1">IsekaiWar!</h2>
-                <div class="ds-stack"><dl class="ds-stack-technical"><div><dt data-i18n="technical.language">Langage</dt><dd>C++</dd></div><div><dt data-i18n="technical.library">Bibliothèque</dt><dd>SFML</dd></div></dl><div class="ds-stack-tools"><span class="ds-tools-label" data-i18n="tools.title">Outils</span><ul class="ds-software-list" aria-label="Outils de création utilisés" data-i18n-aria-label="tools.label"><li class="ds-software" aria-label="Figma"><img src="assets/icons/Figma.png" alt="" width="24" height="24"><span>Figma</span></li><li class="ds-software" aria-label="Photoshop"><img src="assets/icons/Photoshop.png" alt="" width="24" height="24"><span>Photoshop</span></li></ul></div></div>
-                <p class="project-lead" data-i18n="isekai.pitch">Protégez votre monde magique d’une attaque interdimensionnelle. Terrassez les vaisseaux aliens à l’aide de vos compétences magiques.</p>
-                <dl class="ds-facts"><div><dt data-i18n="facts.role">Mon rôle</dt><dd data-i18n="isekai.role">Dev Gameplay</dd></div><div><dt data-i18n="facts.team">Équipe</dt><dd data-i18n="facts.twoDevelopers">2 développeurs</dd></div><div><dt data-i18n="facts.duration">Durée</dt><dd data-i18n="facts.threeWeeks">3 semaines</dd></div></dl>
-                <ul class="ds-proof" aria-label="Mes réalisations principales" data-i18n-aria-label="work.label"><li data-i18n="isekai.work1">Développement d’une architecture d’héritage complète.</li><li data-i18n="isekai.work2">Intégration des classes abstraites de vie, de tirs et de déplacement.</li><li data-i18n="isekai.detail1">Développement des différents projectiles et power-ups.</li><li data-i18n="isekai.detail2">Intégration visuelle du fond et des projectiles.</li></ul>
-                <div class="ds-project-actions"><button class="ds-button ds-button--flat" type="button" data-video-src="assets/videos/isekaiwar.mp4" data-video-poster="assets/thumbnails/isekaiwar.webp" data-video-title="IsekaiWar!"><span aria-hidden="true">▶</span> <span data-i18n="action.video">Voir la vidéo</span></button><a class="ds-button ds-button--secondary" href="https://github.com/gto634/IsekaiWar" target="_blank" rel="noopener noreferrer" aria-label="Code source de IsekaiWar! sur GitHub (nouvel onglet)" data-i18n-aria-label="isekai.sourceLabel"><span class="ds-repo-icon" aria-hidden="true"></span><span data-i18n="action.source">Code source</span><span aria-hidden="true">↗</span></a></div>
             </div>
         </section>
 

@@ -1,0 +1,32 @@
+Fight together. Build your army. Outmatch your partner.
+
+Necromancer × Magical Girl is a 3D local co-op action game for two players. Play as a Necromancer or a Magical Girl, explore a dungeon together, and turn defeated enemies into new recruits for your own army.
+
+Help each other through the dungeon, master your character's abilities, and gather enough followers to take on your partner in the final clash!
+
+⚔️ GAMEPLAY
+Your goal: fight your way through the dungeon and build an army strong enough to outmatch your rival.
+• Choose the Necromancer or the Magical Girl.
+• Fight enemies with your character's attacks and abilities.
+• Recruit defeated enemies to grow your own army.
+• Lead your followers through the dungeon.
+• Face your partner in the final clash!
+
+🎮 LOCAL MULTIPLAYER
+Two players. One computer. Split-screen co-op with a competitive twist.
+Explore and fight together, while each of you builds a separate army. Coordinate your actions to progress, but keep an eye on the force your partner is gathering!
+Select each player's input device on the character-selection screen. Gamepads are supported. This is local multiplayer; no online lobby or port forwarding is needed.
+
+💾 HOW TO PLAY
+1. Download and extract the entire Windows archive.
+2. Open Necromancer × Magical Girl.exe inside the extracted folder.
+3. Start a new game and select the input device for each player.
+4. Choose your characters and enter the dungeon together.
+Game language: menus and dialogue are in French.
+
+👥 CREATORS
+Created by MAHIOU Ryad and Thibaut Hody.
+A two-person project made in 10 days with Unity 6.
+
+Portfolio: https://gto634.github.io/PorteFolio/
+Source code: https://github.com/gto634/Necromancer-x-MagicalGirl

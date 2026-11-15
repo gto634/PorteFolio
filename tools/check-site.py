@@ -9,7 +9,8 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = ['index.html', 'projets.html', 'spacerunner.html',
+PAGES = ['index.html', 'projets.html', 'dungeonroller.html', 'necromancer.html',
+         'tatamiam.html', 'entrecote.html', 'spacerunner.html', 'outtanked.html',
          'design-system/index.html', 'design-system/legacy.html', 'design-system/toon.html']
 CSS_URL = re.compile(r'url\(\s*[\"\x27]?([^\"\x27)]+)[\"\x27]?\s*\)')
 MODULE_URL = re.compile(r'(?:from\s+|import\(\s*|new URL\(\s*)[\"\x27]([^\"\x27]+)[\"\x27]')

@@ -1,0 +1,28 @@
+{
+  "title": "Necromancer × Magical Girl",
+  "short_description": "A two-player dungeon adventure: fight together, recruit enemies and outgrow your rival's army.",
+  "suggested_slug": "necromancer-x-magical-girl",
+  "classification": "Games",
+  "kind": "Downloadable",
+  "platform": "Windows x64",
+  "game_language": "French",
+  "page_language": "English",
+  "player_count": 2,
+  "multiplayer": "Local split-screen",
+  "genre": "Action",
+  "suggested_tags": [
+    "3D",
+    "Local multiplayer",
+    "Local Co-Op",
+    "Magic",
+    "Fantasy",
+    "Dungeon Crawler"
+  ],
+  "creators": [
+    "MAHIOU Ryad",
+    "Thibaut Hody"
+  ],
+  "reference": "https://thib387.itch.io/tata-miam",
+  "visibility": "Draft",
+  "original_archive": "C:\\Users\\Ryad\\Downloads\\Necromancer X MagicalGirl.zip"
+}

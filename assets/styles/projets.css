@@ -1,8 +1,8 @@
 /* Project composition. Buttons, type, facts and disclosures are shared. */
 /* Keep image URLs beside their consuming stylesheet so folder moves stay portable. */
+#dungeon-roller { --project-image: url('../backgrounds/dungeonroller.webp'); }
 #necromancer-magical-girl { --project-image: url('../backgrounds/necromancer.webp'); }
 #projet-1 { --project-image: url('../backgrounds/tatamiam.webp'); }
-#projet-2 { --project-image: url('../backgrounds/isekaiwar.webp'); }
 #projet-3 { --project-image: url('../backgrounds/entrecote.webp'); }
 #projet-4 { --project-image: url('../backgrounds/spacerunner.webp'); }
 #projet-5 { --project-image: url('../backgrounds/outtanked.webp'); }
@@ -59,4 +59,22 @@
 @media (max-width: 380px) {
     .project-screen { --project-gutter: 16px; }
     .ds-project-title { overflow-wrap: anywhere; }
+}
+
+/* Dedicated project pages keep a visible route back to the collection. */
+.project-page .ds-button.project-back {
+    position: fixed;
+    top: var(--ds-nav-inset);
+    left: var(--ds-nav-inset);
+    z-index: 110;
+    gap: var(--ds-space-2);
+    padding-inline: var(--ds-space-3);
+}
+.project-page.ds-toon .ds-button.project-back::before { background: var(--ds-color-background); }
+.project-page .project-screen { --project-top-space: calc(var(--ds-navigation-clearance, 64px) + var(--ds-space-6)); }
+.project-page :is(.ds-menu-panel, .ds-language-panel) { max-height: calc(100dvh - var(--ds-navigation-clearance, 64px) - var(--ds-nav-gap) - var(--ds-nav-inset)); }
+.project-page[data-video-open] .project-back { visibility: hidden; }
+@media (max-width: 600px) {
+    /* The expanded Toon menu moves the globe left; reserve a separate row. */
+    .project-page .ds-compact-nav { top: calc(var(--ds-nav-inset) + var(--ds-control-height) + var(--ds-nav-gap)); }
 }

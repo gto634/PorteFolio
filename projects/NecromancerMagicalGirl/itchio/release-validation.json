@@ -1,0 +1,14 @@
+{
+  "archive": "Necromancer-X-MagicalGirl-Windows.zip",
+  "bytes": 60221825,
+  "sha256": "bdf124afbff4f8628d315b91ec5baea5a4cf0a89676fa22625e8acc86ad9f1c6",
+  "CRC": "OK",
+  "runtime_files_identical_to_original": true,
+  "removed_debug_entries": [
+    "Necromancer X MagicalGirl/Necromancer \u00d7 Magical Girl_BurstDebugInformation_DoNotShip/",
+    "Necromancer X MagicalGirl/Necromancer \u00d7 Magical Girl_BurstDebugInformation_DoNotShip/Data/",
+    "Necromancer X MagicalGirl/Necromancer \u00d7 Magical Girl_BurstDebugInformation_DoNotShip/Data/Plugins/",
+    "Necromancer X MagicalGirl/Necromancer \u00d7 Magical Girl_BurstDebugInformation_DoNotShip/Data/Plugins/x86_64/",
+    "Necromancer X MagicalGirl/Necromancer \u00d7 Magical Girl_BurstDebugInformation_DoNotShip/Data/Plugins/x86_64/lib_burst_generated.txt"
+  ]
+}

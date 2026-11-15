@@ -119,6 +119,26 @@
         960,
         540
       ]
+    },
+    {
+      "source": "projects/DungeonRoller/Splashscreen.png",
+      "output": "assets/backgrounds/dungeonroller.webp",
+      "source_bytes": 683033,
+      "output_bytes": 233926,
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "source": "projects/DungeonRoller/Thumbnail.png",
+      "output": "assets/thumbnails/dungeonroller.webp",
+      "source_bytes": 398971,
+      "output_bytes": 55570,
+      "size": [
+        960,
+        540
+      ]
     }
   ],
   "videos": [
@@ -202,6 +222,20 @@
       "fps": 60.0,
       "duration": 37.01,
       "faststart": true
+    },
+    {
+      "source": "projects/DungeonRoller/Gameplay.mp4",
+      "output": "assets/videos/dungeonroller.mp4",
+      "source_bytes": 1181210606,
+      "output_bytes": 87003726,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "fps": 60.0,
+      "duration": 218.69,
+      "faststart": true,
+      "audio_streams": 1
     }
   ]
 }

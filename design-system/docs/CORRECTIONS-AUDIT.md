@@ -466,3 +466,11 @@ embarque désormais aussi les masques SVG, le fond quadrillé et le favicon.
 - L'original de 398 359 488 octets reste intact et est versionné avec Git LFS.
   Les vidéos servies par le site restent des fichiers MP4 ordinaires dans Git,
   afin que GitHub Pages puisse les publier directement.
+
+## Code source affiché uniquement avec un lien — 25 octobre 2026
+
+À la demande de Ryad, une fiche sans URL de dépôt n'affiche aucune action
+de code source, aucun bouton GitHub désactivé et aucun libellé d'attente.
+Out-Tanked! conserve uniquement son action vidéo. Le bouton d'attente de la
+galerie et ceux des anciens exemples sont retirés ; les règles et la checklist
+de création d'une fiche reprennent désormais ce comportement.

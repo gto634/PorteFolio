@@ -11,11 +11,20 @@ import subprocess
 from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parents[2]
-PROJECTS = [('NecromancerMagicalGirl','necromancer'), ('Tatamiam','tatamiam'),
+PROJECTS = [('DungeonRoller','dungeonroller'), ('NecromancerMagicalGirl','necromancer'), ('Tatamiam','tatamiam'),
             ('IsekaiWar','isekaiwar'), ('Entrecote','entrecote'), ('SpaceRunner','spacerunner'),
             ('Out-Tanked!','outtanked')]
 SILENT_VIDEOS = {'tatamiam', 'entrecote'}
 VIDEO_CRF = {'necromancer': 26}
+VIDEO_OPTIONS = {
+    # Keep the 3:39 Dungeon Roller gameplay within GitHub's 100 MiB file limit.
+    'dungeonroller': [
+        '-filter_threads', '3',
+        '-vf', 'scale=1920:1080:force_original_aspect_ratio=decrease:force_divisible_by=2:flags=lanczos',
+        '-threads', '12', '-preset', 'fast', '-b:v', '3000k',
+        '-colorspace', 'bt709', '-color_primaries', 'bt709', '-color_trc', 'bt709', '-color_range', 'tv',
+    ],
+}
 
 def images():
     report=[]
@@ -38,8 +47,9 @@ def video(item, ffmpeg):
     target=ROOT/'assets'/'videos'/(key+'.mp4')
     target.parent.mkdir(parents=True,exist_ok=True)
     audio_options=['-an'] if key in SILENT_VIDEOS else ['-map','0:a?','-c:a','aac','-b:a','160k']
+    video_options = VIDEO_OPTIONS.get(key, ['-preset', 'medium', '-crf', str(VIDEO_CRF.get(key, 20)), '-threads', '2'])
     subprocess.run([ffmpeg,'-hide_banner','-loglevel','error','-y','-i',str(source),'-map','0:v:0',*audio_options,
-                    '-c:v','libx264','-preset','medium','-crf',str(VIDEO_CRF.get(key,20)),'-pix_fmt','yuv420p','-threads','2',
+                    '-c:v','libx264',*video_options,'-pix_fmt','yuv420p',
                     '-movflags','+faststart',str(target)],check=True)
     print(f'{key}: {source.stat().st_size} -> {target.stat().st_size} bytes',flush=True)
     return dict(source=source.relative_to(ROOT).as_posix(),output=target.relative_to(ROOT).as_posix(),source_bytes=source.stat().st_size,output_bytes=target.stat().st_size)
