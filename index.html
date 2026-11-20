@@ -2,7 +2,7 @@
 <html lang="fr" data-i18n-page>
 <head>
     <meta charset="UTF-8">
-    <script src="assets/scripts/i18n.js?v=1.1.2"></script>
+    <script src="assets/scripts/i18n.js?v=1.1.7"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>MAHIOU Ryad</title> 
@@ -10,11 +10,11 @@
 
     <link rel="stylesheet" href="design-system/styles/tokens.css">
     <link rel="stylesheet" href="assets/styles/base.css">
-    <link rel="stylesheet" href="design-system/styles/components.css?v=1.0.6">
+    <link rel="stylesheet" href="design-system/styles/components.css?v=1.0.7">
     <link rel="stylesheet" href="assets/styles/planches-general.css">
     <link rel="stylesheet" href="assets/styles/intro.css">
-    <link rel="stylesheet" href="assets/styles/projets.css?v=1.0.1">
-    <link rel="stylesheet" href="design-system/styles/toon.css?v=1.0.6">
+    <link rel="stylesheet" href="assets/styles/projets.css?v=1.0.3">
+    <link rel="stylesheet" href="design-system/styles/toon.css?v=1.0.8">
 </head>
 
 <body class="ds-ui showcase-page ds-toon" data-toon-root data-intensity="flamby" data-motion="on" data-tooltip-policy="quiet">
@@ -87,8 +87,15 @@
                     <button class="ds-button ds-button--flat" type="button" data-video-src="assets/videos/dungeonroller.mp4" data-video-poster="assets/thumbnails/dungeonroller.webp" data-video-title="Dungeon Roller">
                         <span aria-hidden="true">▶</span> <span data-i18n="action.video">Voir la vidéo</span>
                     </button>
-                    <a class="ds-button ds-button--secondary" href="https://github.com/gto634/Dungeon-Roller" target="_blank" rel="noopener noreferrer" aria-label="Code source de Dungeon Roller sur GitHub (nouvel onglet)" data-i18n-aria-label="dungeon.sourceLabel">
-                        <span class="ds-repo-icon" aria-hidden="true"></span><span data-i18n="action.source">Code source</span><span aria-hidden="true">↗</span>
+                    <a class="ds-button ds-button--secondary ds-button--platform" href="https://github.com/gto634/Dungeon-Roller" target="_blank" rel="noopener noreferrer"
+                       aria-label="Code source de Dungeon Roller sur GitHub (nouvel onglet)" data-i18n-aria-label="dungeon.sourceLabel"
+                       title="GitHub">
+                        <span class="ds-repo-icon" aria-hidden="true"></span>
+                    </a>
+                    <a class="ds-button ds-button--secondary ds-button--platform" href="https://ryad-mahiou.itch.io/dungeon-roller" target="_blank" rel="noopener noreferrer"
+                       aria-label="Dungeon Roller sur itch.io (nouvel onglet)" data-i18n-aria-label="dungeon.itchLabel"
+                       title="Itch.io">
+                        <span class="ds-icon ds-icon--itchio" aria-hidden="true"></span>
                     </a>
                 </div>
             </div>
@@ -101,7 +108,19 @@
                 <p class="project-lead" data-i18n="necro.pitch">Incarnez un Nécromancien ou une Magical Girl et explorez un donjon en coopération locale. Terrassez les ennemis, puis enrôlez-les dans votre armée pour surpasser celle de votre camarade.</p>
                 <dl class="ds-facts"><div><dt data-i18n="facts.role">Mon rôle</dt><dd data-i18n="necro.role">Gameplay &amp; assets visuels</dd></div><div><dt data-i18n="facts.team">Équipe</dt><dd data-i18n="facts.twoPeople">2 personnes</dd></div><div><dt data-i18n="facts.duration">Durée</dt><dd data-i18n="necro.duration">10 jours</dd></div></dl>
                 <ul class="ds-proof" aria-label="Mes réalisations principales" data-i18n-aria-label="work.label"><li data-i18n="necro.work1">Systèmes de combat : projectiles, hitboxes, dégâts et knockback.</li><li data-i18n="necro.work2">Moveset des deux personnages : capacités, déplacement et visée.</li><li data-i18n="necro.detail1">Intégration et modification des assets et des animations.</li><li data-i18n="necro.detail2">Intégration des feedbacks visuels : effets, particules, flashs et réactions aux impacts.</li></ul>
-                <div class="ds-project-actions"><button class="ds-button ds-button--flat" type="button" data-video-src="assets/videos/necromancer.mp4?v=20261025" data-video-poster="assets/thumbnails/necromancer.webp" data-video-title="Necromancer x Magical Girl"><span aria-hidden="true">▶</span> <span data-i18n="action.video">Voir la vidéo</span></button><a class="ds-button ds-button--secondary" href="https://github.com/gto634/Necromancer-x-MagicalGirl" target="_blank" rel="noopener noreferrer" aria-label="Code source de Necromancer x Magical Girl sur GitHub (nouvel onglet)" data-i18n-aria-label="necro.sourceLabel"><span class="ds-repo-icon" aria-hidden="true"></span><span data-i18n="action.source">Code source</span><span aria-hidden="true">↗</span></a></div>
+                <div class="ds-project-actions">
+                    <button class="ds-button ds-button--flat" type="button" data-video-src="assets/videos/necromancer.mp4?v=20261025" data-video-poster="assets/thumbnails/necromancer.webp" data-video-title="Necromancer x Magical Girl"><span aria-hidden="true">▶</span> <span data-i18n="action.video">Voir la vidéo</span></button>
+                    <a class="ds-button ds-button--secondary ds-button--platform" href="https://github.com/gto634/Necromancer-x-MagicalGirl" target="_blank" rel="noopener noreferrer"
+                       aria-label="Code source de Necromancer x Magical Girl sur GitHub (nouvel onglet)" data-i18n-aria-label="necro.sourceLabel"
+                       title="GitHub">
+                        <span class="ds-repo-icon" aria-hidden="true"></span>
+                    </a>
+                    <a class="ds-button ds-button--secondary ds-button--platform" href="https://ryad-mahiou.itch.io/necromancer-x-magical-girl" target="_blank" rel="noopener noreferrer"
+                       aria-label="Necromancer x Magical Girl sur itch.io (nouvel onglet)" data-i18n-aria-label="necro.itchLabel"
+                       title="Itch.io">
+                        <span class="ds-icon ds-icon--itchio" aria-hidden="true"></span>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -112,7 +131,19 @@
                 <p class="project-lead" data-i18n="tatamiam.pitch">Incarnez un sushi et lancez votre propre restaurant-dojo ! Collaborez avec vos amis en ligne afin de préparer les plats qui correspondent à chaque client.</p>
                 <dl class="ds-facts"><div><dt data-i18n="facts.role">Mon rôle</dt><dd data-i18n="tatamiam.role">Lead Tech · moteur &amp; gameplay</dd></div><div><dt data-i18n="facts.team">Équipe</dt><dd data-i18n="facts.threeDevelopers">3 développeurs</dd></div><div><dt data-i18n="facts.duration">Durée</dt><dd data-i18n="tatamiam.duration">4 semaines</dd></div></dl>
                 <ul class="ds-proof" aria-label="Mes réalisations principales" data-i18n-aria-label="work.label"><li data-i18n="tatamiam.work1">Intégration d’une API multijoueur dans un moteur custom.</li><li data-i18n="tatamiam.work2">Architecture du jeu construite sur une base EC (entités/composants).</li><li data-i18n="tatamiam.detail1">Gameplay du joueur et son intégration visuelle.</li><li data-i18n="tatamiam.detail2">Synchronisation en ligne des différentes features.</li></ul>
-                <div class="ds-project-actions"><button class="ds-button ds-button--flat" type="button" data-video-src="assets/videos/tatamiam.mp4?v=20261025" data-video-poster="assets/thumbnails/tatamiam.webp" data-video-title="Tatamiam"><span aria-hidden="true">▶</span> <span data-i18n="action.video">Voir la vidéo</span></button><a class="ds-button ds-button--secondary" href="https://github.com/gto634/Tata-Miam" target="_blank" rel="noopener noreferrer" aria-label="Code source de Tatamiam sur GitHub (nouvel onglet)" data-i18n-aria-label="tatamiam.sourceLabel"><span class="ds-repo-icon" aria-hidden="true"></span><span data-i18n="action.source">Code source</span><span aria-hidden="true">↗</span></a></div>
+                <div class="ds-project-actions">
+                    <button class="ds-button ds-button--flat" type="button" data-video-src="assets/videos/tatamiam.mp4?v=20261025" data-video-poster="assets/thumbnails/tatamiam.webp" data-video-title="Tatamiam"><span aria-hidden="true">▶</span> <span data-i18n="action.video">Voir la vidéo</span></button>
+                    <a class="ds-button ds-button--secondary ds-button--platform" href="https://github.com/gto634/Tata-Miam" target="_blank" rel="noopener noreferrer"
+                       aria-label="Code source de Tatamiam sur GitHub (nouvel onglet)" data-i18n-aria-label="tatamiam.sourceLabel"
+                       title="GitHub">
+                        <span class="ds-repo-icon" aria-hidden="true"></span>
+                    </a>
+                    <a class="ds-button ds-button--secondary ds-button--platform" href="https://thib387.itch.io/tata-miam" target="_blank" rel="noopener noreferrer"
+                       aria-label="Tatamiam sur itch.io (nouvel onglet)" data-i18n-aria-label="tatamiam.itchLabel"
+                       title="Itch.io">
+                        <span class="ds-icon ds-icon--itchio" aria-hidden="true"></span>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -123,22 +154,31 @@
                 <p class="project-lead" data-i18n="entrecote.pitch">Un moteur de jeu 3D avec un rendu DirectX 12 et une architecture EC (entités/composants). La vidéo présente sa sandbox et Sushi Adventure, un mini-jeu développé en 3 jours.</p>
                 <dl class="ds-facts"><div><dt data-i18n="facts.role">Mon rôle</dt><dd data-i18n="entrecote.role">Dev Moteur</dd></div><div><dt data-i18n="facts.team">Équipe</dt><dd data-i18n="facts.threeDevelopers">3 développeurs</dd></div><div><dt data-i18n="facts.duration">Durée</dt><dd data-i18n="facts.threeWeeks">3 semaines</dd></div></dl>
                 <ul class="ds-proof" aria-label="Mes réalisations principales" data-i18n-aria-label="work.label"><li data-i18n="entrecote.work1">Gestion du pipeline de rendu 3D.</li><li data-i18n="entrecote.work2">Encapsulation de DXII et de la data.</li><li data-i18n="entrecote.detail1">Création du moteur physique avec ses collisions.</li><li data-i18n="entrecote.detail2">Systèmes et composants pour la physique, les renderers et l’animation.</li></ul>
-                <div class="ds-project-actions"><button class="ds-button ds-button--flat" type="button" data-video-src="assets/videos/entrecote.mp4?v=20261025" data-video-poster="assets/thumbnails/entrecote.webp" data-video-title="EntreCôte"><span aria-hidden="true">▶</span> <span data-i18n="action.video">Voir la vidéo</span></button><a class="ds-button ds-button--secondary" href="https://github.com/gto634/EntreCote" target="_blank" rel="noopener noreferrer" aria-label="Code source de EntreCôte sur GitHub (nouvel onglet)" data-i18n-aria-label="entrecote.sourceLabel"><span class="ds-repo-icon" aria-hidden="true"></span><span data-i18n="action.source">Code source</span><span aria-hidden="true">↗</span></a></div>
+                <div class="ds-project-actions">
+                    <button class="ds-button ds-button--flat" type="button" data-video-src="assets/videos/entrecote.mp4?v=20261025" data-video-poster="assets/thumbnails/entrecote.webp?v=thumbnail1" data-video-title="EntreCôte"><span aria-hidden="true">▶</span> <span data-i18n="action.video">Voir la vidéo</span></button>
+                    <a class="ds-button ds-button--secondary ds-button--platform" href="https://github.com/gto634/EntreCote" target="_blank" rel="noopener noreferrer"
+                       aria-label="Code source de EntreCôte sur GitHub (nouvel onglet)" data-i18n-aria-label="entrecote.sourceLabel"
+                       title="GitHub">
+                        <span class="ds-repo-icon" aria-hidden="true"></span>
+                    </a>
+                </div>
             </div>
         </section>
 
         <footer class="end-banner ds-contact ds-contact--grid" id="contact" aria-labelledby="contact-title" tabindex="-1">
             <div class="end-banner-contact">
-                <p class="ds-contact-label"><span data-i18n="contact.invitation">Et si on échangeait ?</span><span class="ds-icon ds-icon--phone" aria-hidden="true"></span></p>
-                <h2 id="contact-title" data-i18n="contact.title">Restons en contact.</h2>
+                <h2 id="contact-title" data-i18n="contact.title">Restons en contact&nbsp;!</h2>
                 <div class="ds-contact-links">
                     <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rmahiou.pro%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Écrire à rmahiou.pro@gmail.com dans Gmail (nouvel onglet)" data-i18n-aria-label="contact.email">rmahiou.pro@gmail.com</a>
-                    <div class="ds-contact-socials" role="group" aria-label="Profils professionnels" data-i18n-aria-label="contact.profiles"><a class="ds-social-link ds-social-link--linkedin" href="https://www.linkedin.com/in/ryad-mahiou-98a06532b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Ryad Mahiou (nouvel onglet)" data-i18n-aria-label="contact.linkedin"><span class="ds-social-icon" aria-hidden="true"></span><span class="ds-tooltip" aria-hidden="true">LinkedIn</span></a><a class="ds-social-link ds-social-link--github" href="https://github.com/gto634" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Ryad Mahiou (nouvel onglet)" data-i18n-aria-label="contact.github"><span class="ds-social-icon" aria-hidden="true"></span><span class="ds-tooltip" aria-hidden="true">GitHub</span></a></div>
+                    <div class="ds-contact-socials" role="group" aria-label="Profils professionnels" data-i18n-aria-label="contact.profiles">
+                        <a class="ds-social-link ds-social-link--linkedin" href="https://www.linkedin.com/in/ryad-mahiou-98a06532b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Ryad Mahiou (nouvel onglet)" data-i18n-aria-label="contact.linkedin"><span class="ds-social-icon" aria-hidden="true"></span><span class="ds-tooltip" aria-hidden="true">LinkedIn</span></a>
+                        <a class="ds-social-link ds-social-link--github" href="https://github.com/gto634" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Ryad Mahiou (nouvel onglet)" data-i18n-aria-label="contact.github"><span class="ds-social-icon" aria-hidden="true"></span><span class="ds-tooltip" aria-hidden="true">GitHub</span></a>
+                        <a class="ds-social-link" href="https://ryad-mahiou.itch.io/" target="_blank" rel="noopener noreferrer" aria-label="Profil itch.io de Ryad Mahiou (nouvel onglet)" data-i18n-aria-label="contact.itchio"><span class="ds-icon ds-icon--itchio" aria-hidden="true"></span><span class="ds-tooltip" aria-hidden="true">Itch.io</span></a>
+                    </div>
                 </div>
                 <p class="ds-contact-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Lyon, France</p>
             </div>
             <div class="end-banner-more">
-                <p data-i18n="contact.more">La collection continue.</p>
                 <div class="ds-contact-actions">
                     <a class="ds-button ds-button--flat" href="projets.html"><span class="ds-icon ds-icon--collection" aria-hidden="true"></span><span data-i18n="contact.projects">Tout mes projets</span></a>
                     <a class="ds-button ds-button--secondary" href="#intro"><span class="ds-icon ds-icon--home" aria-hidden="true"></span><span data-i18n="contact.top">Retour à l’accueil</span></a>

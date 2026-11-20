@@ -101,6 +101,14 @@
 .ds-toon .ds-button--circle:hover { color: var(--ds-color-accent); }
 .ds-toon .ds-button.ds-button--circle::before { background: transparent; border-color: var(--ds-color-accent); box-shadow: none; }
 
+.ds-toon .ds-button--platform {
+    width: var(--ds-control-height);
+    height: var(--ds-control-height);
+    flex: 0 0 var(--ds-control-height);
+    padding: 0;
+}
+.ds-toon .ds-button--platform::before { border-radius: var(--ds-toon-menu-shape); }
+
 .ds-toon .ds-filters button { color: var(--ds-color-muted); padding-inline: 22px; }
 .ds-toon .ds-filters button:is(:hover, :focus-visible) { background: transparent; color: var(--ds-color-text); border-color: transparent; }
 .ds-toon .ds-filters button:is(:hover, :focus-visible)::before { border-color: var(--ds-color-accent); }

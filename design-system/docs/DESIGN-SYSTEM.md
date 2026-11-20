@@ -90,6 +90,7 @@ quand il est ouvert. Les fiches peuvent s’allonger dans le défilement princip
 | Action principale | Fond rose, texte nuit, contour organique autour de 20 px, hauteur min. 48 px, marge intérieure 12 × 16 px. Une action prioritaire par bloc. | Survol rose clair et rebond atténué de 700 ms ; contenu et fond se déforment ensemble. |
 | Action secondaire | Fond transparent, bordure rose, texte rose, mêmes dimensions. | Même rebond, fond transparent au survol et au focus, sans ombre y compris à la pression. |
 | Action rose sans ombre | `ds-button--flat` pour les vidéos et « Tout mes projets ». Même forme et couleur que l’action principale. | Rebond et pression communs ; aucune ombre au repos, au survol, au focus ou à la pression. |
+| Lien de plateforme | `ds-button ds-button--secondary ds-button--platform`, logo de 24 px dans une cible de 48 × 48 px. Coins du menu fermé, fond transparent et contour rose de l’action secondaire. | Contour rose clair au survol et au focus. Libellé au survol, nouvel onglet annoncé dans le nom accessible. |
 | Icône de destination | `ds-icon` : silhouettes pleines de maison, étincelles, téléphone, quatre carrés en grille 2 × 2. 24 px dans les boutons, 20 px dans le menu, 16 px dans l’invitation de contact. | Décorative (`aria-hidden`), couleur héritée ; ne remplace pas le nom du lien. |
 | Actions de contact | Deux boutons dans `ds-contact-actions`, largeur commune et rangées de même hauteur. Icônes à gauche, sans flèches. | Même surface de clic, focus et rebond que les boutons partagés ; adaptation aux libellés français et anglais. |
 | Lien textuel | Libellé explicite ; soulignement pour les liens dans un paragraphe. | Changement de couleur, focus visible ; cible de 44 px dans la navigation. |
@@ -99,16 +100,15 @@ quand il est ouvert. Les fiches peuvent s’allonger dans le défilement princip
 | Logiciel | Logo 24 px et nom toujours visible sur une même ligne. Pas de badge textuel en doublon. | Information ordinaire sans étape Tab ; une précision facultative peut utiliser une infobulle séparée. |
 | Faits du projet | Liste `dl` : « Mon rôle », « Équipe », « Durée ». | Retour à la ligne naturel, aucune donnée tronquée. |
 | Mes réalisations | Quatre contributions directement visibles dans `ul.ds-proof`, sans dépliable sur les fiches. | Lecture continue dans le défilement principal, sans hauteur fixe. |
-| Profil social | Logo LinkedIn ou GitHub monochrome de 24 px dans une cible de 44 × 44 px. | Rose, rebond atténué et infobulle au survol/focus ; nom accessible annonçant le nouvel onglet. |
+| Profil social | Logo LinkedIn, GitHub ou itch.io monochrome de 24 px dans une cible de 44 × 44 px. | Rose, rebond atténué et infobulle au survol/focus ; nom accessible annonçant le nouvel onglet. |
 | Carte de projet | Image 16:9, titre, année si renseignée, pitch bref, catégorie éventuelle. | Une seule destination par carte ; bordure rose, déformation limitée à 12 % de la recette initiale et focus sur toute la carte. |
 
 Les flèches purement décoratives sont `aria-hidden`. Un lien qui ouvre un nouvel
 onglet l’indique aux technologies d’assistance et utilise `rel="noopener
 noreferrer"`. Un changement de page est un lien ; une ouverture de lecteur ou
 un filtre est un bouton. Les actions de chaque fiche suivent cet ordre :
-« ▶ Voir la vidéo » principale, puis « Code source ↗ » secondaire avec logo
-GitHub uniquement lorsqu’une URL de dépôt est disponible. Sans lien de code
-source, ne montrer aucun bouton, logo GitHub ni libellé d’attente pour cette action.
+« ▶ Voir la vidéo », puis le lien GitHub et le lien itch.io, chacun selon les
+URL disponibles pour le projet.
 Une vidéo non publiée utilise un vrai bouton désactivé « Vidéo — à venir ».
 Sa couleur secondaire reste lisible, sans opacité globale.
 Aucun faux lien, href vide ou chargement d’un média manquant.
@@ -130,8 +130,8 @@ ou le nom accessible du lien fournit déjà l’information.
 
 Les actions principales du portfolio utilisent `ds-button ds-button--flat` :
 rose plein, sans ombre au repos, au survol ou à la pression. Le bouton secondaire
-reste transparent, avec un contour rose. Le logo GitHub accompagne « Code source » ;
-la maison accompagne le retour à l’accueil. Les profils gardent leur cible de
+reste transparent, avec un contour rose. La maison accompagne le retour à
+l’accueil. Les profils gardent leur cible de
 44 px, leur infobulle et leur rebond. Les logos de logiciels restent accompagnés
 d’un nom visible et ne deviennent pas des commandes.
 

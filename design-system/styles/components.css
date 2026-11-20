@@ -58,6 +58,7 @@
 .ds-icon--collection { --ds-icon-image: url('../../assets/icons/Collection.svg?v=1.0.6'); }
 .ds-icon--phone { --ds-icon-image: url('../../assets/icons/Phone.svg?v=1.0.6'); }
 .ds-icon--sparkles { --ds-icon-image: url('../../assets/icons/Sparkles.svg?v=1.0.6'); }
+.ds-icon--itchio { --ds-icon-image: url('../../assets/icons/ItchIo.svg'); }
 .ds-button:disabled { cursor: not-allowed; transform: none; background: var(--ds-color-surface); color: var(--ds-color-muted); border-color: var(--ds-color-border-accent); }
 .ds-button--circle {
     width: var(--ds-control-height);

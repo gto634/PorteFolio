@@ -43,8 +43,8 @@ Le français se modifie dans le HTML. L’anglais et les libellés dynamiques se
 trouvent dans [i18n.js](assets/scripts/i18n.js). Les règles graphiques sont dans
 [les règles de pages](design-system/docs/REGLES-PAGES.md).
 
-Chaque carte de la collection ouvre sa fiche dédiée (`dungeonroller.html`,
-`necromancer.html`, `tatamiam.html`, `entrecote.html`, `spacerunner.html` ou
+Chaque carte de la collection ouvre sa fiche dédiée (`minesweeper.html`, `spiderpunk.html`,
+`dungeonroller.html`, `necromancer.html`, `tatamiam.html`, `isekaiwar.html`, `entrecote.html`, `spacerunner.html` ou
 `outtanked.html`). Le bouton en haut à gauche de chaque fiche revient à la
 collection. Les projets à la une gardent aussi leur présentation sur l’accueil :
 actualiser les deux versions de leur contenu lors d’une modification.

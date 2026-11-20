@@ -13,7 +13,7 @@ objectif, leur structure et leur mode de défilement changent.
 | Projets à la une | `index.html#dungeon-roller`, `#necromancer-magical-girl`, `#projet-1`, `#projet-3` | Présenter une sélection et les compétences démontrées. | Écrans extensibles ; un défilement principal, passage automatique par geste. |
 | Contact | `index.html#contact` | Faciliter la prise de contact et l’accès à la collection. | Bannière courte, dernière étape de l’accueil. |
 | Collection | `projets.html` | Explorer l’ensemble des projets. | Page à défilement naturel. |
-| Fiches dédiées | `dungeonroller.html`, `necromancer.html`, `tatamiam.html`, `entrecote.html`, `spacerunner.html`, `outtanked.html` | Présenter chaque projet depuis la collection. | Contenu du projet accessible sans dépendre de l’accueil. |
+| Fiches dédiées | `minesweeper.html`, `spiderpunk.html`, `dungeonroller.html`, `necromancer.html`, `tatamiam.html`, `isekaiwar.html`, `entrecote.html`, `spacerunner.html`, `outtanked.html` | Présenter chaque projet depuis la collection. | Contenu du projet accessible sans dépendre de l’accueil. |
 
 ## 1. Navigation compacte commune
 
@@ -74,10 +74,9 @@ ordre, que la colonne soit à gauche ou à droite :
 4. **Mon rôle · Équipe · Durée**, dans une liste de faits compacte.
 5. **Mes réalisations** : quatre contributions directement visibles dans
    `ul.ds-proof`, sans dépliable « Détails de mes réalisations ».
-6. **Actions disponibles** : Vidéo principale, puis Code source secondaire
-   avec le logo GitHub uniquement si le lien vers le dépôt du projet est fourni.
-   Sans lien de code source, ne pas afficher cette action, même désactivée,
-   ni de libellé d’attente. Si la vidéo manque, utiliser le bouton désactivé
+6. **Actions disponibles** : Vidéo principale, puis les boutons GitHub et itch.io
+   selon les URL disponibles pour le projet. Associer `ds-button--platform` à
+   `ds-button--secondary` pour ces deux liens. Si la vidéo manque, utiliser le bouton désactivé
    « Vidéo — à venir », sans faux href ni lecteur vide.
 
 Le groupe technique réutilise `ds-stack` : `ds-stack-technical` pour le langage
@@ -167,8 +166,8 @@ Elle conserve une hauteur courte : référence desktop `clamp(220px, 30vh, 300px
 Une grande partie du projet précédent reste visible. Ne pas lui appliquer le
 gabarit plein écran des projets.
 
-Ordre de lecture : petite invitation facultative → « Restons en contact » →
-coordonnées → bouton de collection → retour en haut.
+Ordre de lecture : « Restons en contact ! » → coordonnées → bouton de collection
+→ retour en haut.
 
 - Courriel : **rmahiou.pro@gmail.com**. Le lien ouvre la rédaction Gmail dans un
   nouvel onglet, avec cette adresse préremplie comme destinataire :
@@ -176,13 +175,12 @@ coordonnées → bouton de collection → retour en haut.
   Nom accessible explicitant Gmail et le nouvel onglet ; `rel="noopener noreferrer"`.
 - Localisation : **Lyon, France** ; aucune adresse précise nécessaire.
 - Profils : logos [LinkedIn](https://www.linkedin.com/in/ryad-mahiou-98a06532b/)
-  et [GitHub](https://github.com/gto634), dans `ds-contact-socials`.
+  puis [GitHub](https://github.com/gto634) et [itch.io](https://ryad-mahiou.itch.io/), dans `ds-contact-socials`.
   Icônes de 24 px, liens de 44 × 44 px, nom accessible avec annonce du nouvel
   onglet, infobulle au survol et au focus, rose et rebond partagé.
-- Invitation : téléphone de 16 px à droite de « Et si on échangeait ? ».
 - Action principale : **« Tout mes projets »**, vers `projets.html`, avec une icône
   de quatre carrés à gauche, fond rose sans ombre et animation partagée.
-- Retour à l’accueil : bouton secondaire identique à Code source, avec maison
+- Retour à l’accueil : bouton secondaire au contour rose, avec maison
   à gauche, texte « Retour à l’accueil » et lien vers `#intro`.
 - Les deux boutons sont dans `ds-contact-actions`, de mêmes largeur et hauteur,
   sans flèche. Les icônes de destination utilisent une silhouette pleine.
@@ -217,11 +215,13 @@ de résultats → grille → pied de page.
   Garder les titres, les textes et les visuels cohérents
   entre une carte et sa destination.
 
-Ordre actuel : Dungeon Roller, Necromancer x Magical Girl, Tatamiam, EntreCôte,
-SpaceRunner, Out-Tanked!. **SpaceRunner et Out-Tanked! figurent dans la
-collection, hors de l’accueil.** La carte d’Out-Tanked! n’affiche pas d’année
-tant qu’elle n’est pas renseignée. IsekaiWar! est retiré de l’accueil et de la
-collection ; ses médias originaux restent conservés.
+La collection compte neuf projets, dans cet ordre. Minesweeper, Spiderpunk,
+Dungeon Roller, Necromancer x Magical Girl, Tatamiam, IsekaïWar!, EntreCôte,
+SpaceRunner et Out-Tanked!.
+Spiderpunk et IsekaïWar! ouvrent leurs fiches dédiées `spiderpunk.html` et
+`isekaiwar.html`, avec leurs vidéos et liens GitHub. Spiderpunk propose aussi
+son lien Itch.io. Son contenu provient de `projects/Spiderpunk/Texte à intégrer.txt`.
+Le contenu d’IsekaïWar! est restauré depuis le commit `4cd773c`.
 
 ## 6. Fiche autonome / projet conservé
 

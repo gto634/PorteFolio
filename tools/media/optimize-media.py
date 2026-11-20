@@ -11,12 +11,19 @@ import subprocess
 from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parents[2]
-PROJECTS = [('DungeonRoller','dungeonroller'), ('NecromancerMagicalGirl','necromancer'), ('Tatamiam','tatamiam'),
+PROJECTS = [('Minesweeper','minesweeper'), ('Spiderpunk','spiderpunk'), ('DungeonRoller','dungeonroller'),
+            ('NecromancerMagicalGirl','necromancer'), ('Tatamiam','tatamiam'),
             ('IsekaiWar','isekaiwar'), ('Entrecote','entrecote'), ('SpaceRunner','spacerunner'),
             ('Out-Tanked!','outtanked')]
 SILENT_VIDEOS = {'tatamiam', 'entrecote'}
 VIDEO_CRF = {'necromancer': 26}
 VIDEO_OPTIONS = {
+    'spiderpunk': [
+        '-filter_threads', '2',
+        '-vf', 'scale=1920:1080:force_original_aspect_ratio=decrease:force_divisible_by=2:flags=lanczos:out_range=tv',
+        '-threads', '4', '-preset', 'medium', '-crf', '22', '-maxrate', '6500k', '-bufsize', '13000k',
+        '-colorspace', 'bt709', '-color_primaries', 'bt709', '-color_trc', 'bt709', '-color_range', 'tv',
+    ],
     # Keep the 3:39 Dungeon Roller gameplay within GitHub's 100 MiB file limit.
     'dungeonroller': [
         '-filter_threads', '3',

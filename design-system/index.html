@@ -2,14 +2,14 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <script src="../assets/scripts/i18n.js?v=1.1.2"></script>
+    <script src="../assets/scripts/i18n.js?v=1.1.7"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Design system Toon et Slime adopté pour le design system du portfolio de Ryad Mahiou.">
     <title>Design system Toon / Slime · Ryad Mahiou</title>
     <link rel="icon" type="image/png" href="../assets/icons/Hypercube.png">
     <link rel="stylesheet" href="styles/tokens.css">
-    <link rel="stylesheet" href="styles/components.css?v=1.1">
-    <link rel="stylesheet" href="styles/toon.css?v=1.1">
+    <link rel="stylesheet" href="styles/components.css?v=1.1.1">
+    <link rel="stylesheet" href="styles/toon.css?v=1.1.2">
     <link rel="stylesheet" href="styles/toon-gallery.css?v=1.1">
     <script src="scripts/components.js?v=1.1" defer></script>
     <script src="scripts/scroll-cue.js" defer></script>
@@ -55,9 +55,18 @@
                     <div class="lab-example-heading"><h3>Boutons</h3><span>48 px minimum</span></div>
                     <div class="lab-controls">
                         <button class="ds-button ds-button--flat" type="button" data-open-dialog><span aria-hidden="true">▶</span><span>Voir la vidéo</span></button>
-                        <a class="ds-button ds-button--secondary" href="https://github.com/gto634/Necromancer-x-MagicalGirl" target="_blank" rel="noopener noreferrer" data-i18n-region aria-label="Code source de Necromancer x Magical Girl sur GitHub (nouvel onglet)" data-i18n-aria-label="necro.sourceLabel"><span class="ds-repo-icon" aria-hidden="true"></span><span data-i18n="action.source">Code source</span><span aria-hidden="true">↗</span></a>
+                        <a class="ds-button ds-button--secondary ds-button--platform" href="https://github.com/gto634/Necromancer-x-MagicalGirl" target="_blank" rel="noopener noreferrer" data-i18n-region
+                           aria-label="Code source de Necromancer x Magical Girl sur GitHub (nouvel onglet)" data-i18n-aria-label="necro.sourceLabel"
+                           title="GitHub">
+                            <span class="ds-repo-icon" aria-hidden="true"></span>
+                        </a>
+                        <a class="ds-button ds-button--secondary ds-button--platform" href="https://ryad-mahiou.itch.io/necromancer-x-magical-girl" target="_blank" rel="noopener noreferrer" data-i18n-region
+                           aria-label="Necromancer x Magical Girl sur itch.io (nouvel onglet)" data-i18n-aria-label="necro.itchLabel"
+                           title="Itch.io">
+                            <span class="ds-icon ds-icon--itchio" aria-hidden="true"></span>
+                        </a>
                     </div>
-                    <p class="lab-caption">Deux styles : rose plein sans ombre et contour rose sur fond transparent. Le lien Code source utilise le logo GitHub et apparaît uniquement lorsqu’une URL est disponible. En 700 ms, un mouvement léger de 0,5 px avec une déformation limitée à 4 % en largeur et 7 % en hauteur. Le texte et l’icône suivent, puis tout retrouve sa forme normale.</p>
+                    <p class="lab-caption">Le bouton vidéo reste rose. Les liens GitHub et itch.io reprennent la forme du menu de navigation, avec un fond transparent et un contour rose qui s’éclaircit au survol. Chaque icône mène à la page du projet sur la plateforme. En 700 ms, un mouvement léger de 0,5 px avec une déformation limitée à 4 % en largeur et 7 % en hauteur. Le texte et l’icône suivent, puis tout retrouve sa forme normale.</p>
             <a class="ds-link ds-nav-link" href="#regles">Lire les règles du système</a>
                 </div>
                 <div class="lab-example">
@@ -90,7 +99,7 @@
             <p class="catalogue-empty ds-empty" hidden>Aucun projet dans cette catégorie. Choisis « Tous ».</p>
             <ul class="lab-card-grid" aria-label="Exemples avec les visuels du portfolio">
                 <li class="project-card" data-category="jeu"><a class="ds-card" href="#apercu-projet" data-card-preview data-project-title="Tatamiam" data-project-image="../assets/thumbnails/tatamiam.webp"><img src="../assets/thumbnails/tatamiam.webp" alt="" width="960" height="540" loading="lazy"><div class="ds-card-body"><div class="ds-card-meta"><span>Jeu</span><span>2026</span></div><h3 class="ds-card-title">Tatamiam</h3><p>Un jeu de cuisine en ligne où vous incarnez un sushi et gérez un restaurant-dojo avec vos amis.</p><span class="ds-card-cta">Aperçu de la carte <span aria-hidden="true">→</span></span></div></a></li>
-                <li class="project-card" data-category="moteur"><a class="ds-card" href="#apercu-projet" data-card-preview data-project-title="EntreCôte" data-project-image="../assets/thumbnails/entrecote.webp"><img src="../assets/thumbnails/entrecote.webp" alt="" width="960" height="540" loading="lazy"><div class="ds-card-body"><div class="ds-card-meta"><span>Moteur</span><span>2026</span></div><h3 class="ds-card-title">EntreCôte</h3><p>Un moteur 3D avec un rendu DirectX 12 et une architecture à entités et composants.</p><span class="ds-card-cta">Aperçu de la carte <span aria-hidden="true">→</span></span></div></a></li>
+                <li class="project-card" data-category="moteur"><a class="ds-card" href="#apercu-projet" data-card-preview data-project-title="EntreCôte" data-project-image="../assets/thumbnails/entrecote.webp?v=thumbnail1"><img src="../assets/thumbnails/entrecote.webp?v=thumbnail1" alt="" width="960" height="540" loading="lazy"><div class="ds-card-body"><div class="ds-card-meta"><span>Moteur</span><span>2026</span></div><h3 class="ds-card-title">EntreCôte</h3><p>Un moteur 3D avec un rendu DirectX 12 et une architecture à entités et composants.</p><span class="ds-card-cta">Aperçu de la carte <span aria-hidden="true">→</span></span></div></a></li>
             </ul>
             <p class="lab-caption">Ces deux descriptions proviennent de la collection actuelle. Les cartes ouvrent un aperçu dans cette galerie.</p>
         </section>
@@ -132,7 +141,7 @@
 
         <section class="lab-section" id="contact-demo" aria-labelledby="contact-title">
             <div class="lab-section-header"><span class="lab-index">05</span><div><h2 id="contact-title">Contact et lecteur</h2><p>Des cadres adoucis et des commandes cohérentes avec le reste de l’interface.</p></div></div>
-            <div class="ds-contact ds-contact--grid"><div><p class="ds-contact-label"><span>Et si on échangeait ?</span><span class="ds-icon ds-icon--phone" aria-hidden="true"></span></p><h3>Restons en contact</h3><div class="ds-contact-links"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rmahiou.pro%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Écrire à rmahiou.pro@gmail.com dans Gmail (nouvel onglet)" >rmahiou.pro@gmail.com</a><div class="ds-contact-socials" role="group" aria-label="Profils professionnels"><a class="ds-social-link ds-social-link--linkedin" href="https://www.linkedin.com/in/ryad-mahiou-98a06532b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Ryad Mahiou (nouvel onglet)"><span class="ds-social-icon" aria-hidden="true"></span><span class="ds-tooltip" aria-hidden="true">LinkedIn</span></a><a class="ds-social-link ds-social-link--github" href="https://github.com/gto634" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Ryad Mahiou (nouvel onglet)"><span class="ds-social-icon" aria-hidden="true"></span><span class="ds-tooltip" aria-hidden="true">GitHub</span></a></div></div><p class="ds-muted">Lyon, France</p></div><div class="end-banner-more ds-contact-actions"><a class="ds-button ds-button--flat" href="#collection"><span class="ds-icon ds-icon--collection" aria-hidden="true"></span>Tout mes projets</a><a class="ds-button ds-button--secondary" href="#top"><span class="ds-icon ds-icon--home" aria-hidden="true"></span>Retour à l’accueil</a></div></div>
+            <div class="ds-contact ds-contact--grid"><div><h3>Restons en contact&nbsp;!</h3><div class="ds-contact-links"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rmahiou.pro%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Écrire à rmahiou.pro@gmail.com dans Gmail (nouvel onglet)" >rmahiou.pro@gmail.com</a><div class="ds-contact-socials" role="group" aria-label="Profils professionnels"><a class="ds-social-link ds-social-link--linkedin" href="https://www.linkedin.com/in/ryad-mahiou-98a06532b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Ryad Mahiou (nouvel onglet)"><span class="ds-social-icon" aria-hidden="true"></span><span class="ds-tooltip" aria-hidden="true">LinkedIn</span></a><a class="ds-social-link ds-social-link--github" href="https://github.com/gto634" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Ryad Mahiou (nouvel onglet)"><span class="ds-social-icon" aria-hidden="true"></span><span class="ds-tooltip" aria-hidden="true">GitHub</span></a><a class="ds-social-link" href="https://ryad-mahiou.itch.io/" target="_blank" rel="noopener noreferrer" data-i18n-region aria-label="Profil itch.io de Ryad Mahiou (nouvel onglet)" data-i18n-aria-label="contact.itchio"><span class="ds-icon ds-icon--itchio" aria-hidden="true"></span><span class="ds-tooltip" aria-hidden="true">Itch.io</span></a></div></div><p class="ds-muted">Lyon, France</p></div><div class="end-banner-more ds-contact-actions"><a class="ds-button ds-button--flat" href="#collection"><span class="ds-icon ds-icon--collection" aria-hidden="true"></span>Tout mes projets</a><a class="ds-button ds-button--secondary" href="#top"><span class="ds-icon ds-icon--home" aria-hidden="true"></span>Retour à l’accueil</a></div></div>
             <p class="lab-caption">L’aperçu montre le lecteur avec une image fixe, sans croix, contour ni ombre. Échap et le clic extérieur ferment le lecteur et rendent le focus au bouton d’ouverture.</p>
         </section>
 

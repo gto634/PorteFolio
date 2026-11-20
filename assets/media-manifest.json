@@ -73,8 +73,8 @@
     {
       "source": "projects/Entrecote/Thumbnail.png",
       "output": "assets/thumbnails/entrecote.webp",
-      "source_bytes": 681873,
-      "output_bytes": 24164,
+      "source_bytes": 574067,
+      "output_bytes": 14944,
       "size": [
         960,
         540
@@ -135,6 +135,46 @@
       "output": "assets/thumbnails/dungeonroller.webp",
       "source_bytes": 398971,
       "output_bytes": 55570,
+      "size": [
+        960,
+        540
+      ]
+    },
+    {
+      "source": "projects\\Spiderpunk\\Splashscreen.png",
+      "output": "assets\\backgrounds\\spiderpunk.webp",
+      "source_bytes": 1177023,
+      "output_bytes": 221424,
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "source": "projects\\Spiderpunk\\Thumbnail.png",
+      "output": "assets\\thumbnails\\spiderpunk.webp",
+      "source_bytes": 983829,
+      "output_bytes": 46292,
+      "size": [
+        960,
+        540
+      ]
+    },
+    {
+      "source": "projects/Minesweeper/Splashscreen.png",
+      "output": "assets/backgrounds/minesweeper.webp",
+      "source_bytes": 221371,
+      "output_bytes": 85214,
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "source": "projects/Minesweeper/Thumbnail.png",
+      "output": "assets/thumbnails/minesweeper.webp",
+      "source_bytes": 272192,
+      "output_bytes": 34184,
       "size": [
         960,
         540
@@ -236,6 +276,27 @@
       "duration": 218.69,
       "faststart": true,
       "audio_streams": 1
+    },
+    {
+      "source": "projects/Spiderpunk/Gameplay.mp4",
+      "output": "assets/videos/spiderpunk.mp4",
+      "source_bytes": 542489652,
+      "output_bytes": 76566446,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "fps": 60.0,
+      "duration": 106.033,
+      "frames": 6362,
+      "faststart": true,
+      "audio_streams": 1
+    },
+    {
+      "source": "projects/Minesweeper/Gameplay.mp4",
+      "output": "assets/videos/minesweeper.mp4",
+      "source_bytes": 23235001,
+      "output_bytes": 2583135
     }
   ]
 }

@@ -474,3 +474,20 @@ de code source, aucun bouton GitHub désactivé et aucun libellé d'attente.
 Out-Tanked! conserve uniquement son action vidéo. Le bouton d'attente de la
 galerie et ceux des anciens exemples sont retirés ; les règles et la checklist
 de création d'une fiche reprennent désormais ce comportement.
+
+## Spiderpunk et retour d’IsekaïWar! — 20 novembre 2026
+
+La collection compte huit projets. Spiderpunk ouvre la liste et sa fiche reprend
+le texte fourni dans son dossier, ses visuels, sa vidéo et ses liens GitHub et
+Itch.io. IsekaïWar! retrouve sa carte, sa fiche dédiée et les traductions du
+commit `4cd773c`. Les médias d’IsekaïWar! étaient toujours présents.
+
+La vidéo web de Spiderpunk est exportée en 1920 × 1080 à 60 i/s, avec audio
+et `faststart`, pour 76 566 446 octets. Les 6 362 images sont conservées et le
+décodage complet passe. La source de 542 Mo reste dans le dossier local du projet,
+comme la source volumineuse de Dungeon Roller.
+
+Vérifications locales effectuées pour les filtres (8 projets, 7 jeux, 1 moteur),
+les deux langues, la lecture et la fermeture des vidéos, le retour à la collection
+et les largeurs 320, 390, 768 et 1440 px. Le contrôle du site couvre 37 fichiers
+et 366 références locales.

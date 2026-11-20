@@ -1,0 +1,13 @@
+durée : 1 semaines | Solo | langage : C
+
+Creusez toutes les cellules sans tomber sur une bombe!
+Terminez la partie le plus rapidement battre votre record.
+Simulation d'un jeu console.
+
+- sauvegarde de scores et settings
+- plusieurs manière de contrôler le jeu
+- entièrement responsive
+- effets visuel et feedbacks 
+
+lien Git : https://github.com/Ryad-MAHIOU/Minesweeper
+lien Itch : https://ryad-mahiou.itch.io/minesweeper

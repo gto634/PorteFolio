@@ -1,8 +1,11 @@
 /* Project composition. Buttons, type, facts and disclosures are shared. */
 /* Keep image URLs beside their consuming stylesheet so folder moves stay portable. */
+#minesweeper { --project-image: url('../backgrounds/minesweeper.webp'); }
+#spiderpunk { --project-image: url('../backgrounds/spiderpunk.webp'); }
 #dungeon-roller { --project-image: url('../backgrounds/dungeonroller.webp'); }
 #necromancer-magical-girl { --project-image: url('../backgrounds/necromancer.webp'); }
 #projet-1 { --project-image: url('../backgrounds/tatamiam.webp'); }
+#projet-2 { --project-image: url('../backgrounds/isekaiwar.webp'); }
 #projet-3 { --project-image: url('../backgrounds/entrecote.webp'); }
 #projet-4 { --project-image: url('../backgrounds/spacerunner.webp'); }
 #projet-5 { --project-image: url('../backgrounds/outtanked.webp'); }

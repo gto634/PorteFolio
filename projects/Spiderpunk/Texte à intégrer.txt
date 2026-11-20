@@ -1,0 +1,18 @@
+durée : 2 semaines | équipe : 3 | moteur : unity | logiciels : Blender / Photoshop | language : c#
+
+
+Luttez contre la spider society, une méchante coalition de Spiderman !
+
+Voyagez de dimensions en dimensions afin de traquer des Spiderman et les capturer.
+
+Rentrez à votre base afin d'admirer votre collection de Spiderman et leur soutirer des informations.
+
+rôle: tech-art / dev Gameplay
+
+- Animations et intégrations visuelles
+- Shaders du portail, outline, et background guitar
+- Dev du moveset du Player
+- Dev de la boucle de jeu
+
+lien Git : https://github.com/gto634/Spiderpunk
+lien Itch : https://ryad-mahiou.itch.io/spiderpunk

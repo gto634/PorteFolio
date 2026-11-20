@@ -1,6 +1,6 @@
 # Médias originaux des projets
 
-Chaque projet conserve son dossier : `DungeonRoller`, `NecromancerMagicalGirl`, `Tatamiam`,
+Chaque projet conserve son dossier : `Minesweeper`, `Spiderpunk`, `DungeonRoller`, `NecromancerMagicalGirl`, `Tatamiam`,
 `IsekaiWar`, `Entrecote`, `SpaceRunner` et `Out-Tanked!`.
 
 - `Splashscreen.png` : fond du projet.
